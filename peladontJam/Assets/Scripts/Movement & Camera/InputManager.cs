@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    static InputManager _instance;
+    public static InputManager Instance
+    {
+        get { return _instance; }
+    }
+
     private PlayerControlls playerControlls;
 
     private void Awake()
     {
+        _instance = this;
         playerControlls = new PlayerControlls();
     }
     private void OnEnable()

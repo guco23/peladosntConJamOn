@@ -5,32 +5,38 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     private CharacterController controller;
-    private Vector3 playerVelocity;
+    #region References
+    private Transform _myTransform;
+    #endregion
+    #region Parameters
+    [SerializeField]
+    private float _speed = 2.0f;
+    [SerializeField]
+    private float _gravityValue = -9.81f;
+    #endregion
+    #region Properties
     [SerializeField]
     private Vector3 directionVector;
-    private float playerSpeed = 2.0f;
-    private float gravityValue = -9.81f;
+    private Vector3 playerVelocity;
+    #endregion
 
     private void Start()
     {
+        _myTransform = transform;
         controller = gameObject.GetComponent<CharacterController>();
     }
 
     void Update()
     {
-
-        //Vector3 move = new Vector3(direction.x, 0, direction.x);
-        controller.Move(directionVector * Time.deltaTime * playerSpeed);
+        controller.Move(directionVector * Time.deltaTime * _speed);
 
         if (directionVector != Vector3.zero)
         {
-            gameObject.transform.forward = directionVector;
+            _myTransform.forward = directionVector;
         }
-        //playerVelocity.y += gravityValue * Time.deltaTime;
-        //controller.Move(playerVelocity * Time.deltaTime);
     }
-    void SetDirection(Vector2 direction)
+    public void SetDirection(Vector2 direction)
     {
-        directionVector = direction;
+        directionVector = new Vector3(direction.x,0, direction.y);
     }
 }
