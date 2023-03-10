@@ -5,28 +5,43 @@ using UnityEngine;
 public class BalaBehaviour : MonoBehaviour
 {
     [SerializeField]
-    float _fuerza;
+    private float _fuerza;
 
     [SerializeField]
-    float _timeLife;
+    private float _timeLife;
 
-    Vector3 _direction;
+    [SerializeField]
+    private float _damage;
 
-    void Start()
+
+    private LayerMask _enemies;
+    private Vector3 _direction;
+
+
+
+    private void Start()
     {
-        //Ray rayCentro = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane));
-        //Vector3 direccionDisparo = rayCentro.GetPoint(10) - transform.position;
+        _enemies = LayerMask.GetMask("Enemies");
     }
 
     private void Update()
     {
         _timeLife -= Time.deltaTime;
-        if (_timeLife < 0) Destroy(this);
+        if (_timeLife < 0) Destroy(gameObject);
     }
     public void SetDirection(Vector3 direccion)
     {
+        Debug.Log("tu vieja la chupa");
         _direction = direccion.normalized;
         GetComponent<Rigidbody>().AddForce(_direction * _fuerza, ForceMode.Impulse);
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == _enemies)// restar vida
+        {
+
+        }
+        Destroy(gameObject);
     }
 }

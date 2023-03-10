@@ -48,13 +48,13 @@ public class ShooterController : MonoBehaviour
         if (_reloj > _cadenciaDisparo && _disparando)
         {
             GameObject bullet = Instantiate(balaPrefab, spawnTransform.position, Quaternion.identity);
-            //Physics.Raycast(Camera.main.transform.position, Camera.main.ScreenPointToRay(mirilla.position).direction,out hit, Mathf.Infinity);
+            
             Physics.Raycast(Camera.main.ScreenPointToRay(mirilla.position), out hit);
 
             if (hit.point != Vector3.zero)
             {
                 bullet.GetComponent<BalaBehaviour>().SetDirection(hit.point - spawnTransform.position);
-                Debug.Log(hit.point);
+                //Debug.Log(hit.point);
             }
             else { bullet.GetComponent<BalaBehaviour>().SetDirection(Camera.main.ScreenPointToRay(mirilla.position).direction); }           
             _reloj = 0;
