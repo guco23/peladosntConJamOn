@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LifeComponent : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _puddlePrefab;
     [SerializeField] private int _maxLife;
     private int _currentLife;
     private int _damageMultiplier;
@@ -25,7 +27,8 @@ public class LifeComponent : MonoBehaviour
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
         {
             gameObject.SetActive(false);
-            Instantiate()
+            GameObject puddle = Instantiate(_puddlePrefab,transform.position + Vector3.down * 2,Quaternion.identity);
+            puddle.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
         }
         else
         {
