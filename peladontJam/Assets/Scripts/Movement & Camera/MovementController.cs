@@ -7,6 +7,7 @@ public class MovementController : MonoBehaviour
     private CharacterController controller;
     #region References
     private Transform _myTransform;
+    private Transform _cameraTransform;
     #endregion
     #region Parameters
     [SerializeField]
@@ -24,19 +25,17 @@ public class MovementController : MonoBehaviour
     {
         _myTransform = transform;
         controller = gameObject.GetComponent<CharacterController>();
+        _cameraTransform = Camera.main.transform;
     }
 
     void Update()
     {
         controller.Move(directionVector * Time.deltaTime * _speed);
-
-        if (directionVector != Vector3.zero)
-        {
-            _myTransform.forward = directionVector;
-        }
     }
     public void SetDirection(Vector2 direction)
     {
         directionVector = new Vector3(direction.x,0, direction.y);
+        directionVector = _cameraTransform.forward * directionVector.z + _cameraTransform.right* directionVector.x;
+        directionVector.y = 0;
     }
 }
