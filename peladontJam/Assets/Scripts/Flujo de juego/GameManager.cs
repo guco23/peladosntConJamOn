@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _colorController = GetComponent<ColorController>();
-        SpawnAll();
         NewRound();
     }
 
@@ -64,6 +63,15 @@ public class GameManager : MonoBehaviour
          * 
          * 
          */
+    }
+
+    /// <summary>
+    /// Método llamado al recoger un color para informar a la UI
+    /// </summary>
+    /// <param name="color"></param>
+    public void ColorPicked(int color)
+    {
+        _barManager.CatchColor(color);
     }
 
     /// <summary>
@@ -105,14 +113,6 @@ public class GameManager : MonoBehaviour
         {
             spawner.DespawnSpawned();
         }
-    }
-    /// <summary>
-    /// Método llamado al recoger un color para informar a la UI
-    /// </summary>
-    /// <param name="color"></param>
-    public void ColorPicked(int color)
-    {
-        _barManager.CatchColor(color);
     }
 
     private void NewPotionPetition()
