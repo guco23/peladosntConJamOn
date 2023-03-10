@@ -35,4 +35,8 @@ public class InputManager : MonoBehaviour
         return playerControlls.Player.Look.ReadValue<Vector2>();
     }
 
+    public bool GetMouseClick()
+    {
+        return playerControlls.Player.LeftClick.ReadValue<bool>();
+    }
 }
