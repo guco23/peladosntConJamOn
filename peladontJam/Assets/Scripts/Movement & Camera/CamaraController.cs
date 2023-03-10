@@ -9,18 +9,16 @@ public class CamaraController : CinemachineExtension
     private InputManager _inputManager;
     #endregion
     #region Parameters
-    [Tooltip("Valor maximo que se puede mover la camara en vertical")] //El angulo
+    [Tooltip("Angulo max que se puede mover la camara en vertical")] //El angulo
     [SerializeField]
     private float _rotationAngle = 80f;
-    [Tooltip("Sensibilidad horizontal de la camara")]
+    [Tooltip("Sensibilidad de la camara")]
     [SerializeField]
-    private float _horizontalSens = 50f;
-    [Tooltip("Sensibilidad horizontal de la camara")]
-    [SerializeField]
-    private float _verticalSens = 50f;
+    private float _sens = 50f;
     #endregion
     #region Properties
     private Vector3 _rotation;
+    private int _inversionFactor = 1;
     #endregion
     #region Methods
     /// <summary>
@@ -31,7 +29,6 @@ public class CamaraController : CinemachineExtension
     /// <param name="stage"></param>
     /// <param name="state"></param>
     /// <param name="deltaTime"></param>
-
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
         if (vcam.Follow)
@@ -43,14 +40,19 @@ public class CamaraController : CinemachineExtension
 
                 Vector2 deltaInput = _inputManager.GetMouseDelta(); //Recoge input
 
-                _rotation.x += deltaInput.x * _horizontalSens * Time.deltaTime; //calcula la rotacion
-                _rotation.y += deltaInput.y * _verticalSens * Time.deltaTime;
+                _rotation.x += deltaInput.x * _sens * Time.deltaTime; //calcula la rotacion
+                _rotation.y += deltaInput.y * _sens * Time.deltaTime;
                 _rotation.y = Mathf.Clamp(_rotation.y, -_rotationAngle, _rotationAngle); //Capa la rotacion vertical
 
-                state.RawOrientation = Quaternion.Euler(-_rotation.y, _rotation.x, 0f); //setea la rotacion, el "-" que lleva es
+                state.RawOrientation = Quaternion.Euler(-_rotation.y * _inversionFactor, _rotation.x * _inversionFactor, 0f); //setea la rotacion, el "-" que lleva es
                                                                                         //para evitar que el eje vertical de la camara invertido
             }
         }
+    }
+
+    public void InvertirEjes()
+    {
+        _inversionFactor= -_inversionFactor;
     }
     #endregion
     protected override void Awake() //Setea la referencia al Input manager 

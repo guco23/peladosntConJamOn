@@ -165,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fd4eba59a4b5f044ab13f67d31ea4660, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b5f22f8a4ad5b464f9306acff8cd7fab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -416,7 +416,7 @@ MonoBehaviour:
   _audioSourceBlue: {fileID: 971766145}
   _audioSourceGreen: {fileID: 41583079}
   _audioSourceRed: {fileID: 831807588}
-  _fadeTime: 0.5
+  _fadeTime: 0.75
   _umbralVolume: 0.95
   _onBlue: 0
   _onGreen: 0
@@ -466,7 +466,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b5f22f8a4ad5b464f9306acff8cd7fab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 56a25b9cf1953ef41ab630c62fa3febb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -594,7 +594,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56a25b9cf1953ef41ab630c62fa3febb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fd4eba59a4b5f044ab13f67d31ea4660, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

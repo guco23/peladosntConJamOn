@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
     static private GameManager _instance;
     private UIManager _uiManager;
 
+
+    #region Properties
+    
+    #endregion
+
     public static GameManager Instance { get
         {
             return _instance;
