@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     static private GameManager _instance;
     private UIManager _uiManager;
     private ColorController _colorController;
+    private Color _requiredColor;
+    //La cantidad de rondas que lleva ganadas el juegador.
+    private int puntos;
 
     #region Properties
     
@@ -32,8 +35,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _colorController = GetComponent<ColorController>();
-        _colorController.InicializaColores();
-        SpawnAll();
+        NewRound();
     }
 
     public void PlayerDied()
@@ -54,6 +56,17 @@ public class GameManager : MonoBehaviour
          * 
          * 
          */
+    }
+
+    /// <summary>
+    /// Comienza una nueva ronda, (nueva petición de color).
+    /// </summary>
+    private void NewRound()
+    {   
+        //Destruye todos los enemigos y regenera uno.
+        KillAllSpawned();
+        SpawnAll();
+        NewColorRequest();
     }
 
     public void PotionCorrect()
@@ -88,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     private void NewColorRequest()
     {
-        
+        _requiredColor = _colorController.InicializaColor();
     }
 
 }

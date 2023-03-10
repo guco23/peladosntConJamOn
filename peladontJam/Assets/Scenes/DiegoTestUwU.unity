@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 656315542}
   - component: {fileID: 656315541}
   - component: {fileID: 656315540}
+  - component: {fileID: 656315544}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -618,6 +619,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &656315544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656315539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba4adfea079f77439a8e091653fd8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amountOfRed: 0
+  _amountOfGreen: 0
+  _amountOfBlue: 0
+  _totalAmount: 0
+  _redBar: {fileID: 0}
+  _greenBar: {fileID: 0}
+  _blueBar: {fileID: 0}
 --- !u!1 &656805860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 221cd6de839b53f4aa53d52a19a9d398,
@@ -1118,12 +1138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2010f9388000dc640ad7306f7821d7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 04ec63064b6bd3c418c15d339e73c6a1, type: 2}
-  _materialCercano: {fileID: 2100000, guid: b02a395bde6ca0c40b00742d8e8f09df, type: 2}
-  _materialCustom: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
-  _red: 0
-  _green: 0
-  _blue: 0
   _max_color: 0
   _umbralIguales: 5
 --- !u!1 &2006209153

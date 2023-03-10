@@ -25,7 +25,7 @@ public class ColorConfirmationComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _materialToCompare = _myColorController.Material;
+       // _materialToCompare = _myColorController.Material;
     }
 
     // Update is called once per frame

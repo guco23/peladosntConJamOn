@@ -5,78 +5,54 @@ using UnityEngine;
 public class ColorController : MonoBehaviour
 {
     [SerializeField]
-    private Material _material;
-
-    [SerializeField]
-    private Material _materialCercano;
-
-    [SerializeField]
-    private Material _materialCustom;
-
-    public int _red;
-    public int _green;
-    public int _blue;
-
-    [SerializeField]
     private float _max_color;
 
     [SerializeField]
     private float _umbralIguales;
 
-    public Material Material
+    /// <summary>
+    /// Crea un color posible y lo devuelve como objeto color.
+    /// </summary>
+    /// <returns>El objeto color creado (obvio)</returns>
+    public Color InicializaColor()
     {
-        get { return _material; }
-    }
+        Color _color = new Color();
 
-    private Color _color;
-    // Start is called before the first frame update
-    void Start()
-    {
-        InicializaColores();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        _materialCustom.color = GeneraColor(_red, _green, _blue);
-    }
-    public void InicializaColores()
-    {       
-        ResetColor(ref _color);
-
-        float[] colores = new float[] {_color.r,_color.g,_color.b};
+        float[] colores = new float[] { 0, 0, 0 };
 
         int colorPrincipal = Random.Range(0, 3);
 
         //asignamos el color principal e inicializamos los secundarios
         colores[colorPrincipal] = 1;
-        if (colorPrincipal == 0)    InicializaSecundarios(ref colores[1], ref colores[2]);
+        if (colorPrincipal == 0) InicializaSecundarios(ref colores[1], ref colores[2]);
         else if (colorPrincipal == 1) InicializaSecundarios(ref colores[0], ref colores[2]);
         else if (colorPrincipal == 2) InicializaSecundarios(ref colores[1], ref colores[0]);
 
         _color.r = colores[0];
         _color.g = colores[1];
         _color.b = colores[2];
-        
-        _material.color = _color;
-        _materialCercano.color = ColorMasCercano(_color);
+
+        return _color;
     }
 
+    /// <summary>
+    /// Méotodos internos para la creación del color.
+    /// </summary>
+    /// <param name="c1">primer color secundario</param>
+    /// <param name="c2">segundo color secundario</param>
     private void InicializaSecundarios(ref float c1,ref float c2)
     {
         c1 = Random.Range(0f, 1);
         c2 = Random.Range(0f, Mathf.Clamp(_max_color - c1, 0, 1));
     }
-    private void ResetColor(ref Color c)
-    {
-        c = Color.black;        
-    }
+    
 
-    private Color CopiaColor(Color c)
-    {
-        return new Color(c.r, c.g, c.b, c.a);
-    }
-
+    /// <summary>
+    /// Comprueba cosas de los secundarios.
+    /// Yo que se, lo hizo Samuel y funciona bien pero no lo comentó asi que no se que hace ni como ngl.
+    /// </summary>
+    /// <param name="c1"></param>
+    /// <param name="c2"></param>
     private void EvaluaSecundarios(ref float c1,ref float c2)
     {
         if (c1 >= 0.75f)                    {c1 = 1; c2 = 0;}
@@ -86,6 +62,11 @@ public class ColorController : MonoBehaviour
         else                                {c1 = 0; c2 = 1;}
     }
    
+    /// <summary>
+    /// Encuentra el color más cercano de los 7 posibles colores principales, incluyendo el blanco.
+    /// </summary>
+    /// <param name="c"></param>
+    /// <returns>El color de los 7</returns>
     public Color ColorMasCercano(Color c)
     {        
         float[] colores = new float[]{c.r,c.g, c.b};
@@ -97,6 +78,12 @@ public class ColorController : MonoBehaviour
         return new Color(colores[0], colores[1], colores[2],1);
     }
 
+    /// <summary>
+    /// Comprueba si dos colores están suficientemente cerca cromáticamente para darlo por bueno.
+    /// </summary>
+    /// <param name="c1">Uno de los dos colores</param>
+    /// <param name="c2">El otro color</param>
+    /// <returns>True si están suficientemente cerca, False si no lo están. si hay algún otro fallo posible, te aconseja prestar atención a tu progenitora porque no se haya en sus óptimas facultades.</returns>
     public bool ColoresIguales(Color c1,Color c2)
     {        
         if(c1.r == 1)       return Mathf.Abs(c1.g - c2.g) < _umbralIguales && Mathf.Abs(c1.b - c2.b) < _umbralIguales;
