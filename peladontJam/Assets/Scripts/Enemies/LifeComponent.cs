@@ -9,7 +9,9 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private Transform _puddleTransform;
     [SerializeField] private int _maxLife;
+    [SerializeField]
     private int _currentLife;
+    [SerializeField]
     private int _damageMultiplier;
     [SerializeField] private float _spawnerOffset;
 
@@ -34,10 +36,16 @@ public class LifeComponent : MonoBehaviour
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
         {
             gameObject.SetActive(false);
-            GameObject Object = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity);
-            Object.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
-            Object = Instantiate(gameObject, transform.position - _spawnerOffset * Vector3.right, Quaternion.identity);
-            Object = Instantiate(gameObject, transform.position + _spawnerOffset * Vector3.right, Quaternion.identity);
+            GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity);
+            myObject.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
+
+            Vector3 aux = new Vector3(Random.Range(-1f, 1),0, Random.Range(-1f, 1)).normalized;
+            myObject = Instantiate(gameObject, transform.position - _spawnerOffset * aux, Quaternion.identity);
+            myObject.SetActive(true);
+            myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity);
+            myObject.SetActive(true);
+
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

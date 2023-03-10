@@ -21,7 +21,7 @@ public class BalaBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _enemies = LayerMask.GetMask("Enemies");
+        _enemies = LayerMask.NameToLayer("Enemies");
     }
 
     private void Update()
@@ -38,6 +38,7 @@ public class BalaBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(collision.gameObject);
         if(collision.gameObject.layer == _enemies)// restar vida
         {
             Debug.Log("Enemigo");

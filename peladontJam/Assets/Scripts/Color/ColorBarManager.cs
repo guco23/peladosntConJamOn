@@ -59,7 +59,7 @@ public class ColorBarManager : MonoBehaviour
         {
             _amountOfGreen++;
         }
-        else if (color == 1)
+        else if (color == 2)
         {
             _amountOfBlue++;
         }
@@ -71,7 +71,7 @@ public class ColorBarManager : MonoBehaviour
 
     private void SendPercent() //Cambia el relleno de las barras mediante una regla de tres
     {
-        Debug.Log("tu vieja la mama");
+        //Debug.Log("tu vieja la mama");
         if(_totalAmount > 0)
         {
             _redBar.value = (float)(_amountOfRed * 100) / _totalAmount;
@@ -80,7 +80,7 @@ public class ColorBarManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("soy gil");
+            //Debug.Log("soy gil");
             _redBar.value = 0;
             _greenBar.value = 0;
             _blueBar.value = 0;
@@ -94,7 +94,7 @@ public class ColorBarManager : MonoBehaviour
     void Update()
     {
         _totalAmount = _amountOfBlue + _amountOfGreen + _amountOfRed;
-        Debug.Log(_totalAmount);
+        //Debug.Log(_totalAmount);
         SendPercent();
         //Queria probar el componente con el teclado directamente pero me dice que el input a cambiado o no se que.
         //Probandlo si eso
