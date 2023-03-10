@@ -33,4 +33,5 @@ public class InputManager : MonoBehaviour
     {
         return playerControlls.Player.Look.ReadValue<Vector2>();
     }
+
 }
