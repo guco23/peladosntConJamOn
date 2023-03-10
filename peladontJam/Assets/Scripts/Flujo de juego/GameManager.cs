@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         //Destruye todos los enemigos y regenera uno.
         KillAllSpawned();
         SpawnAll();
-        NewColorRequest();
+        NewPotionPetition();
     }
 
     public void PotionCorrect()
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NewColorRequest()
+    private void NewPotionPetition()
     {
         _requiredColor = _colorController.InicializaColor();
     }
