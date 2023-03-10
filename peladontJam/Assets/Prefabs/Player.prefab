@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 8193281251139864041}
   - component: {fileID: 8193281251139864043}
   - component: {fileID: 8193281251139864040}
+  - component: {fileID: -7275171406083387697}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -447,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7128f53a246e26b429d42da3f8128e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 15
   _gravityValue: -9.81
   directionVector: {x: 0, y: 0, z: 0}
 --- !u!114 &8193281251139864041
@@ -538,3 +539,16 @@ MonoBehaviour:
     type: 3}
   spawnTransform: {fileID: 1245307150032697901}
   _cadenciaDisparo: 0.3
+--- !u!114 &-7275171406083387697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193281251761951307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff616c7a6f248b489e4a895a781f985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colors: 000000000000000000000000

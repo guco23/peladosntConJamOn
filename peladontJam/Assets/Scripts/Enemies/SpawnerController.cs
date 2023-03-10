@@ -20,5 +20,6 @@ public class SpawnerController : MonoBehaviour
     public void Spawn()
     {
         GameObject spawny = Instantiate(_enemyPrefab, transform.position, Quaternion.identity, transform);
+        
     }
 }

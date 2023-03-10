@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (SpawnerController spawner in _spawners)
         {
-            spawner.KillSpawned();
+            spawner.DespawnSpawned();
         }
     }
 }
