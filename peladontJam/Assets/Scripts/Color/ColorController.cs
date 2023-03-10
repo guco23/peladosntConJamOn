@@ -23,6 +23,11 @@ public class ColorController : MonoBehaviour
     [SerializeField]
     private float umbralIguales;
 
+    public Material Material
+    {
+        get { return material; }
+    }
+
     private Color color;
     // Start is called before the first frame update
     void Start()
