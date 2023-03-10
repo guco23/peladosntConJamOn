@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _colorController = GetComponent<ColorController>();
-        SpawnAll();
         NewRound();
     }
 
@@ -67,6 +66,15 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Método llamado al recoger un color para informar a la UI
+    /// </summary>
+    /// <param name="color"></param>
+    public void ColorPicked(int color)
+    {
+        _barManager.CatchColor(color);
+    }
+
+    /// <summary>
     /// Comienza una nueva ronda, (nueva petición de color).
     /// </summary>
     private void NewRound()
@@ -74,7 +82,7 @@ public class GameManager : MonoBehaviour
         //Destruye todos los enemigos y regenera uno.
         KillAllSpawned();
         SpawnAll();
-        NewColorRequest();
+        NewPotionPetition();
     }
 
     public void PotionCorrect()
@@ -106,16 +114,8 @@ public class GameManager : MonoBehaviour
             spawner.DespawnSpawned();
         }
     }
-    /// <summary>
-    /// Método llamado al recoger un color para informar a la UI
-    /// </summary>
-    /// <param name="color"></param>
-    public void ColorPicked(int color)
-    {
-        _barManager.CatchColor(color);
-    }
 
-    private void NewColorRequest()
+    private void NewPotionPetition()
     {
         _requiredColor = _colorController.InicializaColor();
     }
