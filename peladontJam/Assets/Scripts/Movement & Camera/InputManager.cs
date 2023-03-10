@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     {
         _instance = this;
         playerControlls = new PlayerControlls();
+        Cursor.lockState= CursorLockMode.Locked;
     }
     private void OnEnable()
     {
@@ -33,4 +34,5 @@ public class InputManager : MonoBehaviour
     {
         return playerControlls.Player.Look.ReadValue<Vector2>();
     }
+
 }
