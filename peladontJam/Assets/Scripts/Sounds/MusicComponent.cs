@@ -30,6 +30,12 @@ public class MusicComponent : MonoBehaviour
     [SerializeField] private bool _onBlue;
     [SerializeField] private bool _onGreen;
     [SerializeField] private bool _onRed;
+
+    [SerializeField] private bool _playBlue;
+    [SerializeField] private bool _playGreen;
+    [SerializeField] private bool _playRed;
+
+    private PlayerControlls _myPlayerControlls;
     #endregion
 
     #region Methods
@@ -86,6 +92,7 @@ public class MusicComponent : MonoBehaviour
         _audioSourceBlue = transform.GetChild(0).GetComponent<AudioSource>();     // AudioSource BLUE
         _audioSourceGreen = transform.GetChild(1).GetComponent<AudioSource>();      // AudioSource GREEN
         _audioSourceRed = transform.GetChild(2).GetComponent<AudioSource>();      // AudioSource RED
+        _myPlayerControlls = new PlayerControlls();
         ChangeMusic(_audioSourceBlue);
     }
 
@@ -100,16 +107,22 @@ public class MusicComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (_playBlue)
         {
+            _playGreen = false;
+            _playRed = false;
             ChangeState(ref _onBlue);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (_playGreen)
         {
+            _playBlue = false;
+            _playRed = false;
             ChangeState(ref _onGreen);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (_playRed)
         {
+            _playGreen = false;
+            _playBlue = false;
             ChangeState(ref _onRed);
         }
 
