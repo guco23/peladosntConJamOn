@@ -6,7 +6,6 @@ public class MovementController : MonoBehaviour
 {
     private CharacterController controller;
     #region References
-    private Transform _myTransform;
     private Transform _cameraTransform;
     #endregion
     #region Parameters
@@ -18,12 +17,10 @@ public class MovementController : MonoBehaviour
     #region Properties
     [SerializeField]
     private Vector3 directionVector;
-    private Vector3 playerVelocity;
     #endregion
 
     private void Start()
     {
-        _myTransform = transform;
         controller = gameObject.GetComponent<CharacterController>();
         _cameraTransform = Camera.main.transform;
     }
