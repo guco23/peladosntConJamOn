@@ -1,39 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShooterController : MonoBehaviour
 {
-    public void SetCadenciaDisparo(float cadenciaDisparo)
-    {
-
-    }
 
     [SerializeField]
     GameObject _balaPrefab;
+    [SerializeField]
     float _cadenciaDisparo;
-    
+
+    float _reloj;
+
     // Start is called before the first frame update
     void Start()
     {
-        _cadenciaDisparo = 4;
+        _reloj = _cadenciaDisparo;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if((_cadenciaDisparo -= Time.deltaTime) < 0)
-        {
-            Debug.Log("pene");
-            Disparar();
-            _cadenciaDisparo = 4;
-        }
+        _reloj += Time.deltaTime;
     }
 
-    public void Disparar()
+    public void Disparar(InputAction.CallbackContext context)
     {
-
-        GameObject bala = Instantiate(_balaPrefab, transform.position, Quaternion.identity);
+        if (_reloj > _cadenciaDisparo && context.started)
+        {
+            GameObject bala = Instantiate(_balaPrefab, transform.position, Quaternion.identity);
+            _reloj = 0;
+        }
     }
 
     

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BalaBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    float _fuerza;
+
     void Start()
     {
-        GetComponent<Rigidbody>().AddForce(Camera.main.gameObject.transform.forward);
+        Ray rayCentro = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane));
+        Vector3 direccionDisparo = rayCentro.GetPoint(10) - transform.position;
+        direccionDisparo.Normalize();
+
+        GetComponent<Rigidbody>().AddForce(direccionDisparo * _fuerza, ForceMode.Impulse);
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector3 direccion3)
     {
-        
+
     }
 }

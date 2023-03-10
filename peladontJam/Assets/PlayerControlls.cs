@@ -60,7 +60,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""id"": ""7d2db109-457b-4c75-8f87-dd20dd6e3d72"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -168,7 +168,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""031028cc-f32d-476e-93ea-bb7e0d15d879"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""LeftClick"",
