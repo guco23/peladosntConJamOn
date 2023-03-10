@@ -38,5 +38,6 @@ public class InputManager : MonoBehaviour
     public bool GetMouseClick()
     {
         return playerControlls.Player.LeftClick.ReadValue<bool>();
+        
     }
 }

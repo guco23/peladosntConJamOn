@@ -58,7 +58,7 @@ public class ShooterController : MonoBehaviour
             }
             else { bullet.GetComponent<BalaBehaviour>().SetDirection(Camera.main.ScreenPointToRay(mirilla.position).direction); }           
             _reloj = 0;
-
+            
         }
     }
 

@@ -11,7 +11,7 @@ public class BalaBehaviour : MonoBehaviour
     private float _timeLife;
 
     [SerializeField]
-    private float _damage;
+    private static float _damage;
 
 
     private LayerMask _enemies;
@@ -43,5 +43,10 @@ public class BalaBehaviour : MonoBehaviour
 
         }
         Destroy(gameObject);
+    }
+
+    public static void SetDamage(float valor)
+    {
+        _damage = valor;
     }
 }
