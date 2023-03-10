@@ -8,6 +8,7 @@ public class MusicCaller : MonoBehaviour
     [SerializeField] private bool _blue;
     [SerializeField] private bool _green;
     [SerializeField] private bool _red;
+    [SerializeField] private bool _total;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,10 @@ public class MusicCaller : MonoBehaviour
             if (_red)
             {
                 _myMusicComponent._playRed = true;
+            }
+            if (_total)
+            {
+                _myMusicComponent._playTotal = true;
             }
         }
     }
