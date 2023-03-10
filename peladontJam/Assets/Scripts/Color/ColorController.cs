@@ -5,48 +5,46 @@ using UnityEngine;
 public class ColorController : MonoBehaviour
 {
     [SerializeField]
-    private Material material;
+    private Material _material;
 
     [SerializeField]
-    private Material materialCercano;
+    private Material _materialCercano;
 
     [SerializeField]
-    private Material materialCustom;
+    private Material _materialCustom;
 
-    public int red;
-    public int green;
-    public int blue;
-
-    [SerializeField]
-    private float max_color;
+    public int _red;
+    public int _green;
+    public int _blue;
 
     [SerializeField]
-    private float umbralIguales;
+    private float _max_color;
+
+    [SerializeField]
+    private float _umbralIguales;
 
     public Material Material
     {
-        get { return material; }
+        get { return _material; }
     }
 
-    private Color color;
+    private Color _color;
     // Start is called before the first frame update
     void Start()
     {
         InicializaColores();
-
-        Debug.Log(ColoresIguales(material.color, materialCercano.color));
     }
 
     // Update is called once per frame
     void Update()
     {
-        materialCustom.color = GeneraColor(red, green, blue);
+        _materialCustom.color = GeneraColor(_red, _green, _blue);
     }
     public void InicializaColores()
     {       
-        ResetColor(ref color);
+        ResetColor(ref _color);
 
-        float[] colores = new float[] {color.r,color.g,color.b};
+        float[] colores = new float[] {_color.r,_color.g,_color.b};
 
         int colorPrincipal = Random.Range(0, 3);
 
@@ -56,18 +54,18 @@ public class ColorController : MonoBehaviour
         else if (colorPrincipal == 1) InicializaSecundarios(ref colores[0], ref colores[2]);
         else if (colorPrincipal == 2) InicializaSecundarios(ref colores[1], ref colores[0]);
 
-        color.r = colores[0];
-        color.g = colores[1];
-        color.b = colores[2];
+        _color.r = colores[0];
+        _color.g = colores[1];
+        _color.b = colores[2];
         
-        material.color = color;
-        materialCercano.color = ColorMasCercano(color);
+        _material.color = _color;
+        _materialCercano.color = ColorMasCercano(_color);
     }
 
     private void InicializaSecundarios(ref float c1,ref float c2)
     {
         c1 = Random.Range(0f, 1);
-        c2 = Random.Range(0f, Mathf.Clamp(max_color - c1, 0, 1));
+        c2 = Random.Range(0f, Mathf.Clamp(_max_color - c1, 0, 1));
     }
     private void ResetColor(ref Color c)
     {
@@ -101,9 +99,9 @@ public class ColorController : MonoBehaviour
 
     public bool ColoresIguales(Color c1,Color c2)
     {        
-        if(c1.r == 1)       return Mathf.Abs(c1.g - c2.g) < umbralIguales && Mathf.Abs(c1.b - c2.b) < umbralIguales;
-        else if (c1.g == 1) return Mathf.Abs(c1.r - c2.r) < umbralIguales && Mathf.Abs(c1.b - c2.b) < umbralIguales;
-        else if (c1.b == 1) return Mathf.Abs(c1.g - c2.g) < umbralIguales && Mathf.Abs(c1.r - c2.r) < umbralIguales;
+        if(c1.r == 1)       return Mathf.Abs(c1.g - c2.g) < _umbralIguales && Mathf.Abs(c1.b - c2.b) < _umbralIguales;
+        else if (c1.g == 1) return Mathf.Abs(c1.r - c2.r) < _umbralIguales && Mathf.Abs(c1.b - c2.b) < _umbralIguales;
+        else if (c1.b == 1) return Mathf.Abs(c1.g - c2.g) < _umbralIguales && Mathf.Abs(c1.r - c2.r) < _umbralIguales;
         else //por si acaso
         {
             Debug.Log("algo va mal con tu vieja");

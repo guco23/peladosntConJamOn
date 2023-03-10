@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     static private GameManager _instance;
     private UIManager _uiManager;
-
+    private ColorController _colorController;
 
     #region Properties
     
@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _colorController = GetComponent<ColorController>();
+        _colorController.InicializaColores();
         SpawnAll();
     }
 
@@ -83,4 +85,10 @@ public class GameManager : MonoBehaviour
             spawner.DespawnSpawned();
         }
     }
+
+    private void NewColorRequest()
+    {
+        
+    }
+
 }
