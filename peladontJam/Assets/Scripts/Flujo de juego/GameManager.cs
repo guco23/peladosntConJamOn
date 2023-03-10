@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region References
+
     [SerializeField]
     SpawnerController[] _spawners;
     [SerializeField]
     GameObject _player;
+    ColorController _colorController;
 
     static private GameManager _instance;
+
     private UIManager _uiManager;
+    [SerializeField]
+    private ColorBarManager _barManager;//meter dentro de la ui
+    #endregion
 
 
     #region Properties
@@ -31,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _colorController = GetComponent<ColorController>();
         SpawnAll();
     }
 
@@ -82,5 +90,13 @@ public class GameManager : MonoBehaviour
         {
             spawner.DespawnSpawned();
         }
+    }
+    /// <summary>
+    /// Método llamado al recoger un color para informar a la UI
+    /// </summary>
+    /// <param name="color"></param>
+    public void ColorPicked(int color)
+    {
+        _barManager.CatchColor(color);
     }
 }

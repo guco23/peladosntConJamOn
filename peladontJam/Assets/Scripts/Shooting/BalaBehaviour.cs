@@ -43,6 +43,7 @@ public class BalaBehaviour : MonoBehaviour
         {
             Debug.Log("Enemigo");
             collision.gameObject.GetComponent<LifeComponent>().DealDamage(20);
+            collision.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - collision.transform.position);
         }
         Destroy(gameObject);
     }
