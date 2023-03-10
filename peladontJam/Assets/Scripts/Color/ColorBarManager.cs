@@ -7,13 +7,14 @@ using UnityEngine.UI;
 
 public class ColorBarManager : MonoBehaviour
 {
+    public static ColorBarManager Instance { get; private set; }
 
     #region parameters
 
-    private int _amountOfRed;
-    private int _amountOfGreen;
-    private int _amountOfBlue;
-    private int _totalAmount;
+    public int _amountOfRed;
+    public int _amountOfGreen;
+    public int _amountOfBlue;
+    public int _totalAmount;
 
     #endregion
 
@@ -25,18 +26,27 @@ public class ColorBarManager : MonoBehaviour
 
     #region references
     [SerializeField]
-    private GameObject _redBar;
+    private Slider _redBar;
 
     [SerializeField]
-    private GameObject _greenBar;
+    private Slider _greenBar;
 
     [SerializeField]
-    private GameObject _blueBar;
+    private Slider _blueBar;
 
     #endregion 
 
     #region methods 
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+    private void Start()
+    {
+        _amountOfBlue = _amountOfGreen = _amountOfRed = _totalAmount = 0;
+        SendPercent();
+    }
     //Va sumando a la cantidad de cada color y al total
     public void CatchColor(int color)
     {
@@ -61,9 +71,20 @@ public class ColorBarManager : MonoBehaviour
 
     private void SendPercent() //Cambia el relleno de las barras mediante una regla de tres
     {
-        _redBar.GetComponent<Slider>().value = (_amountOfRed * 100) / _totalAmount;
-        _greenBar.GetComponent<Slider>().value = (_amountOfGreen * 100) / _totalAmount;
-        _blueBar.GetComponent<Slider>().value = (_amountOfBlue * 100) / _totalAmount;
+        Debug.Log("tu vieja la mama");
+        if(_totalAmount > 0)
+        {
+            _redBar.value = (float)(_amountOfRed * 100) / _totalAmount;
+            _greenBar.value = (float)(_amountOfGreen * 100) / _totalAmount;
+            _blueBar.value = (float)(_amountOfBlue ) * 100 / _totalAmount;
+        }
+        else
+        {
+            Debug.Log("soy gil");
+            _redBar.value = 0;
+            _greenBar.value = 0;
+            _blueBar.value = 0;
+        }
     }
 
     #endregion
@@ -72,7 +93,9 @@ public class ColorBarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _totalAmount = _amountOfBlue + _amountOfGreen + _amountOfRed;
+        Debug.Log(_totalAmount);
+        SendPercent();
         //Queria probar el componente con el teclado directamente pero me dice que el input a cambiado o no se que.
         //Probandlo si eso
 

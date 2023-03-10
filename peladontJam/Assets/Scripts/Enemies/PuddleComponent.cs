@@ -18,6 +18,7 @@ public class PuddleComponent : MonoBehaviour
         if (_manager != null)
         {
             _manager.AddColor((int) _color);
+            ColorBarManager.Instance.CatchColor((int)_color);
             Destroy(gameObject);
         }
     }
