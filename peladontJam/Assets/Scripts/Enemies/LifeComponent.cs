@@ -40,9 +40,9 @@ public class LifeComponent : MonoBehaviour
             myObject.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
 
             Vector3 aux = new Vector3(Random.Range(-1f, 1),0, Random.Range(-1f, 1)).normalized;
-            myObject = Instantiate(gameObject, transform.position - _spawnerOffset * aux, Quaternion.identity);
+            myObject = Instantiate(gameObject, transform.position - _spawnerOffset * aux, Quaternion.identity, transform.parent);
             myObject.SetActive(true);
-            myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity);
+            myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity, transform.parent);
             myObject.SetActive(true);
 
             Destroy(gameObject);

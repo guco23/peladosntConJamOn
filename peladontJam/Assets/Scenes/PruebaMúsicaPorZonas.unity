@@ -434,8 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAngle: 80
-  _horizontalSens: 50
-  _verticalSens: 50
+  _sens: 50
 --- !u!114 &254765686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,7 +1445,7 @@ GameObject:
   - component: {fileID: 1159966567}
   - component: {fileID: 1159966566}
   m_Layer: 0
-  m_Name: "Caba\xF1a"
+  m_Name: Puesto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

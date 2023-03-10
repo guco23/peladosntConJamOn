@@ -14,6 +14,8 @@ public class MusicComponent : MonoBehaviour
     private AudioSource _audioSourceGreen;
     [SerializeField]
     private AudioSource _audioSourceRed;
+    [SerializeField]
+    private AudioSource _audioSourceTotal;
     /// <summary>
     /// tiempo de la transicion
     /// </summary>
@@ -30,10 +32,12 @@ public class MusicComponent : MonoBehaviour
     [SerializeField] private bool _onBlue;
     [SerializeField] private bool _onGreen;
     [SerializeField] private bool _onRed;
+    [SerializeField] private bool _onTotal;
 
     public bool _playBlue;
     public bool _playGreen;
     public bool _playRed;
+    public bool _playTotal;
 
     private PlayerControlls _myPlayerControlls;
     #endregion
@@ -63,6 +67,10 @@ public class MusicComponent : MonoBehaviour
             {
                 _audioSourceRed.volume = Mathf.Lerp(_audioSourceRed.volume, 0, Time.deltaTime * _fadeTime);
             }
+            if (!_onTotal)
+            {
+                _audioSourceTotal.volume = Mathf.Lerp(_audioSourceTotal.volume, 0, Time.deltaTime * _fadeTime);
+            }
 
             currentSource.volume = Mathf.Lerp(currentSource.volume, 1, Time.deltaTime * _fadeTime);
         }
@@ -80,6 +88,10 @@ public class MusicComponent : MonoBehaviour
             {
                 _audioSourceRed.volume = 0;
             }
+            if (!_onTotal)
+            {
+                _audioSourceTotal.volume = 0;
+            }
 
             currentSource.volume = 1;
         }
@@ -92,6 +104,7 @@ public class MusicComponent : MonoBehaviour
         _audioSourceBlue = transform.GetChild(0).GetComponent<AudioSource>();     // AudioSource BLUE
         _audioSourceGreen = transform.GetChild(1).GetComponent<AudioSource>();      // AudioSource GREEN
         _audioSourceRed = transform.GetChild(2).GetComponent<AudioSource>();      // AudioSource RED
+        _audioSourceTotal = transform.GetChild(3).GetComponent<AudioSource>();      // AudioSource TOTAL
         _myPlayerControlls = new PlayerControlls();
         ChangeMusic(_audioSourceBlue);
     }
@@ -101,6 +114,7 @@ public class MusicComponent : MonoBehaviour
         _onBlue = false;
         _onGreen = false;
         _onRed = false;
+        _onTotal = false;
         myState = true;
     }
 
@@ -113,6 +127,7 @@ public class MusicComponent : MonoBehaviour
             _playGreen = false;
             _playRed = false;
             _playBlue = false;
+            _playTotal = false;
         }
         if (_playGreen)
         {
@@ -120,6 +135,7 @@ public class MusicComponent : MonoBehaviour
             _playBlue = false;
             _playRed = false;
             _playGreen = false;
+            _playTotal = false;
         }
         if (_playRed)
         {
@@ -127,10 +143,20 @@ public class MusicComponent : MonoBehaviour
             _playGreen = false;
             _playBlue = false;
             _playRed = false;
+            _playTotal = false;
+        }
+        if (_playTotal)
+        {
+            ChangeState(ref _onTotal);
+            _playGreen = false;
+            _playBlue = false;
+            _playRed = false;
+            _playTotal = false;
         }
 
         if (_onBlue) ChangeMusic(_audioSourceBlue);
         if (_onGreen) ChangeMusic(_audioSourceGreen);
         if (_onRed) ChangeMusic(_audioSourceRed);
+        if (_onTotal) ChangeMusic(_audioSourceTotal);
     }
 }
