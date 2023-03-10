@@ -7,6 +7,9 @@ public class BalaBehaviour : MonoBehaviour
     [SerializeField]
     float _fuerza;
 
+    [SerializeField]
+    float _timeLife;
+
     Vector3 _direction;
 
     void Start()
@@ -15,6 +18,11 @@ public class BalaBehaviour : MonoBehaviour
         //Vector3 direccionDisparo = rayCentro.GetPoint(10) - transform.position;
     }
 
+    private void Update()
+    {
+        _timeLife -= Time.deltaTime;
+        if (_timeLife < 0) Destroy(this);
+    }
     public void SetDirection(Vector3 direccion)
     {
         _direction = direccion.normalized;

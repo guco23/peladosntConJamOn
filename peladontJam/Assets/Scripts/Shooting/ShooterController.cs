@@ -22,21 +22,30 @@ public class ShooterController : MonoBehaviour
     private RaycastHit hit;
     float _reloj;
 
+
+    bool _disparando;
     // Start is called before the first frame update
     void Start()
     {
         _reloj = _cadenciaDisparo;
+        _disparando = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         _reloj += Time.deltaTime;
+        Shoot();
     }
 
     public void Disparar(InputAction.CallbackContext context)
     {
-        if (_reloj > _cadenciaDisparo && context.started)
+        if (context.started) _disparando = true;
+        if (context.canceled) _disparando = false;
+    }
+    private void Shoot()
+    {
+        if (_reloj > _cadenciaDisparo && _disparando)
         {
             GameObject bullet = Instantiate(balaPrefab, spawnTransform.position, Quaternion.identity);
             //Physics.Raycast(Camera.main.transform.position, Camera.main.ScreenPointToRay(mirilla.position).direction,out hit, Mathf.Infinity);
@@ -47,7 +56,7 @@ public class ShooterController : MonoBehaviour
                 bullet.GetComponent<BalaBehaviour>().SetDirection(hit.point - spawnTransform.position);
                 Debug.Log(hit.point);
             }
-            else { bullet.GetComponent<BalaBehaviour>().SetDirection(Camera.main.ScreenPointToRay(mirilla.position).direction); }
+            else { bullet.GetComponent<BalaBehaviour>().SetDirection(Camera.main.ScreenPointToRay(mirilla.position).direction); }           
             _reloj = 0;
 
         }
