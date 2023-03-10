@@ -30,7 +30,7 @@ public class ColorConfirmationComponent : MonoBehaviour
     void Start()
     {
         _myColorController = GameManager.Instance.GetComponent<ColorController>();
-        _materialToCompare = _myColorController.Material;
+       // _materialToCompare = _myColorController.Material;
     }
 
     // Update is called once per frame

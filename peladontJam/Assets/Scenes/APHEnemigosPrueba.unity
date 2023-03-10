@@ -773,7 +773,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 52.4
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1299,7 +1299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -17.8, y: 0.3}
+  m_AnchoredPosition: {x: -3.0000038, y: 0.3}
   m_SizeDelta: {x: 103.8609, y: 103.8609}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &657019613
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 33.3
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1868,7 +1868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -17.7, y: 0.3}
+  m_AnchoredPosition: {x: -3, y: 0.3}
   m_SizeDelta: {x: 103.8609, y: 103.8609}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093418350
@@ -2703,7 +2703,7 @@ GameObject:
   - component: {fileID: 1537345666}
   - component: {fileID: 1537345665}
   m_Layer: 5
-  m_Name: icon
+  m_Name: BluePotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2726,7 +2726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -17.4, y: 0.3}
+  m_AnchoredPosition: {x: -3.0000114, y: 0.3}
   m_SizeDelta: {x: 103.8609, y: 103.8609}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537345665
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 50.2
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
