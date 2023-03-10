@@ -12,7 +12,6 @@ public class ShooterController : MonoBehaviour
     [SerializeField]
     GameObject _balaPrefab;
     float _cadenciaDisparo;
-    InputManager _inputManager;
     
     // Start is called before the first frame update
     void Start()
@@ -23,8 +22,7 @@ public class ShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TEMPORAL HASTA QUE ESTÉ EL INPUT Y MOVEMENT HECHO
-        if(_inputManager.GetMouseClick())
+        if(InputManager.Instance.GetMouseClick())
         {
             Debug.Log("pene");
             Disparar();
