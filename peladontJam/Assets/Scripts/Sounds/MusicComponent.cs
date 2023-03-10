@@ -31,9 +31,9 @@ public class MusicComponent : MonoBehaviour
     [SerializeField] private bool _onGreen;
     [SerializeField] private bool _onRed;
 
-    [SerializeField] private bool _playBlue;
-    [SerializeField] private bool _playGreen;
-    [SerializeField] private bool _playRed;
+    public bool _playBlue;
+    public bool _playGreen;
+    public bool _playRed;
 
     private PlayerControlls _myPlayerControlls;
     #endregion
@@ -47,7 +47,7 @@ public class MusicComponent : MonoBehaviour
     /// <summary>
     /// cambia la pista de audio a la indicada, progresivamente bajando las otras pistas
     /// </summary>
-    public void ChangeMusic(AudioSource currentSource)
+    private void ChangeMusic(AudioSource currentSource)
     {
         if (currentSource.volume <= _umbralVolume)
         {
@@ -109,21 +109,24 @@ public class MusicComponent : MonoBehaviour
     {
         if (_playBlue)
         {
+            ChangeState(ref _onBlue);
             _playGreen = false;
             _playRed = false;
-            ChangeState(ref _onBlue);
+            _playBlue = false;
         }
         if (_playGreen)
         {
+            ChangeState(ref _onGreen);
             _playBlue = false;
             _playRed = false;
-            ChangeState(ref _onGreen);
+            _playGreen = false;
         }
         if (_playRed)
         {
+            ChangeState(ref _onRed);
             _playGreen = false;
             _playBlue = false;
-            ChangeState(ref _onRed);
+            _playRed = false;
         }
 
         if (_onBlue) ChangeMusic(_audioSourceBlue);
