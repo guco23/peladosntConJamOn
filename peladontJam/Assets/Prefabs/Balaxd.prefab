@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3875322795554869405}
   - component: {fileID: 7634669686933989675}
   - component: {fileID: 4730365425401156507}
+  - component: {fileID: 3798866068833999337}
+  - component: {fileID: 4850129159358311147}
   m_Layer: 0
   m_Name: Balaxd
   m_TagString: Untagged
@@ -97,3 +99,31 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3798866068833999337
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274303377031267322}
+  serializedVersion: 2
+  m_Mass: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0.02
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4850129159358311147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274303377031267322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26074a675bb0acc4d9a067c803a37b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

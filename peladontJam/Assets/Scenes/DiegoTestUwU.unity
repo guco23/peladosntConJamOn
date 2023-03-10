@@ -557,6 +557,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6988559274304062564, guid: d1f7d2759927ba3449a19c50ffa20e85,
+        type: 3}
+      propertyPath: _balaPrefab
+      value: 
+      objectReference: {fileID: 4274303377031267322, guid: 9c545fda6ec1ba34a80efc9450ff8db6,
+        type: 3}
     - target: {fileID: 6988559274611621801, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_Name

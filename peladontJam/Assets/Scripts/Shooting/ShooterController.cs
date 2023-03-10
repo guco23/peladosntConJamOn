@@ -16,22 +16,24 @@ public class ShooterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _cadenciaDisparo = 1;
+        _cadenciaDisparo = 4;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(InputManager.Instance.GetMouseClick())
+        if((_cadenciaDisparo -= Time.deltaTime) < 0)
         {
             Debug.Log("pene");
             Disparar();
+            _cadenciaDisparo = 4;
         }
     }
 
     public void Disparar()
     {
-        Instantiate(_balaPrefab, transform, true);
+
+        GameObject bala = Instantiate(_balaPrefab, transform.position, Quaternion.identity);
     }
 
     
