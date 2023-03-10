@@ -23,11 +23,24 @@ public class ColorBarManager : MonoBehaviour
 
     #endregion
 
+    #region references
+    [SerializeField]
+    private GameObject _redBar;
+
+    [SerializeField]
+    private GameObject _greenBar;
+
+    [SerializeField]
+    private GameObject _blueBar;
+
+    #endregion 
+
     #region methods 
 
+    //Va sumando a la cantidad de cada color y al total
     public void CatchColor(int color)
     {
-        if (color == 1)
+        if (color == 0)
         {
             _amountOfRed++;
             
@@ -42,25 +55,40 @@ public class ColorBarManager : MonoBehaviour
         }
 
         _totalAmount++;
+
+        SendPercent();
     }
 
-    private void SendPercent()
+    private void SendPercent() //Cambia el relleno de las barras mediante una regla de tres
     {
-
+        _redBar.GetComponent<Slider>().value = (_amountOfRed * 100) / _totalAmount;
+        _greenBar.GetComponent<Slider>().value = (_amountOfGreen * 100) / _totalAmount;
+        _blueBar.GetComponent<Slider>().value = (_amountOfBlue * 100) / _totalAmount;
     }
 
     #endregion
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+
+        //Queria probar el componente con el teclado directamente pero me dice que el input a cambiado o no se que.
+        //Probandlo si eso
+
+        /*
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            CatchColor(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            CatchColor(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            CatchColor(2);
+        }
+        */
     }
 }

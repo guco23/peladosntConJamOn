@@ -23,6 +23,8 @@ public class ColorManager : MonoBehaviour
     public void AddColor(int color)
     {
         Colors[color]++;
+        //Hacer llamada al CatchColor dentro del ColorBarManager,
+        //componente que tiene el GameObject ColorBars y pasarle el "int color" del parentesis
     }
 
 }
