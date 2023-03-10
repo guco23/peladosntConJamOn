@@ -40,7 +40,8 @@ public class BalaBehaviour : MonoBehaviour
     {
         if(collision.gameObject.layer == _enemies)// restar vida
         {
-
+            Debug.Log("Enemigo");
+            collision.gameObject.GetComponent<LifeComponent>().DealDamage(20);
         }
         Destroy(gameObject);
     }

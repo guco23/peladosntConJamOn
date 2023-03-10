@@ -22,8 +22,4 @@ public class IAManager : MonoBehaviour
     {
         
     }
-    public void SetColor(ColorManager.colors color)
-    {
-        _color = color;
-    }
 }

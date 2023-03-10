@@ -6,14 +6,21 @@ public class LifeComponent : MonoBehaviour
 {
     [SerializeField]
     private GameObject _puddlePrefab;
+    [SerializeField]
+    private Transform _puddleTransform;
     [SerializeField] private int _maxLife;
     private int _currentLife;
     private int _damageMultiplier;
+    [SerializeField] private float _spawnerOffset;
 
     IAManager _iaManager;
     public void DealDamage(int damage)
     {
         _currentLife -= damage * _damageMultiplier;
+        if (_currentLife <= 0)
+        {
+            HandleDeath();
+        }
     }
 
     private void HandleDeath()
@@ -27,18 +34,16 @@ public class LifeComponent : MonoBehaviour
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
         {
             gameObject.SetActive(false);
-            GameObject puddle = Instantiate(_puddlePrefab,transform.position + Vector3.down * 2,Quaternion.identity);
-            puddle.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
-        }
-        else
-        {
-
+            GameObject Object = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity);
+            Object.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
+            Object = Instantiate(gameObject, transform.position - _spawnerOffset * Vector3.right, Quaternion.identity);
+            Object = Instantiate(gameObject, transform.position + _spawnerOffset * Vector3.right, Quaternion.identity);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        _currentLife = _maxLife;
     }
 
     // Update is called once per frame
