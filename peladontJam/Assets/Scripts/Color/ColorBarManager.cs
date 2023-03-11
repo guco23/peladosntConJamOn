@@ -20,7 +20,6 @@ public class ColorBarManager : MonoBehaviour
 
     #region Properties
 
-    private Slider slider;
 
     #endregion
 
@@ -44,8 +43,12 @@ public class ColorBarManager : MonoBehaviour
     }
     private void Start()
     {
-        _amountOfBlue = _amountOfGreen = _amountOfRed = _totalAmount = 0;
+        ResetColors();
         SendPercent();
+    }
+    public void ResetColors()
+    {
+        _amountOfBlue = _amountOfGreen = _amountOfRed = _totalAmount = 0;
     }
     //Va sumando a la cantidad de cada color y al total
     public void CatchColor(int color)

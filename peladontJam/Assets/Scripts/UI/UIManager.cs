@@ -54,4 +54,8 @@ public class UIManager : MonoBehaviour
     {
         _hitBorder.HitRecived();
     }
+    public void ResetColors()
+    {
+        _colorBarManager.ResetColors();
+    }
 }

@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
         SpawnAll();
         NewPotionPetition();
         _playerColorManager.ResetCantidades();
+        _uiManager.ResetColors();
     }
 
 
