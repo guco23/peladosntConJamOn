@@ -1007,7 +1007,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _playerLifeComponent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1389580673}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef098fb2f803eb479b2c47a3ba76326, type: 3}
 --- !u!224 &1335569059 stripped
@@ -1102,6 +1102,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 852645527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1389580673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1389580684, guid: d1f7d2759927ba3449a19c50ffa20e85,
+    type: 3}
+  m_PrefabInstance: {fileID: 852645527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389580672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fef66ae0529324292800cfb498db1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514339026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1908884500594009344, guid: bef098fb2f803eb479b2c47a3ba76326,
