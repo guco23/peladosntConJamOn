@@ -2,14 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DebuffUIManager : MonoBehaviour
 {
 
+    public enum Debuffs { LessDamage, LessVelocity, MoreSlippy, MixAxis, SlimeDamage, LessBullets, CameraVelocity}
+
     #region references
 
     [SerializeField]
-    private GameObject[] _debuffIcons; 
+    private Sprite[] _debuffIcons;
+
+    #endregion
+
+    #region methods
+
+
 
     #endregion
 
