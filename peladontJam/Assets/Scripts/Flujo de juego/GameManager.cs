@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     #region Properties
     public bool DEBUG;
     #endregion
+    #region Accesor
+    public GameObject Player { get { return _player; } }
+    #endregion
 
     public static GameManager Instance { get
         {
@@ -69,7 +72,9 @@ public class GameManager : MonoBehaviour
 
     public void PotionFailed(Color color)
     {
-        _colorController.ColorMasCercano(color);
+        //usar este método para aplicar los debufos
+        _colorController.DecodeColor(color);
+
         //TODO
         /*
          * Obtener un efecto negativo 

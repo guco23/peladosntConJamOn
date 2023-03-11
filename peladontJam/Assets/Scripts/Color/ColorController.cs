@@ -14,6 +14,7 @@ public class ColorController : MonoBehaviour
     [Tooltip("Margen de error para aceptar un color,1 es maxima tolerancia,0 es nada de tolerancia")]
     private float _umbralIguales;
 
+    public enum ColorCodificacion {Rojo,Amarillo,Verde,Cian,Azul, Magenta,Blanco,ColorError};
     /// <summary>
     /// Crea un color posible y lo devuelve como objeto color.
     /// </summary>
@@ -81,6 +82,27 @@ public class ColorController : MonoBehaviour
         else if (colores[2] == 1) EvaluaSecundarios(ref colores[1], ref colores[0]);
 
         return new Color(colores[0], colores[1], colores[2],1);
+    }
+    /// <summary>
+    /// Decodifica un color dado en el color de debufo correspondiente devolviendo un valor del enum de decodificación
+    /// </summary>
+    /// <param name="c"></param>
+    /// <returns></returns>
+    public ColorCodificacion DecodeColor(Color c)
+    {
+        if (ColoresIguales(c, Color.white))
+        {
+            return ColorCodificacion.Blanco;
+        }
+        Color aux = ColorMasCercano(c);
+        if (aux == Color.red) return ColorCodificacion.Rojo;
+        else if (aux == Color.yellow) return ColorCodificacion.Amarillo;
+        else if (aux == Color.green) return ColorCodificacion.Verde;
+        else if (aux == Color.cyan) return ColorCodificacion.Cian;
+        else if (aux == Color.blue) return ColorCodificacion.Azul;
+        else if (aux == Color.magenta) return ColorCodificacion.Magenta;
+        else return ColorCodificacion.ColorError;
+
     }
 
     /// <summary>
