@@ -11,64 +11,135 @@ public class DebuffManager : MonoBehaviour
     [SerializeField]
     private MovementController _movementController; //Para velocidad de movimiento
     [SerializeField]
-    private UIManager _uiManager; //Para la mira
-    [SerializeField]
     private LifeComponent _lifeComponent; //Para el daño recibido
     [SerializeField]
     private ShooterController _shooterController; //Para la cadencia
     [SerializeField]
     private CamaraController _cameraController; //Para la sensibilidad e invertir los ejes
+    [SerializeField]
+    private UIManager _uiManager; //Para la mira
     #endregion
     #region Parameters
-    //cantidad que bajan, array de ints (la mayoria lo son y los que no toman valores enteros) para no 
-    //tener ochenta parametros diferentes
-    [Tooltip("Cantidad que disminuye/aumenta cada debuff (no el valor que toma). " +
-        "Orden debuffs: daño hecho, velocidad movimiento, friccion, daño recibido, cadencia, sensibilidad camara")]
+    //cantidad que aumentan/disminuyen los parametros de cada debuff
     [SerializeField]
-    private int[] _debuffs = new int [6];
+    private int _damageDebuff;
+    [SerializeField]
+    private float _speedDebuff;
+    [SerializeField]
+    private int _damageReceivedDebuff;
+    [SerializeField]
+    private float _rateOfFireDebuff;
+    [SerializeField]
+    private float _sensDebuff;
     #endregion
     #region Properties
-    private int _dañoBalasActual; //Ya que el daño de las balas se setea para cada bala,
+    //Valores originales de los parámetros
+    private int _originalDamageDealt;
+    private float _originalWalkSpeed;
+    private float _originalRunSpeed;
+    private int _originalDamageReceived;
+    private float _originalRateOfFire;
+    private float _originalSens;
+
+    private int _currentDamage; //Ya que el daño de las balas se setea para cada bala,
                                   //va almacenando el valor para que se pueda stackear el efecto
-    //booleano para testing
-    //public bool _a;
+
+    //Array que sirve para el conteo de los efectos. Codificacion:
+    //0 = LessDamage, 1 = LessVelocity, 2 = SlimeDamage, 3 = LessBullets
+    //4 = CameraVelocity, 5 = MixAxis, 6 = HideCrosshair
+    private int[] _debuffContador = new int[7];
+
+    /*booleanos para testing
+    public bool _a;
+    public bool _b;*/
     #endregion
     #region Methods
+    //Conjunto de metodos que aplican debuffs
     private void LessDamageDebuff()
     {
-        _dañoBalasActual -= _debuffs[0];
-        _playerController.SetDañoBalas(_dañoBalasActual);
+        _currentDamage -= _damageDebuff;
+        _playerController.SetDañoBalas(_currentDamage);
+        _debuffContador[0]++; 
     }
     private void LessVelocity()
     {
-        _movementController._walkSpeed -= _debuffs[1];
-        _movementController._maxRunSpeed -= _debuffs[1];
+        _movementController._walkSpeed -= _speedDebuff;
+        _movementController._maxRunSpeed -= _speedDebuff;
+        _debuffContador[1]++;
+    }
+    private void SlimeDamage()
+    {
+        _lifeComponent._damageMultiplier += _damageReceivedDebuff;
+        _debuffContador[2]++;
+    }
+    private void LessBullets()
+    {
+        _shooterController._cadenciaDisparo -= _rateOfFireDebuff;
+        _debuffContador[3]++;
+    }
+    private void CameraVelocity()
+    {
+        _cameraController._sens += _sensDebuff;
+        _debuffContador[4]++;
+    }
+    private void MixAxis()
+    {
+        _cameraController.InvertirEjes();
+        _debuffContador[5]++;
     }
     private void HideCrosshair()
     {
         _uiManager.HideCrossHair();
-    }
-    private void MixAxis()
-    {
-        _cameraController.InvertirEjes(); 
-    }
-    private void SlimeDamage()
-    {
-        _lifeComponent._damageMultiplier += _debuffs[3];
-    }
-    private void LessBullets()
-    {
-        _shooterController._cadenciaDisparo -= (float) _debuffs[4] / 10;
-    }
-    private void CameraVelocity()
-    {
-        _cameraController._sens += _debuffs[5];
+        _debuffContador[6]++;
     }
     
+    //Conjunto de métodos que eliminan debuffs
+    private void ElimDamageDebuff()
+    {
+        _playerController._dañoBalasBase = _originalDamageDealt;
+        _debuffContador[0]--;
+    }
+    private void ElimSpeedDebuff()
+    {
+        _movementController._walkSpeed = _originalWalkSpeed;
+        _movementController._maxRunSpeed = _originalRunSpeed;
+        _debuffContador[1]--;
+    }
+    private void ElimSlimeDebuff()
+    {
+        _lifeComponent._damageMultiplier = _originalDamageReceived;
+        _debuffContador[2]--;
+    }
+    private void ElimLessBulletsDebuff()
+    {
+        _shooterController._cadenciaDisparo = _originalRateOfFire;
+        _debuffContador[3]--;
+    }
+    private void ElimCameraSpeedDebuff()
+    {
+        _cameraController._sens = _originalSens;
+        _debuffContador[4]--;
+    }
+    private void ElimAxisDebuff()
+    {
+        _cameraController.InvertirEjes();
+        _debuffContador[5]--;
+    }
+    private void ElimCrosshairDebuff()
+    {
+        _uiManager.ShowCrossHair();
+        _debuffContador[6]--;
+    }
     #endregion
     // Start is called before the first frame update
     void Start()
     {
+        _originalDamageDealt = _playerController._dañoBalasBase;
+        _originalWalkSpeed = _movementController._walkSpeed;
+        _originalRunSpeed = _movementController._maxRunSpeed;
+        _originalDamageReceived = _lifeComponent._damageMultiplier;
+        _originalRateOfFire = _shooterController._cadenciaDisparo;
+        _originalSens = _cameraController._sens;
         /* Testing
         _dañoBalasActual = _playerController._dañoBalasBase;
         Debug.Log("daño balas actual " + _playerController._dañoBalasBase);
@@ -81,7 +152,7 @@ public class DebuffManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* Mas testing
+        /* More testing
         if (_a)
         {
             _a = false;
@@ -92,6 +163,17 @@ public class DebuffManager : MonoBehaviour
             SlimeDamage(); Debug.Log("slime damage" + _lifeComponent._damageMultiplier);
             LessBullets(); Debug.Log("cadencia " + _shooterController._cadenciaDisparo);
             CameraVelocity(); Debug.Log("sens" + _cameraController._sens);
+        }
+        if(_b)
+        {
+            _b= false;
+            ElimAxisDebuff();
+            ElimCameraSpeedDebuff();
+            //ElimCrosshairDebuff();
+            ElimDamageDebuff();
+            ElimLessBulletsDebuff();
+            ElimSlimeDebuff();
+            ElimSpeedDebuff();
         }*/
     }
 }

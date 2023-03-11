@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
@@ -605,12 +605,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1874292705}
   _movementController: {fileID: 1874292704}
-  _uiManager: {fileID: 0}
   _lifeComponent: {fileID: 1874292699}
   _shooterController: {fileID: 1874292701}
   _cameraController: {fileID: 172966726}
-  _debuffs: 050000000100000000000000020000000100000014000000
+  _uiManager: {fileID: 0}
+  _debuffs: 0500000001000000020000000100000014000000
+  _debuffContador: 00000000000000000000000000000000000000000000000000000000
   _a: 0
+  _b: 0
 --- !u!1001 &1931106903
 PrefabInstance:
   m_ObjectHideFlags: 0
