@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class UIManager : MonoBehaviour
     TextMeshProUGUI _textMessage;
     [SerializeField]
     GameObject _crossHair;
+    [SerializeField]
+    HitBorder _hitBorder;
+    
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -45,5 +49,9 @@ public class UIManager : MonoBehaviour
     public void ShowCrossHair()
     {
         _crossHair.SetActive(true);
+    }
+    public void HitRecived()
+    {
+        _hitBorder.HitRecived();
     }
 }

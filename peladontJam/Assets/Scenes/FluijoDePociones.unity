@@ -942,6 +942,11 @@ PrefabInstance:
       propertyPath: _message
       value: 
       objectReference: {fileID: 1514339026}
+    - target: {fileID: 2739798409895149962, guid: bef098fb2f803eb479b2c47a3ba76326,
+        type: 3}
+      propertyPath: _hitBorder
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3958349146131540259, guid: bef098fb2f803eb479b2c47a3ba76326,
         type: 3}
       propertyPath: m_AnchorMax.x

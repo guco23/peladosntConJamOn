@@ -30,6 +30,7 @@ public class LifeComponent : MonoBehaviour
         if (GetComponent<PlayerController>() != null)   // Si nos encontramos en el jugador
         {
             GameManager.Instance.UpdateHeath(_currentLife);
+            GameManager.Instance.HitRecived();
         }
         if (_currentLife <= 0)
         {

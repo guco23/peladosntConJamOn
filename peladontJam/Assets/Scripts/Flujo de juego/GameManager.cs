@@ -108,6 +108,10 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.UpdateHealth(life);
     }
+    public void HitRecived()
+    {
+        _uiManager.HitRecived();
+    }
     public void ShowMesage(string mesagge)
     {
         _uiManager.ShowMesagge(mesagge);
