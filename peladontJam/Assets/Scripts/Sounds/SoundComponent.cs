@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SoundComponent : MonoBehaviour
 {
-    public AudioClip _shoot;
-    public AudioClip _move;
+    public AudioClip _shoot;                    // +-
+    //public AudioClip _idle;
+    //public AudioClip _walking;
+    //public AudioClip _running;
     public AudioClip _receiveDamage;
-    public AudioClip _slimeJump;
+    public AudioClip _slimeJump;                // +-
+    public AudioClip _pickUpPuddle;             // --
 
     #region Singleton
     static private SoundComponent _instance;

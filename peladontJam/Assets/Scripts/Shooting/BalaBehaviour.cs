@@ -19,6 +19,7 @@ public class BalaBehaviour : MonoBehaviour
     private void Start()
     {
         _enemies = LayerMask.NameToLayer("Enemies");
+        GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._shoot);
     }
 
     private void Update()
