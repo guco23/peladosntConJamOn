@@ -313,31 +313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1245307150032697901, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.674
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281250774105541, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8193281251139863954, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_RootOrder
@@ -398,28 +373,12 @@ PrefabInstance:
       propertyPath: mirilla
       value: 
       objectReference: {fileID: 2006209154}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1739595319}
-    - target: {fileID: 8193281251139864044, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864046, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: _gravityValue
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 8193281251761951307, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8193281250774105541, guid: d1f7d2759927ba3449a19c50ffa20e85, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f7d2759927ba3449a19c50ffa20e85, type: 3}
 --- !u!1001 &203272440
 PrefabInstance:
@@ -2965,12 +2924,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712660712}
   m_CullTransparentMesh: 1
---- !u!20 &1739595319 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8193281249799342541, guid: d1f7d2759927ba3449a19c50ffa20e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 75391646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1805047217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8193281251761951307, guid: d1f7d2759927ba3449a19c50ffa20e85,

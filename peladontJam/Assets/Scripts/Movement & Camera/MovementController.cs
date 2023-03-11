@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         controller.Move(directionVector * Time.deltaTime * _speed);
-        controller.Move(_downForce * Vector3.down);
+        controller.Move(_downForce * Vector3.down   );
     }
     public void SetDirection(Vector2 direction)
     {
