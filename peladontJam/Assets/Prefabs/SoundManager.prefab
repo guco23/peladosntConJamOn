@@ -490,6 +490,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b6ca182478f504cb35e68e5d002744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shoot: {fileID: 0}
+  _move: {fileID: 0}
+  _receiveDamage: {fileID: 0}
+  _slimeJump: {fileID: 8300000, guid: 9dd7852987350a848870d9584f8c331f, type: 3}
 --- !u!1 &2706892563963087886
 GameObject:
   m_ObjectHideFlags: 0

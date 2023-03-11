@@ -25,7 +25,6 @@ public class SoundComponent : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-
     }
     #endregion
 
