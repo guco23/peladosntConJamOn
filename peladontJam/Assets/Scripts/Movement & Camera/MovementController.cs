@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class MovementController : MonoBehaviour
     #endregion
     #region Parameters
     [SerializeField]
-    private float _speed = 2.0f;
+    private float _walkSpeed = 2.0f;
+    private float _runSpeed = 1.0f;
+    [SerializeField] private float _maxRunSpeed = 3.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
     private float _downForce;
@@ -28,8 +31,8 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        controller.Move(directionVector * Time.deltaTime * _speed);
-        controller.Move(_downForce * Vector3.down   );
+        controller.Move(directionVector * Time.deltaTime * _walkSpeed * _runSpeed);
+        controller.Move(_downForce * Vector3.down);
     }
     public void SetDirection(Vector2 direction)
     {
@@ -39,6 +42,17 @@ public class MovementController : MonoBehaviour
         if (controller.isGrounded)
         {
             _downForce = 0;
+        }
+    }
+    public void Run(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _runSpeed = _maxRunSpeed;
+        }
+        if (context.canceled)
+        {
+            _runSpeed = 1.0f;
         }
     }
 }
