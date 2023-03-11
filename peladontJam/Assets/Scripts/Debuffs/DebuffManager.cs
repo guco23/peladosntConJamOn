@@ -11,7 +11,7 @@ public class DebuffManager : MonoBehaviour
     [SerializeField]
     private MovementController _movementController; //Para velocidad de movimiento
     [SerializeField]
-    private Collider2D _playerCollider2D; //Para la friccion
+    private Collider _playerCollider; //Para la friccion
     [SerializeField]
     private LifeComponent _lifeComponent; //Para el daño recibido
     [SerializeField]
@@ -44,7 +44,8 @@ public class DebuffManager : MonoBehaviour
     }
     private void MoreSlippy()
     {
-        _playerCollider2D.sharedMaterial.friction -= _debuffs[2];
+        _playerCollider.material.staticFriction -= _debuffs[2];
+        _playerCollider.material.dynamicFriction -= _debuffs[2];
     }
     private void MixAxis()
     {
@@ -73,6 +74,9 @@ public class DebuffManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MoreSlippy();
+        }
     }
 }
