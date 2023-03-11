@@ -24,6 +24,7 @@ public class EnemyNavMesh : MonoBehaviour
         _myAgent = GetComponent<NavMeshAgent>();
         _playerInArea = false;
         _color = (int)GetComponent<IAManager>().Color;
+        _myAgent.SetDestination(_myTransform.position);
 
         EnemiesManager.Instance.entrys[_color] +=  OnEnter;
         EnemiesManager.Instance.exits[_color] +=  OnExit;
