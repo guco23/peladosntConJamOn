@@ -424,6 +424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "_da\xF1oBalasBase": 34
+  "_da\xF1oEnemigosBase": 20
+  "_tiempoEntreDa\xF1os": 1
 --- !u!114 &8193281251139864046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +593,6 @@ MonoBehaviour:
   _puddleTransform: {fileID: 0}
   _maxLife: 100
   _currentLife: 0
-  _damageMultiplier: 0
+  _damageMultiplier: 1
   _kockbackForce: 0
   _spawnerOffset: 0
