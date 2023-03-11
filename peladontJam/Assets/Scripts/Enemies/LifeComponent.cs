@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+
 public class LifeComponent : MonoBehaviour
 {
     [SerializeField]
@@ -56,11 +57,11 @@ public class LifeComponent : MonoBehaviour
             Vector3 aux = new Vector3(Random.Range(-1f, 1),0, Random.Range(-1f, 1)).normalized;
 
             //crear primer enemigo
-            myObject = Instantiate(gameObject, transform.position - _spawnerOffset * aux, Quaternion.identity, transform.parent);
+            myObject = Instantiate(gameObject, transform.position - (_spawnerOffset * aux), Quaternion.identity, transform.parent);
             myObject.SetActive(true);
             myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;            
             //crear segundo enemigo
-            myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity, transform.parent);
+            myObject = Instantiate(gameObject, transform.position + (_spawnerOffset * aux), Quaternion.identity, transform.parent);
             myObject.SetActive(true);
             myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;
 

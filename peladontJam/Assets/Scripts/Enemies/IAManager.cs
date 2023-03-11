@@ -37,6 +37,9 @@ public class IAManager : MonoBehaviour
         _colorInt = (int)GetComponent<IAManager>().Color;
         _myAgent.SetDestination(_myTransform.position);
 
+        //GetComponent<NavMeshAgent>().updatePosition = false;
+        //_myAgent.updateUpAxis = false;
+        
         EnemiesManager.Instance.entrys[_colorInt] += OnEnter;
         EnemiesManager.Instance.exits[_colorInt] += OnExit;
     }
