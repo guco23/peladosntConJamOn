@@ -11,9 +11,9 @@ public class MovementController : MonoBehaviour
     #endregion
     #region Parameters
     [SerializeField]
-    private float _walkSpeed = 2.0f;
+    public float _walkSpeed = 2.0f;
     private float _runSpeedMultiplier = 1.0f;
-    [SerializeField] private float _maxRunSpeed = 3.0f;
+    [SerializeField] public float _maxRunSpeed = 3.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
     private float _downForce;

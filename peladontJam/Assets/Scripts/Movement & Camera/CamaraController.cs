@@ -14,7 +14,7 @@ public class CamaraController : CinemachineExtension
     private float _rotationAngle = 80f;
     [Tooltip("Sensibilidad de la camara")]
     [SerializeField]
-    private float _sens = 50f;
+    public float _sens = 50f;
     #endregion
     #region Properties
     private Vector3 _rotation;
