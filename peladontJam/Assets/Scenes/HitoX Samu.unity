@@ -430,11 +430,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7275171406083387697, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: _customMAterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
     - target: {fileID: 8193281251139863954, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_RootOrder
@@ -495,16 +490,6 @@ PrefabInstance:
       propertyPath: mirilla
       value: 
       objectReference: {fileID: 1611294577}
-    - target: {fileID: 8193281251139864040, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: _armaPlaceHolder
-      value: 
-      objectReference: {fileID: 1252100644}
-    - target: {fileID: 8193281251139864047, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: "_da\xF1oBalasBase"
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 8193281251761951307, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_Name
@@ -541,12 +526,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8258496421646009564, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
     type: 3}
   m_PrefabInstance: {fileID: 8258496420693009115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1252100644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8193281250774105543, guid: d1f7d2759927ba3449a19c50ffa20e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 852645527}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1326887807
 GameObject:
@@ -879,11 +858,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 852645527}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1389580684
+--- !u!114 &1389580684 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1389580684, guid: d1f7d2759927ba3449a19c50ffa20e85,
+    type: 3}
+  m_PrefabInstance: {fileID: 852645527}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389580672}
   m_Enabled: 1
@@ -891,13 +870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fef66ae0529324292800cfb498db1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _puddlePrefab: {fileID: 0}
-  _puddleTransform: {fileID: 0}
-  _maxLife: 100
-  _currentLife: 0
-  _damageMultiplier: 0
-  _kockbackForce: 0
-  _spawnerOffset: 0
 --- !u!1 &1600679563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,18 +1099,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 8002896732857060337, guid: ec647dce5f6b67a40b7e5cd41ecc4ea3,
     type: 3}
---- !u!114 &1945157639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1945515810936848194, guid: bef098fb2f803eb479b2c47a3ba76326,
-    type: 3}
-  m_PrefabInstance: {fileID: 1335569058}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba4adfea079f77439a8e091653fd8b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2050504860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,26 +1357,6 @@ PrefabInstance:
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 854489101}
-    - target: {fileID: 8258496421646009555, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
-        type: 3}
-      propertyPath: _barManager
-      value: 
-      objectReference: {fileID: 1945157639}
-    - target: {fileID: 8258496421646009555, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
-        type: 3}
-      propertyPath: _colorCustom
-      value: 
-      objectReference: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
-    - target: {fileID: 8258496421646009555, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
-        type: 3}
-      propertyPath: _colorPetition
-      value: 
-      objectReference: {fileID: 2100000, guid: 04ec63064b6bd3c418c15d339e73c6a1, type: 2}
-    - target: {fileID: 8258496421646009555, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
-        type: 3}
-      propertyPath: _spawners.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8258496421646009555, guid: 4e8a05f611dc1a44d8bda92c8f2551dc,
         type: 3}
       propertyPath: _spawners.Array.data[0]

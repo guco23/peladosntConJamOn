@@ -38,6 +38,6 @@ public class SizeComponent : MonoBehaviour
     {
         //actualizacion de la escala
         _myTransform.localScale = Vector3.one *(float) (_escalaMin + (1-_escalaMin)* ((float)_myLifeComponent.GetCurrentLife() / _myLifeComponent.GetMaxLife()));
-        _masaActual = _masaMax * (_masaMin + (1 - _masaMin) * ((float)_myLifeComponent.GetCurrentLife() / _myLifeComponent.GetMaxLife());
+        _masaActual = _masaMax * (_masaMin + (1 - _masaMin) * ((float)_myLifeComponent.GetCurrentLife() / _myLifeComponent.GetMaxLife()));
     }
 }
