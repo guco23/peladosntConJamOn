@@ -10,29 +10,9 @@ public class EnemiesManager : MonoBehaviour
 
     public mydelegate[] entrys = new mydelegate[3];
     public mydelegate[] exits = new mydelegate[3];
-    
-    //CREO QUE NO HACEN FALTA
-    /*
-    public mydelegate RedEnemiesEntry;
-    public mydelegate GreenEnemiesEntry;
-    public mydelegate BlueEnemiesEntry;
-    public mydelegate RedEnemiesExit;
-    public mydelegate GreenEnemiesExit;
-    public mydelegate BlueEnemiesExit;
-    */
+       
     private void Awake()
     {
         Instance = this;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    }  
 }
