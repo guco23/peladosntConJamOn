@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour
     ColorBarManager _colorBarManager;
     [SerializeField]
     LifeBarComponet _lifeBarComponet;
+    [SerializeField]
+    TextMeshProUGUI _textMessage;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -29,4 +32,9 @@ public class UIManager : MonoBehaviour
     {
         _lifeBarComponet.UpdateHeath(life);
     }
+    public void ShowMesagge(string mesagge)
+    {
+        _textMessage.text = mesagge;
+    }
+
 }

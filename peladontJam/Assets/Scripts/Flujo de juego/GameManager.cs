@@ -95,11 +95,18 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.CatchColor(color);
     }
+    /// <summary>
+    /// Método que actualiza la barra de vida
+    /// </summary>
+    /// <param name="life"></param>
     public void UpdateHeath(int life)
     {
         _uiManager.UpdateHealth(life);
     }
-
+    public void ShowMesage(string mesagge)
+    {
+        _uiManager.ShowMesagge(mesagge);
+    }
     /// <summary>
     /// Comienza una nueva ronda, (nueva petición de color).
     /// </summary>
