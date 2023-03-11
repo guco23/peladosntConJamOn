@@ -12,8 +12,8 @@ public class EnemyNavMesh : MonoBehaviour
 
     private NavMeshAgent _myAgent;
 
-    [SerializeField]
-    private bool _playerInArea;
+    
+    public bool _playerInArea;
 
     private int _color;
     // Start is called before the first frame update
