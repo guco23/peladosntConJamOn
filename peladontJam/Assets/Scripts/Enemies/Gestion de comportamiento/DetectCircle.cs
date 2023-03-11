@@ -18,7 +18,6 @@ public class DetectCircle : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Debug.Log("tu vieja exit");
-
         EnemiesManager.Instance.exits[_color]();
         _myMusicComponent._playTotal = true; 
     }

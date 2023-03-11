@@ -17,22 +17,10 @@ public class PuddleComponent : MonoBehaviour
         ColorManager _manager = other.gameObject.GetComponent<ColorManager>();
         if (_manager != null)
         {
+            //añade el color en el manager, manda el mensaje a la UI y destruye el objeto
             _manager.AddColor((int) _color);
-            //ColorBarManager.Instance.CatchColor((int)_color);
             GameManager.Instance.ColorPicked((int) _color);
             Destroy(gameObject);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    }  
 }

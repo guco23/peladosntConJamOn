@@ -24,8 +24,7 @@ public class ColorManager : MonoBehaviour
         if (GameManager.Instance.DEBUG)
         {
             _customMAterial.color = GameManager.Instance.GetComponent<ColorController>().GeneraColor(Colors[0], Colors[1], Colors[2]);
-        }
-        
+        }        
     }
 
     public void ResetCantidades()

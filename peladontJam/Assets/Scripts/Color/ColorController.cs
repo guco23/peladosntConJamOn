@@ -5,11 +5,13 @@ using UnityEngine;
 public class ColorController : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Valor entre 0 y 2 para incicar la cercanía al blanco del color generado")]
+    [Range(0f,2f)]
+    [Tooltip("Valor entre 0 y 2 para indicar la cercanía al blanco del color generado")]
     private float _max_color;
 
     [SerializeField]
-    [Tooltip("Margen de error para aceptar un color")]
+    [Range(0f,1f)]
+    [Tooltip("Margen de error para aceptar un color,1 es maxima tolerancia,0 es nada de tolerancia")]
     private float _umbralIguales;
 
     /// <summary>
@@ -18,7 +20,7 @@ public class ColorController : MonoBehaviour
     /// <returns>El objeto color creado (obvio)</returns>
     public Color InicializaColor()
     {
-        Debug.Log("Color de tu vieja");
+        //Debug.Log("Color de tu vieja");
         Color _color = new Color();
 
         float[] colores = new float[] { 0, 0, 0 };
