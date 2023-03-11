@@ -17,7 +17,7 @@ public class ColorConfirmationComponent : MonoBehaviour
         {
             _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
             _canCompare = true;
-            GameManager.Instance.ShowMesage("Pulsa F Para entregar la poción");
+            GameManager.Instance.ShowMesage("F para interactuar");
         }
     }
     private void OnTriggerExit(Collider other)

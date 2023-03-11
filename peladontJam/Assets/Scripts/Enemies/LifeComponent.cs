@@ -72,6 +72,9 @@ public class LifeComponent : MonoBehaviour
         }
     }
 
+
+
+
     public void KnockBack(Vector3 direction)
     {
         //direction.Normalize();
