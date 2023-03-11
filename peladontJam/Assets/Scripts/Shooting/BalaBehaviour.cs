@@ -11,13 +11,10 @@ public class BalaBehaviour : MonoBehaviour
     private float _timeLife;
 
     [SerializeField]
-    private static float _damage;
-
+    private static int _damage;
 
     private LayerMask _enemies;
     private Vector3 _direction;
-
-
 
     private void Start()
     {
@@ -41,12 +38,12 @@ public class BalaBehaviour : MonoBehaviour
         if (other.gameObject.layer == _enemies)// restar vida
         {
             //Debug.Log("Enemigo");
-            other.gameObject.GetComponent<LifeComponent>().DealDamage(20);
+            other.gameObject.GetComponent<LifeComponent>().DealDamage(_damage);
             other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
         }
         if(other.gameObject.layer != LayerMask.NameToLayer("Detection")) Destroy(gameObject);
     }    
-    public static void SetDamage(float valor)
+    public static void SetDamage(int valor)
     {
         _damage = valor;
     }
