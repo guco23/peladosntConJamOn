@@ -56,9 +56,9 @@ public class LifeComponent : MonoBehaviour
 
     public void KnockBack(Vector3 direction)
     {
-        direction.Normalize();
-        Debug.Log("Auch");
-        _myRigidBody.AddForce(new Vector3(direction.x,0,direction.z) * _kockbackForce + Vector3.up * 2, ForceMode.Impulse);
+        //direction.Normalize();
+        //Debug.Log("Auch");
+        //_myRigidBody.AddForce(new Vector3(direction.x,0,direction.z) * _kockbackForce + Vector3.up * 2, ForceMode.Impulse);
     }
     // Start is called before the first frame update
     void Start()

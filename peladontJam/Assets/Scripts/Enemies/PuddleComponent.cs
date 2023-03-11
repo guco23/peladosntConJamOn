@@ -13,7 +13,7 @@ public class PuddleComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TU Vieja:" + gameObject.name);
+        //Debug.Log("TU Vieja:" + gameObject.name);
         ColorManager _manager = other.gameObject.GetComponent<ColorManager>();
         if (_manager != null)
         {

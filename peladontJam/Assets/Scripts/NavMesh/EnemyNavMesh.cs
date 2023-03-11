@@ -37,11 +37,11 @@ public class EnemyNavMesh : MonoBehaviour
 
     private void OnEnter()
     {
-        Debug.Log(_playerInArea);
+        //Debug.Log(_playerInArea);
         _playerInArea = true;
-        Debug.Log(_playerInArea);
+        //Debug.Log(_playerInArea);
 
-        Debug.Log("he llamado al delegado   "+gameObject.name);
+        //Debug.Log("he llamado al delegado   "+gameObject.name);
     }
     private void OnExit()
     {

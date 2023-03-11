@@ -9,12 +9,12 @@ public class DetectCircle : MonoBehaviour
  
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("tu vieja enter");  
+        //Debug.Log("tu vieja enter");  
         EnemiesManager.Instance.entrys[_color]();
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("tu vieja exit");
+        //Debug.Log("tu vieja exit");
 
         EnemiesManager.Instance.exits[_color]();
     }
