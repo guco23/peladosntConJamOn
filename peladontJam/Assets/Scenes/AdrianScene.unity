@@ -1571,6 +1571,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c6ef7eec7e5dd4340897ec83bb2f8eea, type: 3}
   - {fileID: 21300000, guid: 2a71465be7b5f68499533d3723a32cd4, type: 3}
   - {fileID: 21300000, guid: 7ab80f5683db59f45bf56fc9866bea85, type: 3}
+  _colors:
+  - {r: 1, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0, b: 1, a: 0}
+  - {r: 0, g: 1, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0, b: 1, a: 0}
 --- !u!1 &1169278338
 GameObject:
   m_ObjectHideFlags: 0
