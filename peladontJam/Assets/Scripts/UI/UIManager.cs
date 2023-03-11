@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     LifeBarComponet _lifeBarComponet;
     [SerializeField]
     TextMeshProUGUI _textMessage;
+    [SerializeField]
+    GameObject _crossHair;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -36,5 +38,12 @@ public class UIManager : MonoBehaviour
     {
         _textMessage.text = mesagge;
     }
-
+    public void HideCrossHair()
+    {
+        _crossHair.SetActive(false);
+    }
+    public void ShowCrossHair()
+    {
+        _crossHair.SetActive(true);
+    }
 }
