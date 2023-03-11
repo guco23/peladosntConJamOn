@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class ShooterController : MonoBehaviour
 {
-
+    public static ShooterController instance { get; private set; }
     [SerializeField]
     RectTransform mirilla;
 
@@ -17,18 +17,28 @@ public class ShooterController : MonoBehaviour
     Transform spawnTransform;
 
     [SerializeField]
+    private GameObject _armaPlaceHolder;
+
+    [SerializeField]
     float _cadenciaDisparo;
+
 
     private RaycastHit hit;
     float _reloj;
 
+    private bool _enArea;
 
     bool _disparando;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         _reloj = _cadenciaDisparo;
         _disparando = false;
+        ExitArea();
     }
 
     // Update is called once per frame
@@ -45,7 +55,7 @@ public class ShooterController : MonoBehaviour
     }
     private void Shoot()
     {
-        if (_reloj > _cadenciaDisparo && _disparando)
+        if (_reloj > _cadenciaDisparo && _disparando && _enArea)
         {
             GameObject bullet = Instantiate(balaPrefab, spawnTransform.position, Quaternion.identity);
             Physics.Raycast(Camera.main.ScreenPointToRay(mirilla.position), out hit);
@@ -61,5 +71,18 @@ public class ShooterController : MonoBehaviour
         }
     }
 
-    
+    public void EnterArea()
+    {
+        _enArea = true;
+        mirilla.gameObject.SetActive(true);
+        _armaPlaceHolder.SetActive(true);
+
+    }
+    public void ExitArea()
+    {
+        _enArea = false;
+        mirilla.gameObject.SetActive(false);
+        _armaPlaceHolder.SetActive(false);
+
+    }
 }
