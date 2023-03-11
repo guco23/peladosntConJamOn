@@ -10,6 +10,7 @@ public class DetectCircle : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("tu vieja enter");  
+        ShooterController.instance.EnterArea();
         EnemiesManager.Instance.entrys[_color]();
         if (_color == 0) _myMusicComponent._playRed = true;
         else if (_color == 1) _myMusicComponent._playGreen = true;
@@ -18,6 +19,8 @@ public class DetectCircle : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Debug.Log("tu vieja exit");
+
+        ShooterController.instance.ExitArea();
         EnemiesManager.Instance.exits[_color]();
         _myMusicComponent._playTotal = true; 
     }

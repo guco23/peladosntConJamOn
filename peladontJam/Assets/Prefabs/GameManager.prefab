@@ -58,9 +58,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c315a67757679544d9701ec85ed4d01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawners: []
+  _spawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _player: {fileID: 0}
-  _barManager: {fileID: 0}
+  _uiManager: {fileID: 0}
+  _colorPetition: {fileID: 2100000, guid: 04ec63064b6bd3c418c15d339e73c6a1, type: 2}
+  _colorCustom: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
+  _closestWrongColor: {fileID: 0}
+  _requiredColor: {r: 0, g: 0, b: 0, a: 0}
+  DEBUG: 0
 --- !u!114 &8258496421646009554
 MonoBehaviour:
   m_ObjectHideFlags: 0
