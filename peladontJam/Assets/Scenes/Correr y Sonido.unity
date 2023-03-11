@@ -1184,6 +1184,7 @@ GameObject:
   - component: {fileID: 1776457755}
   - component: {fileID: 1776457754}
   - component: {fileID: 1776457753}
+  - component: {fileID: 1776457758}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1205,14 +1206,14 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 4.5
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1365,6 +1366,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776457758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776457752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaefaba1927ea6c44bae4802379f5f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1881585440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1624,11 +1637,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2050504861}
     m_Modifications:
+    - target: {fileID: 2706892562901214128, guid: 14b0a1eaefcf2d14ba978d65cb313037,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
         type: 3}
       propertyPath: _slimeJump
       value: 
-      objectReference: {fileID: 8300000, guid: 9dd7852987350a848870d9584f8c331f, type: 3}
+      objectReference: {fileID: 8300000, guid: 87ac24cf923050042b9507d287d8a11e, type: 3}
     - target: {fileID: 2706892563963087886, guid: 14b0a1eaefcf2d14ba978d65cb313037,
         type: 3}
       propertyPath: m_Name
