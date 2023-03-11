@@ -14,7 +14,7 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private int _currentLife;
     [SerializeField]
-    private int _damageMultiplier;
+    public int _damageMultiplier;
     [SerializeField]
     private float _kockbackForce;
     [SerializeField] private float _spawnerOffset;

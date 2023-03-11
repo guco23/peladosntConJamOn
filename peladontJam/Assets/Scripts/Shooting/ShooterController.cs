@@ -20,7 +20,7 @@ public class ShooterController : MonoBehaviour
     private GameObject _armaPlaceHolder;
 
     [SerializeField]
-    float _cadenciaDisparo;
+    public float _cadenciaDisparo;
 
 
     private RaycastHit hit;
