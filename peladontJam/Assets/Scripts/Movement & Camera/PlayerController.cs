@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Parameters
     [SerializeField]
-    private intS _dañoBalasBase;
+    private int _dañoBalasBase;
     #endregion
     #region References
     private MovementController _myMovementController;
