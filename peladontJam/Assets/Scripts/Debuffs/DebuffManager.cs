@@ -11,7 +11,7 @@ public class DebuffManager : MonoBehaviour
     [SerializeField]
     private MovementController _movementController; //Para velocidad de movimiento
     [SerializeField]
-    private PhysicsMaterial2D _playerPhysicsMaterial; //Para la friccion
+    private Collider2D _playerCollider2D; //Para la friccion
     [SerializeField]
     private LifeComponent _lifeComponent; //Para el daño recibido
     [SerializeField]
@@ -25,7 +25,7 @@ public class DebuffManager : MonoBehaviour
     [Tooltip("Cantidad que disminuye/aumenta cada debuff (no el valor que toma). " +
         "Orden debuffs: daño hecho, velocidad movimiento, friccion, daño recibido, cadencia, sensibilidad camara")]
     [SerializeField]
-    private int[] _debuffs;
+    private int[] _debuffs = new int [6];
     #endregion
     #region Properties
     private int _dañoBalasActual; //Ya que el daño de las balas se setea para cada bala,
@@ -44,7 +44,7 @@ public class DebuffManager : MonoBehaviour
     }
     private void MoreSlippy()
     {
-        _playerPhysicsMaterial.friction -= _debuffs[2];
+        _playerCollider2D.sharedMaterial.friction -= _debuffs[2];
     }
     private void MixAxis()
     {
