@@ -49,6 +49,7 @@ public class LifeComponent : MonoBehaviour
             myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity, transform.parent);
             myObject.SetActive(true);
 
+            gameObject.GetComponent<EnemyNavMesh>().QuitaDelegados();
             Destroy(gameObject);
         }
     }
