@@ -41,7 +41,7 @@ public class BalaBehaviour : MonoBehaviour
         if (other.gameObject.layer == _enemies)// restar vida
         {
             Debug.Log("Enemigo");
-            other.gameObject.GetComponent<LifeComponent>().DealDamage(50);
+            other.gameObject.GetComponent<LifeComponent>().DealDamage(20);
             other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
         }
         if(other.gameObject.layer != LayerMask.NameToLayer("Detection")) Destroy(gameObject);

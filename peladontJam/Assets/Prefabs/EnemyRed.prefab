@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8002896732857060346}
   - component: {fileID: 120399801}
   - component: {fileID: 120399808}
+  - component: {fileID: 3866249721495876643}
   m_Layer: 6
   m_Name: EnemyRed
   m_TagString: Untagged
@@ -201,3 +202,16 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3866249721495876643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002896732857060337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e6872de39d89649b34bb179c300080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _escalaMinima: 0.3

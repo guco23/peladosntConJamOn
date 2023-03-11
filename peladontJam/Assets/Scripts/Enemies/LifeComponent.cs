@@ -82,4 +82,13 @@ public class LifeComponent : MonoBehaviour
     {
         
     }
+
+    public int GetCurrentLife()
+    {
+        return _currentLife;
+    }
+    public int GetMaxLife()
+    {
+        return _maxLife;
+    }
 }
