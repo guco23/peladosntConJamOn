@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Parameters
     [SerializeField]
-    private int _dañoBalasBase;
+    public int _dañoBalasBase;
 
     //NOTA
     //Gestionamos el daño de los enemigos desde aquí ya que todos los enemigos tienen el mismo daño y así es mas fácil cambiarlo

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DebuffUIManager : MonoBehaviour
 {
 
-    public enum Debuffs { LessDamage, LessVelocity, MoreSlippy, MixAxis, SlimeDamage, LessBullets, CameraVelocity}
+    public enum Debuffs { LessDamage, LessVelocity, HideCrosshair, MixAxis, SlimeDamage, LessBullets, CameraVelocity}
 
     #region references
 
