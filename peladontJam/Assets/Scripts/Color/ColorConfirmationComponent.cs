@@ -29,7 +29,7 @@ public class ColorConfirmationComponent : MonoBehaviour
             //}
         }
     }
-    private void GivePotion(InputAction.CallbackContext context)
+    public void GivePotion(InputAction.CallbackContext context)
     {
         if (_canCompare && context.performed)
         {

@@ -9,7 +9,8 @@ public class LifeComponent : MonoBehaviour
     private GameObject _puddlePrefab;
     [SerializeField]
     private Transform _puddleTransform;
-    [SerializeField] private int _maxLife;
+    [SerializeField] 
+    private int _maxLife;
     [SerializeField]
     private int _currentLife;
     [SerializeField]
@@ -20,9 +21,15 @@ public class LifeComponent : MonoBehaviour
     IAManager _iaManager;
 
     Rigidbody _myRigidBody;
+
+    public int MaxLife { get { return _maxLife; }}
     public void DealDamage(int damage)
     {
         _currentLife -= damage * _damageMultiplier;
+        if (GetComponent<PlayerController>() != null)   // Si nos encontramos en el jugador
+        {
+            GameManager.Instance.UpdateHeath(_currentLife);
+        }
         if (_currentLife <= 0)
         {
             HandleDeath();

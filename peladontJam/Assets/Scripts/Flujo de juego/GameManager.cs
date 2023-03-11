@@ -11,11 +11,9 @@ public class GameManager : MonoBehaviour
     SpawnerController[] _spawners;
     [SerializeField]
     GameObject _player;
-
-    private UIManager _uiManager;
+    [Header("Managers")]
     [SerializeField]
-    private ColorBarManager _barManager;//meter dentro de la ui
-
+    private UIManager _uiManager;
     private ColorController _colorController;
     private ColorManager _playerColorManager;
 
@@ -95,7 +93,11 @@ public class GameManager : MonoBehaviour
     /// <param name="color"></param>
     public void ColorPicked(int color)
     {
-        _barManager.CatchColor(color);
+        _uiManager.CatchColor(color);
+    }
+    public void UpdateHeath(int life)
+    {
+        _uiManager.UpdateHealth(life);
     }
 
     /// <summary>

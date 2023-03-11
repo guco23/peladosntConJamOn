@@ -62,6 +62,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GivePotion"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec3be37f-e99a-46e4-93c7-3354380566ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +183,17 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""LeftClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30521309-2986-4031-a0f9-78126826b0ad"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GivePotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Music = m_Player.FindAction("Music", throwIfNotFound: true);
         m_Player_LeftClick = m_Player.FindAction("LeftClick", throwIfNotFound: true);
+        m_Player_GivePotion = m_Player.FindAction("GivePotion", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Music;
     private readonly InputAction m_Player_LeftClick;
+    private readonly InputAction m_Player_GivePotion;
     public struct PlayerActions
     {
         private @PlayerControlls m_Wrapper;
@@ -257,6 +279,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Music => m_Wrapper.m_Player_Music;
         public InputAction @LeftClick => m_Wrapper.m_Player_LeftClick;
+        public InputAction @GivePotion => m_Wrapper.m_Player_GivePotion;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +301,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @LeftClick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
                 @LeftClick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
                 @LeftClick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
+                @GivePotion.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGivePotion;
+                @GivePotion.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGivePotion;
+                @GivePotion.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGivePotion;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +320,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @LeftClick.started += instance.OnLeftClick;
                 @LeftClick.performed += instance.OnLeftClick;
                 @LeftClick.canceled += instance.OnLeftClick;
+                @GivePotion.started += instance.OnGivePotion;
+                @GivePotion.performed += instance.OnGivePotion;
+                @GivePotion.canceled += instance.OnGivePotion;
             }
         }
     }
@@ -304,5 +333,6 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnMusic(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
+        void OnGivePotion(InputAction.CallbackContext context);
     }
 }
