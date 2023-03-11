@@ -11,7 +11,7 @@ public class DebuffManager : MonoBehaviour
     [SerializeField]
     private MovementController _movementController; //Para velocidad de movimiento
     [SerializeField]
-    private Collider _playerCollider; //Para la friccion
+    private UIManager _uiManager; //Para la mira
     [SerializeField]
     private LifeComponent _lifeComponent; //Para el daño recibido
     [SerializeField]
@@ -30,6 +30,8 @@ public class DebuffManager : MonoBehaviour
     #region Properties
     private int _dañoBalasActual; //Ya que el daño de las balas se setea para cada bala,
                                   //va almacenando el valor para que se pueda stackear el efecto
+    //booleano para testing
+    //public bool _a;
     #endregion
     #region Methods
     private void LessDamageDebuff()
@@ -42,10 +44,9 @@ public class DebuffManager : MonoBehaviour
         _movementController._walkSpeed -= _debuffs[1];
         _movementController._maxRunSpeed -= _debuffs[1];
     }
-    private void MoreSlippy()
+    private void HideCrosshair()
     {
-        _playerCollider.material.staticFriction -= _debuffs[2];
-        _playerCollider.material.dynamicFriction -= _debuffs[2];
+        _uiManager.HideCrossHair();
     }
     private void MixAxis()
     {
@@ -57,7 +58,7 @@ public class DebuffManager : MonoBehaviour
     }
     private void LessBullets()
     {
-        _shooterController._cadenciaDisparo -= _debuffs[4];
+        _shooterController._cadenciaDisparo -= (float) _debuffs[4] / 10;
     }
     private void CameraVelocity()
     {
@@ -68,15 +69,29 @@ public class DebuffManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        /* Testing
+        _dañoBalasActual = _playerController._dañoBalasBase;
+        Debug.Log("daño balas actual " + _playerController._dañoBalasBase);
+        Debug.Log("andar" + _movementController._walkSpeed + " correr " +  _movementController._maxRunSpeed);
+        Debug.Log("slime damage" + _lifeComponent._damageMultiplier);
+        Debug.Log("cadencia " + _shooterController._cadenciaDisparo);
+        Debug.Log("sens" + _cameraController._sens);*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /* Mas testing
+        if (_a)
         {
-            MoreSlippy();
-        }
+            _a = false;
+            LessDamageDebuff(); Debug.Log("daño balas actual " + _dañoBalasActual);
+            LessVelocity(); Debug.Log("andar" + _movementController._walkSpeed + " correr " + _movementController._maxRunSpeed);
+            //HideCrosshair();
+            MixAxis();
+            SlimeDamage(); Debug.Log("slime damage" + _lifeComponent._damageMultiplier);
+            LessBullets(); Debug.Log("cadencia " + _shooterController._cadenciaDisparo);
+            CameraVelocity(); Debug.Log("sens" + _cameraController._sens);
+        }*/
     }
 }
