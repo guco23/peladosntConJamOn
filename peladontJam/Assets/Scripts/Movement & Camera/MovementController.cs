@@ -13,6 +13,7 @@ public class MovementController : MonoBehaviour
     private float _speed = 2.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
+    private float _downForce;
     #endregion
     #region Properties
     [SerializeField]
@@ -28,11 +29,16 @@ public class MovementController : MonoBehaviour
     void Update()
     {
         controller.Move(directionVector * Time.deltaTime * _speed);
+        controller.Move(_downForce * Vector3.down   );
     }
     public void SetDirection(Vector2 direction)
     {
         directionVector = new Vector3(direction.x,0, direction.y);
         directionVector = _cameraTransform.forward * directionVector.z + _cameraTransform.right* directionVector.x;
-        directionVector.y = 0;
+        _downForce -= _gravityValue *Time.deltaTime;
+        if (controller.isGrounded)
+        {
+            _downForce = 0;
+        }
     }
 }

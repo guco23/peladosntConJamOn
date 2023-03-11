@@ -5,9 +5,11 @@ using UnityEngine;
 public class ColorController : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Valor entre 0 y 2 para incicar la cercanía al blanco del color generado")]
     private float _max_color;
 
     [SerializeField]
+    [Tooltip("Margen de error para aceptar un color")]
     private float _umbralIguales;
 
     /// <summary>
