@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8002896732857060350}
   - component: {fileID: 8002896732857060347}
   - component: {fileID: 8002896732857060346}
-  - component: {fileID: 1543473288}
   - component: {fileID: 1543473295}
   - component: {fileID: -760968814289082439}
   m_Layer: 6
@@ -167,18 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: 2
---- !u!114 &1543473288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002896732857060337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9e8dc4e4720d4499ad7e1b319fb39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _playerInArea: 0
 --- !u!195 &1543473295
 NavMeshAgent:

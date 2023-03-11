@@ -46,20 +46,28 @@ public class LifeComponent : MonoBehaviour
 
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
         {
+            //desactivamos el enemigo
             gameObject.SetActive(false);
+            //creamos el puddle y le asignamos el color
             GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity);
             myObject.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
 
+            //generamos un vector aleatorio para la generacion de los enemigos
             Vector3 aux = new Vector3(Random.Range(-1f, 1),0, Random.Range(-1f, 1)).normalized;
+
+            //crear primer enemigo
             myObject = Instantiate(gameObject, transform.position - _spawnerOffset * aux, Quaternion.identity, transform.parent);
             myObject.SetActive(true);
-            myObject.GetComponent<EnemyNavMesh>()._playerInArea = GetComponent<EnemyNavMesh>()._playerInArea;
+            myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;            
+            //crear segundo enemigo
             myObject = Instantiate(gameObject, transform.position + _spawnerOffset * aux, Quaternion.identity, transform.parent);
             myObject.SetActive(true);
-            myObject.GetComponent<EnemyNavMesh>()._playerInArea = GetComponent<EnemyNavMesh>()._playerInArea;
+            myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;
 
+            //quitar los delegados del padre
+            gameObject.GetComponent<IAManager>().QuitaDelegados();
 
-            gameObject.GetComponent<EnemyNavMesh>().QuitaDelegados();
+            //destruimos el objeto
             Destroy(gameObject);
         }
     }
@@ -76,13 +84,6 @@ public class LifeComponent : MonoBehaviour
         _currentLife = _maxLife;
         _myRigidBody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public int GetCurrentLife()
     {
         return _currentLife;

@@ -31,7 +31,7 @@ public class BalaBehaviour : MonoBehaviour
     }
     public void SetDirection(Vector3 direccion)
     {
-        Debug.Log("tu vieja la chupa");
+        //Debug.Log("tu vieja la chupa");
         _direction = direccion.normalized;
         GetComponent<Rigidbody>().AddForce(_direction * _fuerza, ForceMode.Impulse);
     }
@@ -40,24 +40,12 @@ public class BalaBehaviour : MonoBehaviour
         //Debug.Log(collision.gameObject);
         if (other.gameObject.layer == _enemies)// restar vida
         {
-            Debug.Log("Enemigo");
+            //Debug.Log("Enemigo");
             other.gameObject.GetComponent<LifeComponent>().DealDamage(20);
             other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
         }
         if(other.gameObject.layer != LayerMask.NameToLayer("Detection")) Destroy(gameObject);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Debug.Log(collision.gameObject);
-        if(collision.gameObject.layer == _enemies)// restar vida
-        {
-            Debug.Log("Enemigo");
-            collision.gameObject.GetComponent<LifeComponent>().DealDamage(20);
-            collision.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - collision.transform.position);
-        }
-        Destroy(gameObject);
-    }
-
+    }    
     public static void SetDamage(float valor)
     {
         _damage = valor;
