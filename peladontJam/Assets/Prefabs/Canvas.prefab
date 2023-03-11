@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: F para interactuar
+  m_text: Tu vieja
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41dc29921ffe2994e9c936eea58915e8, type: 2}
   m_sharedMaterial: {fileID: -3409117287083032733, guid: 41dc29921ffe2994e9c936eea58915e8,
@@ -2595,10 +2595,10 @@ RectTransform:
   m_Father: {fileID: 1945515809631733599}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.73, y: 0.6913052}
-  m_AnchorMax: {x: 0.94200003, y: 0.91600007}
-  m_AnchoredPosition: {x: 12, y: -6}
-  m_SizeDelta: {x: -1.6897558, y: -25.999956}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -112.5, y: -90}
+  m_SizeDelta: {x: 159.31024, y: 70.000046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945515810936848194
 MonoBehaviour:
@@ -2710,4 +2710,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitBorder: {fileID: 1520552095622446859}
   _alphaColorBorder: 0
-  _interpolationSpeed: 3
+  _interpolationSpeed: 2

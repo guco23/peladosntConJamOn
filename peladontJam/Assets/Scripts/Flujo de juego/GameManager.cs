@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
          * Obtener un efecto negativo 
          * Notificar a la UI el nuevo efecto
          */
-
+        _playerColorManager.ResetCantidades();
+        _uiManager.ResetColors();
         //Comenzar una nueva petición.?????
         //NewPotionPetition();
     }
