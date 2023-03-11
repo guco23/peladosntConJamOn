@@ -55,6 +55,7 @@ public class JumpController : MonoBehaviour
 
             if (_currentTime >= _descensionTime)
             {
+                GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._slimeJump);
                 _ascend = true;
                 _currentTime = 0;
             }
