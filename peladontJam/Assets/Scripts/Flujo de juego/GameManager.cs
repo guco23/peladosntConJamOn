@@ -5,26 +5,35 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region References
+    static private GameManager _instance;
 
     [SerializeField]
     SpawnerController[] _spawners;
     [SerializeField]
     GameObject _player;
 
-    static private GameManager _instance;
-
     private UIManager _uiManager;
     [SerializeField]
     private ColorBarManager _barManager;//meter dentro de la ui
-    #endregion
 
     private ColorController _colorController;
+    private ColorManager _playerColorManager;
+
+    [Header("Materiales")]
+    [SerializeField]
+    Material _colorPetition;
+    [SerializeField]
+    Material _colorCustom;
+    [SerializeField]
+    Material _closestWrongColor;
+    #endregion
+    [SerializeField]
     private Color _requiredColor;
     //La cantidad de rondas que lleva ganadas el juegador.
     private int puntos;
 
     #region Properties
-    
+    public bool DEBUG;
     #endregion
 
     public static GameManager Instance { get
@@ -42,7 +51,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _colorController = GetComponent<ColorController>();
+        _playerColorManager = _player.GetComponent<ColorManager>();
         NewRound();
+    }
+    private void Update()
+    {
+        //provisional
     }
 
     public void PlayerDied()
@@ -55,12 +69,22 @@ public class GameManager : MonoBehaviour
          */
     }
 
-    public void PotionFailed()
+    public void PotionFailed(Color color)
     {
+        _colorController.ColorMasCercano(color);
         //TODO
         /*
          * Obtener un efecto negativo 
          * 
+         * 
+         */
+    }
+    public void PotionCorrect(Color color)
+    {
+
+        /*
+         * Perder todos los efectos negativos.
+         * Despawnear todos los enemigos, spawnear uno nuevo de cada.
          * 
          */
     }
@@ -83,16 +107,9 @@ public class GameManager : MonoBehaviour
         KillAllSpawned();
         SpawnAll();
         NewPotionPetition();
+        _playerColorManager.ResetCantidades();
     }
 
-    public void PotionCorrect()
-    {
-        /*
-         * Perder todos los efectos negativos.
-         * Despawnear todos los enemigos, spawnear uno nuevo de cada.
-         * 
-         */
-    }
 
     /// <summary>
     /// Recorre cada spawner activando su spawn.
@@ -118,6 +135,6 @@ public class GameManager : MonoBehaviour
     private void NewPotionPetition()
     {
         _requiredColor = _colorController.InicializaColor();
+        _colorPetition.color = _requiredColor;
     }
-
 }

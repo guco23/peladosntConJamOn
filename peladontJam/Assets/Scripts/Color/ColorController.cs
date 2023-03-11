@@ -18,6 +18,7 @@ public class ColorController : MonoBehaviour
     /// <returns>El objeto color creado (obvio)</returns>
     public Color InicializaColor()
     {
+        Debug.Log("Color de tu vieja");
         Color _color = new Color();
 
         float[] colores = new float[] { 0, 0, 0 };
@@ -94,7 +95,7 @@ public class ColorController : MonoBehaviour
         else //por si acaso
         {
             Debug.Log("algo va mal con tu vieja");
-            return true;
+            return false;
         }
         //return ((Mathf.Abs(c1.r - c2.r) + Mathf.Abs(c1.g - c2.g) + Mathf.Abs(c1.b - c2.b)) < umbrarIguales);
     }
