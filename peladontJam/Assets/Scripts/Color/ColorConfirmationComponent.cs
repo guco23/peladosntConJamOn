@@ -11,22 +11,22 @@ public class ColorConfirmationComponent : MonoBehaviour
     private ColorController _myColorController;
 
     private bool _canCompare;
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<ColorManager>() != null)
         {
             _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
             _canCompare = true;
-            //if (_myColorController.ColoresIguales(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]), _materialToCompare.color))
-            //{
-            //    Debug.Log("Tu vieja colorada");
-            //    GameManager.Instance.PotionCorrect(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]));
-            //}
-            //else
-            //{
-            //    Debug.Log("ColorEquivocado");
-            //    GameManager.Instance.PotionFailed(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]));
-            //}
+            GameManager.Instance.ShowMesage("Pulsa F Para entregar la poción");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<ColorManager>() != null)
+        {
+            _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
+            _canCompare = false;
+            GameManager.Instance.ShowMesage("");
         }
     }
     public void GivePotion(InputAction.CallbackContext context)
@@ -45,6 +45,7 @@ public class ColorConfirmationComponent : MonoBehaviour
                 GameManager.Instance.PotionFailed(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]));
             }
             _canCompare = false;
+            GameManager.Instance.ShowMesage("");
         }
     }
 
