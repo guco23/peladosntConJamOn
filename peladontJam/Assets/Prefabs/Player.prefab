@@ -436,7 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7128f53a246e26b429d42da3f8128e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
+  _walkSpeed: 4
+  _maxRunSpeed: 2
   _gravityValue: -6
   directionVector: {x: 0, y: 0, z: 0}
 --- !u!114 &8193281251139864041
@@ -505,6 +506,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7d2db109-457b-4c75-8f87-dd20dd6e3d72
     m_ActionName: Player/LeftClick[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ColorConfirmationComponent, Assembly-CSharp
+        m_MethodName: GivePotion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ec3be37f-e99a-46e4-93c7-3354380566ba
+    m_ActionName: Player/GivePotion[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8193281251139864046}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 26c3c018-ab0a-4164-a633-31f00a6f091f
+    m_ActionName: Player/Run[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

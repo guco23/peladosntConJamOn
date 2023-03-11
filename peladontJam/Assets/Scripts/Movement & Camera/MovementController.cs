@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     #region Parameters
     [SerializeField]
     private float _walkSpeed = 2.0f;
-    private float _runSpeed = 1.0f;
+    private float _runSpeedMultiplier = 1.0f;
     [SerializeField] private float _maxRunSpeed = 3.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
@@ -31,7 +31,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        controller.Move(directionVector * Time.deltaTime * _walkSpeed * _runSpeed);
+        controller.Move(directionVector * Time.deltaTime * _walkSpeed * _runSpeedMultiplier);
         controller.Move(_downForce * Vector3.down);
     }
     public void SetDirection(Vector2 direction)
@@ -48,11 +48,11 @@ public class MovementController : MonoBehaviour
     {
         if (context.performed)
         {
-            _runSpeed = _maxRunSpeed;
+            _runSpeedMultiplier = _maxRunSpeed;
         }
         if (context.canceled)
         {
-            _runSpeed = 1.0f;
+            _runSpeedMultiplier = 1.0f;
         }
     }
 }
