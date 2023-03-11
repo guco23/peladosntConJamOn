@@ -14,11 +14,32 @@ public class DebuffUIManager : MonoBehaviour
     [SerializeField]
     private Sprite[] _debuffIcons;
 
+    [SerializeField]
+    private Color[] _colors;
+
+    #endregion
+
+    #region parameters
+
+    private int _numberOfSlot = 0;
+
     #endregion
 
     #region methods
 
-
+    public void AddDebuff(int debuff)
+    {
+        if (_numberOfSlot < 7)
+        {
+            transform.GetChild(_numberOfSlot).GetComponent<Image>().sprite = _debuffIcons[debuff];
+            transform.GetChild(_numberOfSlot).GetComponent<Image>().color = _colors[debuff];
+        }
+        else
+        {
+            
+        }
+       
+    }
 
     #endregion
 
