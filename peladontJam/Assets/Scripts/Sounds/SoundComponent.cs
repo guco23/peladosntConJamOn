@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class SoundComponent : MonoBehaviour
 {
-    #region Accessors
+    public AudioClip _shoot;
+    public AudioClip _move;
+    public AudioClip _receiveDamage;
+    public AudioClip _slimeJump;
+
+    #region Singleton
+    static private SoundComponent _instance;
+    public static SoundComponent Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+
+    }
     #endregion
 
-    #region Paramenters
-    #endregion
-
-    #region Properties
-    #endregion
-
-    #region Methods
-    #endregion
     // Start is called before the first frame update
     void Start()
     {
