@@ -19,6 +19,7 @@ public class ColorManager : MonoBehaviour
         ResetCantidades();
         _customMAterial.color = GameManager.Instance.GetComponent<ColorController>().GeneraColor(Colors[0], Colors[1], Colors[2]);
     }
+
     private void Update()
     {
         if (GameManager.Instance.DEBUG)
@@ -31,6 +32,7 @@ public class ColorManager : MonoBehaviour
     {
         for (int i = 0; i < Colors.Length; i++) Colors[i] = 0;
     }
+
     public void AddColor(int color)
     {
         Colors[color]++;
@@ -38,4 +40,8 @@ public class ColorManager : MonoBehaviour
         //componente que tiene el GameObject ColorBars y pasarle el "int color" del parentesis
     }
 
+    public bool HasColor()
+    {
+        return Colors[1] != 0 || Colors[2] != 0 || Colors[0] != 0;
+    }
 }

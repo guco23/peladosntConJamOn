@@ -15,20 +15,26 @@ public class ColorConfirmationComponent : MonoBehaviour
     {
         if (other.gameObject.GetComponent<ColorManager>() != null)
         {
-            _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
-            _canCompare = true;
-            GameManager.Instance.ShowMesage("F para interactuar");
+            if (other.gameObject.GetComponent<ColorManager>().HasColor())
+            {
+                _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
+                _canCompare = true;
+                GameManager.Instance.ShowMesage("F para interactuar");
+            }
+            
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.GetComponent<ColorManager>() != null)
         {
-            _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
+            _playerColor = null;
             _canCompare = false;
             GameManager.Instance.ShowMesage("");
         }
     }
+
     public void GivePotion(InputAction.CallbackContext context)
     {
         if (_canCompare && context.performed)

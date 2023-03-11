@@ -9,11 +9,13 @@ public class SpawnerController : MonoBehaviour
 
     public void DespawnSpawned()
     {
+        Debug.Log("spawner despawneo");
         int numChilds = transform.childCount;
 
         for(int i = 0; i < numChilds; i++)
         {
-            Destroy(transform.GetChild(i));
+            Debug.Log("despaun");
+            Destroy(transform.GetChild(i).gameObject);
         }
     }
 

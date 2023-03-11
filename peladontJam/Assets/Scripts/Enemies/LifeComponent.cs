@@ -21,7 +21,6 @@ public class LifeComponent : MonoBehaviour
     [SerializeField] private float _spawnerOffset;
     IAManager _iaManager;
 
-    Rigidbody _myRigidBody;
 
     public int MaxLife { get { return _maxLife; }}
     public void DealDamage(int damage)
@@ -42,7 +41,7 @@ public class LifeComponent : MonoBehaviour
         _iaManager = GetComponent<IAManager>();
         if (GetComponent<PlayerController>() != null)   // Si nos encontramos en el jugador
         {
-            //Acción cuando el jugador muera
+            GameManager.Instance.PlayerDied();
         }
 
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
@@ -73,9 +72,6 @@ public class LifeComponent : MonoBehaviour
         }
     }
 
-
-
-
     public void KnockBack(Vector3 direction)
     {
         //direction.Normalize();
@@ -86,7 +82,6 @@ public class LifeComponent : MonoBehaviour
     void Start()
     {
         _currentLife = _maxLife;
-        _myRigidBody = GetComponent<Rigidbody>();
     }
     public int GetCurrentLife()
     {

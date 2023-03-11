@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,8 +27,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Material _closestWrongColor;
     #endregion
-    [SerializeField]
-    private Color _requiredColor;
     //La cantidad de rondas que lleva ganadas el juegador.
     private int puntos;
 
@@ -55,41 +55,48 @@ public class GameManager : MonoBehaviour
         _playerColorManager = _player.GetComponent<ColorManager>();
         NewRound();
     }
-    private void Update()
+    private void RestartScene()
     {
-        //provisional
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
     public void PlayerDied()
     {
         //TODO
 
+        Debug.Log("Tu vieja murió");
         /*
          * Pantalla de Game Over
          * Reiniciar la escena.
          */
+        RestartScene();
     }
 
     public void PotionFailed(Color color)
     {
         //usar este método para aplicar los debufos
-        _colorController.DecodeColor(color);
+        ColorController.ColorCodificacion colorCod = _colorController.DecodeColor(color);
 
         //TODO
         /*
          * Obtener un efecto negativo 
-         * 
-         * 
+         * Notificar a la UI el nuevo efecto
          */
+
+        //Comenzar una nueva petición.?????
+        //NewPotionPetition();
     }
     public void PotionCorrect(Color color)
     {
 
         /*
          * Perder todos los efectos negativos.
-         * Despawnear todos los enemigos, spawnear uno nuevo de cada.
          * 
          */
+        NewPotionPetition();
+        KillAllSpawned();
+        SpawnAll();
     }
 
     /// <summary>
@@ -148,7 +155,9 @@ public class GameManager : MonoBehaviour
 
     private void NewPotionPetition()
     {
-        _requiredColor = _colorController.InicializaColor();
-        _colorPetition.color = _requiredColor;
+        //Resetea los colores del player
+        _playerColorManager.ResetCantidades();
+        //Nuevo color
+        _colorPetition.color = _colorController.InicializaColor();
     }
 }
