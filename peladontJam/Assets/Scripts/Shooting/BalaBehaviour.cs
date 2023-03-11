@@ -35,7 +35,17 @@ public class BalaBehaviour : MonoBehaviour
         _direction = direccion.normalized;
         GetComponent<Rigidbody>().AddForce(_direction * _fuerza, ForceMode.Impulse);
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(collision.gameObject);
+        if (other.gameObject.layer == _enemies)// restar vida
+        {
+            Debug.Log("Enemigo");
+            other.gameObject.GetComponent<LifeComponent>().DealDamage(20);
+            other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
+        }
+        Destroy(gameObject);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log(collision.gameObject);
@@ -43,6 +53,7 @@ public class BalaBehaviour : MonoBehaviour
         {
             Debug.Log("Enemigo");
             collision.gameObject.GetComponent<LifeComponent>().DealDamage(20);
+            collision.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - collision.transform.position);
         }
         Destroy(gameObject);
     }

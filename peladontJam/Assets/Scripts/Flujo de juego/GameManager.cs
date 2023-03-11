@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region References
+
     [SerializeField]
     SpawnerController[] _spawners;
     [SerializeField]
     GameObject _player;
 
     static private GameManager _instance;
+
     private UIManager _uiManager;
+    [SerializeField]
+    private ColorBarManager _barManager;//meter dentro de la ui
+    #endregion
+
     private ColorController _colorController;
     private Color _requiredColor;
     //La cantidad de rondas que lleva ganadas el juegador.
@@ -59,6 +66,15 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Método llamado al recoger un color para informar a la UI
+    /// </summary>
+    /// <param name="color"></param>
+    public void ColorPicked(int color)
+    {
+        _barManager.CatchColor(color);
+    }
+
+    /// <summary>
     /// Comienza una nueva ronda, (nueva petición de color).
     /// </summary>
     private void NewRound()
@@ -66,7 +82,7 @@ public class GameManager : MonoBehaviour
         //Destruye todos los enemigos y regenera uno.
         KillAllSpawned();
         SpawnAll();
-        NewColorRequest();
+        NewPotionPetition();
     }
 
     public void PotionCorrect()
@@ -99,7 +115,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NewColorRequest()
+    private void NewPotionPetition()
     {
         _requiredColor = _colorController.InicializaColor();
     }

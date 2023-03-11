@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LifeComponent : MonoBehaviour
@@ -13,9 +14,12 @@ public class LifeComponent : MonoBehaviour
     private int _currentLife;
     [SerializeField]
     private int _damageMultiplier;
+    [SerializeField]
+    private float _kockbackForce;
     [SerializeField] private float _spawnerOffset;
-
     IAManager _iaManager;
+
+    Rigidbody _myRigidBody;
     public void DealDamage(int damage)
     {
         _currentLife -= damage * _damageMultiplier;
@@ -49,10 +53,18 @@ public class LifeComponent : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void KnockBack(Vector3 direction)
+    {
+        direction.Normalize();
+        Debug.Log("Auch");
+        _myRigidBody.AddForce(new Vector3(direction.x,0,direction.z) * _kockbackForce + Vector3.up * 2, ForceMode.Impulse);
+    }
     // Start is called before the first frame update
     void Start()
     {
         _currentLife = _maxLife;
+        _myRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

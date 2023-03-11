@@ -6,7 +6,6 @@ public class PuddleComponent : MonoBehaviour
 {
     private ColorManager.colors _color;
 
-
     public void SetColor(ColorManager.colors color)
     {
         _color = color;
@@ -14,11 +13,13 @@ public class PuddleComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TU Vieja:" + gameObject.name);
         ColorManager _manager = other.gameObject.GetComponent<ColorManager>();
         if (_manager != null)
         {
             _manager.AddColor((int) _color);
-            ColorBarManager.Instance.CatchColor((int)_color);
+            //ColorBarManager.Instance.CatchColor((int)_color);
+            GameManager.Instance.ColorPicked((int) _color);
             Destroy(gameObject);
         }
     }

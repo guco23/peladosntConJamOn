@@ -19,12 +19,17 @@ public class ColorConfirmationComponent : MonoBehaviour
                 Debug.Log("Tu vieja colorada");
 
             }
+            else
+            {
+                Debug.Log("ColorEquivocado");
+            }
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        _myColorController = GameManager.Instance.GetComponent<ColorController>();
        // _materialToCompare = _myColorController.Material;
     }
 
