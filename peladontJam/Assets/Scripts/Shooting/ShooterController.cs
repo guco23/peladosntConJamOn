@@ -56,6 +56,7 @@ public class ShooterController : MonoBehaviour
     {
         if (_reloj > _cadenciaDisparo && _disparando && _enArea)
         {
+            GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._shoot);
             GameObject bullet = Instantiate(balaPrefab, spawnTransform.position, Quaternion.identity);
             Physics.Raycast(Camera.main.ScreenPointToRay(mirilla.position), out hit);
 

@@ -1640,8 +1640,23 @@ PrefabInstance:
     - target: {fileID: 2706892562901214128, guid: 14b0a1eaefcf2d14ba978d65cb313037,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
+        type: 3}
+      propertyPath: _shoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 63d0ec187bdffc144aea0121941afd32, type: 3}
+    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
+        type: 3}
+      propertyPath: _running
+      value: 
+      objectReference: {fileID: 8300000, guid: ea192bb0862029e40b0f4dbcc5c8b7db, type: 3}
+    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
+        type: 3}
+      propertyPath: _walking
+      value: 
+      objectReference: {fileID: 8300000, guid: e4fc985e0271ec6428a1476fe114a857, type: 3}
     - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
         type: 3}
       propertyPath: _slimeJump
