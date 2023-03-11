@@ -28,6 +28,11 @@ public class SoundComponent : MonoBehaviour
     }
     #endregion
 
+    public void PlaySound(AudioClip myAudio)
+    {
+        GetComponent<AudioSource>().PlayOneShot(myAudio);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

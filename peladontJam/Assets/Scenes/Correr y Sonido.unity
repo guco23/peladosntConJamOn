@@ -1637,36 +1637,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2050504861}
     m_Modifications:
-    - target: {fileID: 2706892562901214128, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: _shoot
-      value: 
-      objectReference: {fileID: 8300000, guid: 63d0ec187bdffc144aea0121941afd32, type: 3}
-    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: _running
-      value: 
-      objectReference: {fileID: 8300000, guid: ea192bb0862029e40b0f4dbcc5c8b7db, type: 3}
-    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: _walking
-      value: 
-      objectReference: {fileID: 8300000, guid: e4fc985e0271ec6428a1476fe114a857, type: 3}
-    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: _slimeJump
-      value: 
-      objectReference: {fileID: 8300000, guid: 9dd7852987350a848870d9584f8c331f, type: 3}
-    - target: {fileID: 2706892563659012931, guid: 14b0a1eaefcf2d14ba978d65cb313037,
-        type: 3}
-      propertyPath: _pickUpPuddle
-      value: 
-      objectReference: {fileID: 8300000, guid: 61d54a207aa3d4a42a278c54a9aaea26, type: 3}
     - target: {fileID: 2706892563963087886, guid: 14b0a1eaefcf2d14ba978d65cb313037,
         type: 3}
       propertyPath: m_Name
