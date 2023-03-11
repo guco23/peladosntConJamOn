@@ -257,6 +257,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7275171406083387697, guid: d1f7d2759927ba3449a19c50ffa20e85,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193281249799342543, guid: d1f7d2759927ba3449a19c50ffa20e85,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8193281251139863954, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
@@ -327,6 +337,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193281251139864040, guid: d1f7d2759927ba3449a19c50ffa20e85,
+        type: 3}
+      propertyPath: mirilla
+      value: 
+      objectReference: {fileID: 968818501}
+    - target: {fileID: 8193281251139864046, guid: d1f7d2759927ba3449a19c50ffa20e85,
+        type: 3}
+      propertyPath: _maxRunSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8193281251761951307, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_Name
@@ -334,6 +354,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f7d2759927ba3449a19c50ffa20e85, type: 3}
+--- !u!224 &968818501 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1945515810437413231, guid: bef098fb2f803eb479b2c47a3ba76326,
+    type: 3}
+  m_PrefabInstance: {fileID: 1931106903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987605047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,11 +605,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1874292705}
   _movementController: {fileID: 1874292704}
-  _playerPhysicsMaterial: {fileID: 0}
+  _uiManager: {fileID: 0}
   _lifeComponent: {fileID: 1874292699}
   _shooterController: {fileID: 1874292701}
   _cameraController: {fileID: 172966726}
-  _debuffs: 000000000000000000000000000000000000000000000000
+  _debuffs: 050000000100000000000000020000000100000014000000
+  _a: 0
 --- !u!1001 &1931106903
 PrefabInstance:
   m_ObjectHideFlags: 0
