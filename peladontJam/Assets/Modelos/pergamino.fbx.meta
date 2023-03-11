@@ -2,16 +2,7 @@ fileFormatVersion: 2
 guid: 741d456c9a1186a44b6db86188fdbbcc
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: 1097455907372002974
-    second: pistola|pistolaAction
-  - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
-      74: -2111779600099031386
-    second: Armature|pistolaAction
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
