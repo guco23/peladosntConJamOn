@@ -64,22 +64,20 @@ public class GameManager : MonoBehaviour
         _debuffManager = GetComponent<DebuffManager>();
         NewRound();
     }
-    private void RestartScene()
+    public void RestartScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
+    
 
     public void PlayerDied()
     {
         //TODO
 
         Debug.Log("Tu vieja murió");
-        /*
-         * Pantalla de Game Over
-         * Reiniciar la escena.
-         */
-        RestartScene();
+        SceneManager.LoadScene("GameOver");
+        //RestartScene();
     }
 
     public void PotionFailed(Color color)
