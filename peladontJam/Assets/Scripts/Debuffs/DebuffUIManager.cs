@@ -35,9 +35,9 @@ public class DebuffUIManager : MonoBehaviour
     {
         if (_numberOfSlot < 7) //Si no esta llena la lista de debuffs el nuevo se almacena en el seguiente espacio libre
         {
-            _debuffs[_numberOfSlot] = debuff;
             transform.GetChild(_numberOfSlot).GetComponent<Image>().sprite = _debuffIcons[debuff];
             transform.GetChild(_numberOfSlot).GetComponent<Image>().color = _colors[debuff];
+            _debuffs[_numberOfSlot] = debuff;
             _numberOfSlot++;
         }
         else //Si esta llena la lista se sobrescribe en el último y se desplazan el resto, sobrescribiendo de uno en uno
