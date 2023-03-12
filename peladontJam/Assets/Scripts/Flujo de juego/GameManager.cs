@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         NewPotionPetition();
         
         _puntos++;
+        _uiManager.SetPuntuacion(_puntos.ToString());
         if (_puntos >= _maxPointsRound)
         {
             KillAllSpawned();
