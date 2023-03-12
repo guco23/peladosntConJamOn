@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Material _closestWrongColor;
 
-    DebuffManager _debuffManager;
+    public DebuffManager _debuffManager;
 
     NPCManager _npcManager;
 
