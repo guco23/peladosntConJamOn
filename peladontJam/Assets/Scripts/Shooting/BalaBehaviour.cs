@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BalaBehaviour : MonoBehaviour
@@ -42,8 +40,8 @@ public class BalaBehaviour : MonoBehaviour
             other.gameObject.GetComponent<LifeComponent>().DealDamage(_damage);
             other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
         }
-        if(other.gameObject.layer != LayerMask.NameToLayer("Detection")) Destroy(gameObject);
-    }    
+        if (other.gameObject.layer != LayerMask.NameToLayer("Detection")) Destroy(gameObject);
+    }
     public static void SetDamage(int valor)
     {
         _damage = valor;
