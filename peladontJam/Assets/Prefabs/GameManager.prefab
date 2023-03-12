@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &964137352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964137353}
+  m_Layer: 0
+  m_Name: Destination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964137353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964137352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.87, y: 0, z: 48.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8258496421646009564}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &993229251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993229252}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &993229252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993229251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.9, y: 0, z: 83.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8258496421646009564}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8258496421646009566
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +74,8 @@ GameObject:
   - component: {fileID: 8258496421646009565}
   - component: {fileID: 8258496421646009555}
   - component: {fileID: 8258496421646009554}
+  - component: {fileID: 488412619}
+  - component: {fileID: 488412623}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,7 +94,9 @@ Transform:
   m_LocalPosition: {x: 11.636081, y: 0.74960995, z: -15.057339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 993229252}
+  - {fileID: 964137353}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,9 +132,9 @@ MonoBehaviour:
   _uiManager: {fileID: 0}
   _colorPetition: {fileID: 2100000, guid: 04ec63064b6bd3c418c15d339e73c6a1, type: 2}
   _colorCustom: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
-  _closestWrongColor: {fileID: 0}
-  _requiredColor: {r: 0, g: 0, b: 0, a: 0}
-  DEBUG: 0
+  _closestWrongColor: {fileID: 2100000, guid: b02a395bde6ca0c40b00742d8e8f09df, type: 2}
+  _maxPointsRound: 5
+  DEBUG: 1
 --- !u!114 &8258496421646009554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +149,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _max_color: 1.5
   _umbralIguales: 0.3
+--- !u!114 &488412619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258496421646009566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c561a593b6a2a224dafe01eb424584f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 0}
+  _movementController: {fileID: 0}
+  _lifeComponent: {fileID: 0}
+  _shooterController: {fileID: 0}
+  _cameraController: {fileID: 0}
+  _uiManager: {fileID: 0}
+  _damageDebuff: 5
+  _speedDebuff: 0.6
+  _damageReceivedDebuff: 0.1
+  _rateOfFireDebuff: 0.1
+  _sensDebuff: 3
+--- !u!114 &488412623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258496421646009566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58ef4d9aa24a0b40a4b4136f98bb5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnpPoint: {fileID: 993229252}
+  _destinationPoint: {fileID: 964137353}
+  _poolNPCSprefabs:
+  - {fileID: 9020561404893691685, guid: 2c58cd36acc222145901297907b13170, type: 3}
+  - {fileID: 9020561404893691685, guid: 70f1f96af7ee5d44c89776d473e0ec5e, type: 3}
+  - {fileID: 9020561404893691685, guid: 5139d4ad006432a458bc79d18372f83c, type: 3}
+  - {fileID: 9020561404893691685, guid: caa14673154deff439fd26c0a21ef351, type: 3}
+  _margin: 2
+  _time: 0.33

@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
         {
             KillAllSpawned();
             SpawnAll();
+            _player.GetComponent<LifeComponent>().ResetLife();
         }
     }
 
