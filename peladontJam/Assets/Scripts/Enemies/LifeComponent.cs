@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 public class LifeComponent : MonoBehaviour
 {
@@ -20,6 +20,8 @@ public class LifeComponent : MonoBehaviour
     [SerializeField] private float _spawnerOffset;
     IAManager _iaManager;
 
+
+    private NavMeshAgent _agent;
 
     public int MaxLife { get { return _maxLife; }}
     public void DealDamage(int damage)
@@ -50,18 +52,22 @@ public class LifeComponent : MonoBehaviour
             //desactivamos el enemigo
             gameObject.SetActive(false);
             //creamos el puddle y le asignamos el color
-            GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity,transform.parent);
+            GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,
+                Quaternion.identity,transform.parent);
             myObject.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
 
             //generamos un vector aleatorio para la generacion de los enemigos
             Vector3 aux = new Vector3(Random.Range(-1f, 1),0, Random.Range(-1f, 1)).normalized;
 
             //crear primer enemigo
-            myObject = Instantiate(gameObject, transform.position - (_spawnerOffset * aux), Quaternion.identity, transform.parent);
+            myObject = Instantiate(gameObject, transform.position - (_spawnerOffset * aux) ,
+                Quaternion.identity, transform.parent);
             myObject.SetActive(true);
-            myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;            
+            myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea; 
+            
             //crear segundo enemigo
-            myObject = Instantiate(gameObject, transform.position + (_spawnerOffset * aux), Quaternion.identity, transform.parent);
+            myObject = Instantiate(gameObject, transform.position + (_spawnerOffset * aux) ,
+                Quaternion.identity, transform.parent);
             myObject.SetActive(true);
             myObject.GetComponent<IAManager>()._playerInArea = GetComponent<IAManager>()._playerInArea;
 
@@ -83,6 +89,7 @@ public class LifeComponent : MonoBehaviour
     void Start()
     {
         _currentLife = _maxLife;
+        _agent = GetComponent<NavMeshAgent>();
     }
     public int GetCurrentLife()
     {

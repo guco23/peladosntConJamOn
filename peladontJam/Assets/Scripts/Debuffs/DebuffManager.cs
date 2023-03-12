@@ -85,7 +85,7 @@ public class DebuffManager : MonoBehaviour
     }
     private void LessBullets()
     {
-        _shooterController._cadenciaDisparo -= _rateOfFireDebuff;
+        _shooterController._cadenciaDisparo += _rateOfFireDebuff;
         _debuffContador[3]++;
     }
     private void CameraVelocity()
@@ -180,7 +180,7 @@ public class DebuffManager : MonoBehaviour
     }
     private void ElimLessBulletsDebuffParcial()
     {
-        _shooterController._cadenciaDisparo += _rateOfFireDebuff;
+        _shooterController._cadenciaDisparo -= _rateOfFireDebuff;
         _debuffContador[3]--;
     }
     private void ElimCameraSpeedDebuffParcial()
