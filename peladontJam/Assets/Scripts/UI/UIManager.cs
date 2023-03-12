@@ -122,7 +122,7 @@ public class UIManager : MonoBehaviour
 
     public void SetPuntuacion(string puntuacion)
     {
-        _puntuacion.text = puntuacion;
+        _puntuacion.text = "Puntos: " + puntuacion;
     }
 
     public void ExitGame()
