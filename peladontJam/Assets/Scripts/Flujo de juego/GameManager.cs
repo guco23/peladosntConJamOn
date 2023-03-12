@@ -30,12 +30,15 @@ public class GameManager : MonoBehaviour
     Material _closestWrongColor;
 
     DebuffManager _debuffManager;
-    
+
     #endregion
     //La cantidad de rondas que lleva ganadas el juegador.
-    private int puntos;
-
+    #region Parameters
+    [SerializeField]
+    private int _maxPointsRound;
+    #endregion
     #region Properties
+    private int _puntos;
     public bool DEBUG;
     private GameStates _actualState;
     private GameStates _beforeState;
@@ -62,24 +65,23 @@ public class GameManager : MonoBehaviour
         _colorController = GetComponent<ColorController>();
         _playerColorManager = _player.GetComponent<ColorManager>();
         _debuffManager = GetComponent<DebuffManager>();
+        _puntos = 0;
         NewRound();
     }
-    private void RestartScene()
+    public void RestartScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
+    
 
     public void PlayerDied()
     {
         //TODO
 
         Debug.Log("Tu vieja murió");
-        /*
-         * Pantalla de Game Over
-         * Reiniciar la escena.
-         */
-        RestartScene();
+        SceneManager.LoadScene("GameOver");
+        //RestartScene();
     }
 
     public void PotionFailed(Color color)
@@ -102,8 +104,13 @@ public class GameManager : MonoBehaviour
         _uiManager.EliminaTodosLosDebuffs();
         _debuffManager.EliminaTodos();//quita los efectos del debuff en codido
         NewPotionPetition();
-        KillAllSpawned();
-        SpawnAll(); 
+        
+        _puntos++;
+        if (_puntos >= _maxPointsRound)
+        {
+            KillAllSpawned();
+            SpawnAll();
+        }
     }
 
     /// <summary>
@@ -162,6 +169,13 @@ public class GameManager : MonoBehaviour
         foreach (SpawnerController spawner in _spawners)
         {
             spawner.DespawnSpawned();
+        }
+    }
+    private void CleanPuddles()
+    {
+        foreach (SpawnerController spawner in _spawners)
+        {
+            spawner.CleanPuddles();
         }
     }
 

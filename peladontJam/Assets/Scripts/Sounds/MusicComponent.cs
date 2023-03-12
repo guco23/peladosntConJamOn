@@ -74,7 +74,7 @@ public class MusicComponent : MonoBehaviour
                 _audioSourceTotal.volume = Mathf.Lerp(_audioSourceTotal.volume, 0, Time.deltaTime * _fadeTime);
             }
 
-            currentSource.volume = Mathf.Lerp(currentSource.volume, _maxVolume, Time.deltaTime * _fadeTime);
+            currentSource.volume = Mathf.Lerp(currentSource.volume, 1, Time.deltaTime * _fadeTime);
         }
         else
         {
@@ -95,7 +95,7 @@ public class MusicComponent : MonoBehaviour
                 _audioSourceTotal.volume = 0;
             }
 
-            currentSource.volume = _maxVolume;
+            currentSource.volume = 1;
         }
 
     }

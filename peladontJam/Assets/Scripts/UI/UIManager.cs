@@ -25,13 +25,17 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     DebuffUIManager _debuffUIManager;
 
+    [Header("Menus")]
+    [SerializeField]
+    private GameObject _startMenu;
+    [SerializeField]
+    private GameObject _endMenu;
+    [SerializeField]
+    private GameObject _gameMenu;
+
     #endregion
 
     #region properties
-
-    private GameObject _startMenu;
-    private GameObject _endMenu;
-    private GameObject _gameMenu;
     private GameObject _actualMenu;
 
     #endregion
@@ -120,5 +124,14 @@ public class UIManager : MonoBehaviour
     public void SetPuntuacion(string puntuacion)
     {
         _puntuacion.text = puntuacion;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public void ReturnGame()
+    {
+        SceneManager.LoadScene("_Final");
     }
 }

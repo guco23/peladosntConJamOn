@@ -40,4 +40,8 @@ public class InputManager : MonoBehaviour
         return playerControlls.Player.LeftClick.ReadValue<bool>();
         
     }
+    private void OnDestroy()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 }
