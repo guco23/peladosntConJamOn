@@ -31,13 +31,21 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        controller.Move(directionVector * Time.deltaTime * _walkSpeed * _runSpeedMultiplier);
+        controller.Move(directionVector.normalized * Time.deltaTime * _walkSpeed * _runSpeedMultiplier);
         controller.Move(_downForce * Vector3.down);
     }
     public void SetDirection(Vector2 direction)
-    {
+    {       
         directionVector = new Vector3(direction.x,0, direction.y);
-        directionVector = _cameraTransform.forward * directionVector.z + _cameraTransform.right* directionVector.x;
+        Transform aux = transform;
+        
+
+        //directionVector = _cameraTransform.forward * directionVector.z + _cameraTransform.right.normalized* directionVector.x;
+        Vector3 v = new Vector2(_cameraTransform.forward.x,_cameraTransform.forward.z).normalized * directionVector.z +
+                         new Vector2(_cameraTransform.right.x, _cameraTransform.right.z).normalized * directionVector.x;
+        directionVector = new Vector3(v.x, 0, v.y);
+        //transform.rotation = _cameraTransform.rotation;      
+        Debug.Log(directionVector);
         _downForce -= _gravityValue *Time.deltaTime;
         if (controller.isGrounded)
         {
