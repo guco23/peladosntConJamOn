@@ -14,6 +14,9 @@ public class SpawnerController : MonoBehaviour
 
         for(int i = 0; i < numChilds; i++)
         {
+            IAManager aux = transform.GetChild(i).gameObject.GetComponent<IAManager>();
+            if (aux != null) aux.QuitaDelegados();
+
             Debug.Log("despaun");
             Destroy(transform.GetChild(i).gameObject);
         }
