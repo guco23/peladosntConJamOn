@@ -39,16 +39,17 @@ public class ColorConfirmationComponent : MonoBehaviour
     {
         if (_canCompare && context.performed)
         {
-            if (_myColorController.ColoresIguales(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]), 
-                _materialToCompare.color))
+            Color c = _myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]);
+
+            if (_myColorController.ColoresIguales(c, _materialToCompare.color))
             {
                 Debug.Log("Tu vieja colorada");
-                GameManager.Instance.PotionCorrect(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]));
+                GameManager.Instance.PotionCorrect(c);
             }
             else
             {
                 Debug.Log("ColorEquivocado");
-                GameManager.Instance.PotionFailed(_myColorController.GeneraColor(_playerColor[0], _playerColor[1], _playerColor[2]));
+                GameManager.Instance.PotionFailed(c);
             }
             _canCompare = false;
             GameManager.Instance.ShowMesage("");

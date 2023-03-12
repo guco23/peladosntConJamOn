@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     GameObject _crossHair;
     [SerializeField]
     HitBorder _hitBorder;
-    
+    [SerializeField]
+    DebuffUIManager _debuffUIManager;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -57,5 +58,9 @@ public class UIManager : MonoBehaviour
     public void ResetColors()
     {
         _colorBarManager.ResetColors();
+    }
+    public void AddDebuff(int v)
+    {
+        _debuffUIManager.AddDebuff(v);
     }
 }

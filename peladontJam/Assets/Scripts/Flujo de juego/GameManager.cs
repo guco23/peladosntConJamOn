@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     Material _colorCustom;
     [SerializeField]
     Material _closestWrongColor;
+
+    DebuffManager _debuffManager;
+    
     #endregion
     //La cantidad de rondas que lleva ganadas el juegador.
     private int puntos;
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
     #endregion
     #region Accesor
     public GameObject Player { get { return _player; } }
+    public UIManager UImanager { get { return _uiManager; } }
     #endregion
 
     public static GameManager Instance { get
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         _colorController = GetComponent<ColorController>();
         _playerColorManager = _player.GetComponent<ColorManager>();
+        _debuffManager = GetComponent<DebuffManager>();
         NewRound();
     }
     private void RestartScene()
@@ -78,6 +83,9 @@ public class GameManager : MonoBehaviour
         //usar este método para aplicar los debufos
         ColorController.ColorCodificacion colorCod = _colorController.DecodeColor(color);
 
+
+        _debuffManager.ApplyDebuff((int)colorCod);
+        _uiManager.AddDebuff((int)colorCod);
         //TODO
         /*
          * Obtener un efecto negativo 

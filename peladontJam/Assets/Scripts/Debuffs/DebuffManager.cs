@@ -26,7 +26,7 @@ public class DebuffManager : MonoBehaviour
     [SerializeField]
     private float _speedDebuff;
     [SerializeField]
-    private int _damageReceivedDebuff;
+    private float _damageReceivedDebuff;
     [SerializeField]
     private float _rateOfFireDebuff;
     [SerializeField]
@@ -37,7 +37,7 @@ public class DebuffManager : MonoBehaviour
     private int _originalDamageDealt;
     private float _originalWalkSpeed;
     private float _originalRunSpeed;
-    private int _originalDamageReceived;
+    private float _originalDamageReceived;
     private float _originalRateOfFire;
     private float _originalSens;
 
@@ -53,7 +53,18 @@ public class DebuffManager : MonoBehaviour
     public bool _a;
     public bool _b;*/
     #endregion
-    #region Methods
+    #region Methods{
+
+    public void ApplyDebuff(int indexDebuff)
+    {
+        if (indexDebuff == 0) LessDamageDebuff();
+        else if (indexDebuff == 1) LessVelocity();
+        else if (indexDebuff == 2) SlimeDamage();
+        else if (indexDebuff == 3) LessBullets();
+        else if (indexDebuff == 4) CameraVelocity();
+        else if (indexDebuff == 5) MixAxis();
+        else if (indexDebuff == 6) HideCrosshair();        
+    }
     //Conjunto de metodos que aplican debuffs
     private void LessDamageDebuff()
     {
@@ -94,6 +105,27 @@ public class DebuffManager : MonoBehaviour
     }
     
     //Conjunto de métodos que eliminan debuffs
+    public void EliminaTodos()
+    {
+        for(int i =0; i < _debuffContador.Length; i++)
+        {
+            if (_debuffContador[i] > 0)
+            {
+                EliminameEsta(i);
+                _debuffContador[i] = 0;
+            }
+        }
+    }
+    private void EliminameEsta(int indexDebuff)
+    {
+        if (indexDebuff == 0) ElimDamageDebuff();
+        else if (indexDebuff == 1) ElimSpeedDebuff();
+        else if (indexDebuff == 2) ElimSlimeDebuff();
+        else if (indexDebuff == 3) ElimLessBulletsDebuff();
+        else if (indexDebuff == 4) ElimCameraSpeedDebuff();
+        else if (indexDebuff == 5) ElimAxisDebuff();
+        else if (indexDebuff == 6) ElimCrosshairDebuff();
+    }
     private void ElimDamageDebuff()
     {
         _playerController._dañoBalasBase = _originalDamageDealt;
@@ -134,12 +166,20 @@ public class DebuffManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _playerController = GameManager.Instance.Player.GetComponent<PlayerController>();
+        _movementController = GameManager.Instance.Player.GetComponent<MovementController>();
+        _lifeComponent = GameManager.Instance.Player.GetComponent<LifeComponent>();
+        _shooterController = GameManager.Instance.Player.GetComponent<ShooterController>();
+        _uiManager = GameManager.Instance.UImanager;
+
         _originalDamageDealt = _playerController._dañoBalasBase;
         _originalWalkSpeed = _movementController._walkSpeed;
         _originalRunSpeed = _movementController._maxRunSpeed;
         _originalDamageReceived = _lifeComponent._damageMultiplier;
         _originalRateOfFire = _shooterController._cadenciaDisparo;
         _originalSens = _cameraController._sens;
+
+        _currentDamage = _originalDamageDealt;
         /* Testing
         _dañoBalasActual = _playerController._dañoBalasBase;
         Debug.Log("daño balas actual " + _playerController._dañoBalasBase);
