@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameStates { Start, Game, GameOver}
+
     #region References
     static private GameManager _instance;
 
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     #region Properties
     public bool DEBUG;
+    private GameStates _actualState;
+    private GameStates _beforeState;
     #endregion
     #region Accesor
     public GameObject Player { get { return _player; } }
@@ -173,5 +177,43 @@ public class GameManager : MonoBehaviour
         _playerColorManager.ResetCantidades();
         //Nuevo color
         _colorPetition.color = _colorController.InicializaColor();
+    }
+
+    public void RequestStateChange(GameStates gameState)
+    {
+        if ((_actualState == GameStates.Start || _actualState == GameStates.GameOver) && gameState == GameStates.Game)
+        {
+            _beforeState = _actualState;
+            _actualState = gameState;
+        }
+        else if(_actualState == GameStates.Start && gameState == GameStates.GameOver)
+        {
+            _beforeState = _actualState;
+            _actualState = gameState;
+        }
+
+
+    }
+
+    public void UpdateState(GameStates newGameState, GameStates beforeGameState) 
+    {
+
+        _uiManager.ChangeMenu(newGameState, beforeGameState);
+
+        if (newGameState == GameStates.Game)
+        {
+            if (beforeGameState == GameStates.Start) 
+            { 
+                
+            }
+            else if (beforeGameState == GameStates.GameOver)
+            {
+
+            }
+        }
+        else if (newGameState == GameStates.GameOver)
+        {
+
+        }
     }
 }
