@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
          * Perder todos los efectos negativos.
          * 
          */
+        _uiManager.ResetColors();
+
         _uiManager.EliminaTodosLosDebuffs();
         _debuffManager.EliminaTodos();//quita los efectos del debuff en codido
         //falta quitar los efectos en la UI

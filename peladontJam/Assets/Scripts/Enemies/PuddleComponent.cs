@@ -6,6 +6,13 @@ public class PuddleComponent : MonoBehaviour
 {
     private ColorManager.colors _color;
 
+    [SerializeField]
+    private float _alturaY;
+
+    private void Start()
+    {
+        transform.position = new Vector3(transform.position.x, _alturaY, transform.position.z);
+    }
     public void SetColor(ColorManager.colors color)
     {
         _color = color;
