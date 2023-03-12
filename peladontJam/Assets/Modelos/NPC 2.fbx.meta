@@ -153,6 +153,9 @@ ModelImporter:
   - first:
       74: -8019425490038929712
     second: color vaso|vasoAction.001
+  - first:
+      74: 8810958205022355906
+    second: idle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -300,7 +303,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: idle
-      takeName: npc cara|Circle.001Action
+      takeName: Armature|ArmatureAction.003
       internalID: 0
       firstFrame: 0
       lastFrame: 0
