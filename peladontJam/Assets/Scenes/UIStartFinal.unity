@@ -451,20 +451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1945515809525187634, guid: bef098fb2f803eb479b2c47a3ba76326,
+    - target: {fileID: 1945515809260858026, guid: bef098fb2f803eb479b2c47a3ba76326,
         type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 0.6431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1945515809525187634, guid: bef098fb2f803eb479b2c47a3ba76326,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 0.6431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1945515809525187634, guid: bef098fb2f803eb479b2c47a3ba76326,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 0.6431373
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1945515810055835232, guid: bef098fb2f803eb479b2c47a3ba76326,
         type: 3}
@@ -576,27 +566,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8070821582294209825, guid: bef098fb2f803eb479b2c47a3ba76326,
+    - target: {fileID: 1945515810055835236, guid: bef098fb2f803eb479b2c47a3ba76326,
         type: 3}
-      propertyPath: m_fontSize
-      value: 13
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8070821582294209825, guid: bef098fb2f803eb479b2c47a3ba76326,
+    - target: {fileID: 6916489886171515090, guid: bef098fb2f803eb479b2c47a3ba76326,
         type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 81c1370fe1cb7e94c8f55f2b2f028b61,
-        type: 2}
-    - target: {fileID: 8070821582294209825, guid: bef098fb2f803eb479b2c47a3ba76326,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 13
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8070821582294209825, guid: bef098fb2f803eb479b2c47a3ba76326,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5698306951546634735, guid: 81c1370fe1cb7e94c8f55f2b2f028b61,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef098fb2f803eb479b2c47a3ba76326, type: 3}
