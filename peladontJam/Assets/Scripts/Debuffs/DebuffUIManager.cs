@@ -42,12 +42,20 @@ public class DebuffUIManager : MonoBehaviour
         }
         else //Si esta llena la lista se sobrescribe en el último y se desplazan el resto, sobrescribiendo de uno en uno
         {
-            _debuffs[_numberOfSlot -1] = debuff;
-            for (int i = _numberOfSlot-1; i > 0; i--)
+            transform.GetChild(_numberOfSlot - 1).GetComponent<Image>().sprite = _debuffIcons[debuff];
+            transform.GetChild(_numberOfSlot - 1).GetComponent<Image>().color = _colors[debuff];
+            
+            for (int i = _numberOfSlot - 2; i >= 0; i--)
             {
-                transform.GetChild(i).GetComponent<Image>().sprite = _debuffIcons[_debuffs[i]];
-                transform.GetChild(i).GetComponent<Image>().color = _colors[_debuffs[i]];
+                transform.GetChild(i).GetComponent<Image>().sprite = _debuffIcons[_debuffs[i + 1]];
+                transform.GetChild(i).GetComponent<Image>().color = _colors[_debuffs[i + 1]];
+            }
 
+            _debuffs[_numberOfSlot - 1] = debuff;
+
+            for (int i = 0; i <= _numberOfSlot - 1; i++)
+            {
+                _debuffs[i] = _debuffs[i + 1];
             }
         }
        
