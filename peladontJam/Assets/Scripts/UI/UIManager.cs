@@ -104,4 +104,9 @@ public class UIManager : MonoBehaviour
     {
         _debuffUIManager.AddDebuff(v);
     }
+
+    public void EliminaTodosLosDebuffs()
+    {
+        _debuffUIManager.EliminaTodosLosDebuffs();
+    }
 }

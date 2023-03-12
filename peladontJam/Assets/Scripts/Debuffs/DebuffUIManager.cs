@@ -60,8 +60,17 @@ public class DebuffUIManager : MonoBehaviour
 
             _debuffs[_numberOfSlot - 1] = debuff;
         }
-       
+
+
+        //activar en la UI solo los elementos visibles
+        for (int i = 0; i < _numberOfSlot; i++) transform.GetChild(i).gameObject.SetActive(true);
     }
+
+    public void EliminaTodosLosDebuffs()
+    {
+        _numberOfSlot = 0;
+    }
+
 
     #endregion
 

@@ -50,7 +50,7 @@ public class LifeComponent : MonoBehaviour
             //desactivamos el enemigo
             gameObject.SetActive(false);
             //creamos el puddle y le asignamos el color
-            GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity);
+            GameObject myObject = Instantiate(_puddlePrefab,_puddleTransform.position,Quaternion.identity,transform.parent);
             myObject.GetComponent<PuddleComponent>().SetColor(_iaManager.Color);
 
             //generamos un vector aleatorio para la generacion de los enemigos
