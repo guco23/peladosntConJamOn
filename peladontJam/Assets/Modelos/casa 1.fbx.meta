@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 0d89a7273a1e9034d9fcb229472d4f1e
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -4257819709067605937
+    second: casa 1|arbusto|arbusto|gota grandeAction
+  - first:
+      74: -650478828331327622
+    second: casa 1|arbusto|arbusto|gota grandeAction.001
+  - first:
+      74: -7978257807907885901
+    second: casa 1|arbusto|arbusto|PlaneAction
+  - first:
+      74: 556159668284928780
+    second: casa 1|arbusto|arbusto|troncoAction
+  - first:
+      74: -319767832359205067
+    second: casa 1|Circle.001Action
+  - first:
+      74: 3850791399307263531
+    second: casa 1|Circle.001Action.001
+  - first:
+      74: -1526962102991942177
+    second: casa 1|Circle.001Action.002
+  - first:
+      74: 3558531615863720603
+    second: casa 1|EmptyAction
+  - first:
+      74: 4757984148289218199
+    second: casa 1|EmptyAction.001
+  - first:
+      74: 1048961116458655833
+    second: casa 1|EmptyAction.002
+  - first:
+      74: -8285160205300594759
+    second: casa 1|npc 1Action
+  - first:
+      74: 8602901973863484798
+    second: casa 1|npc baseAction
+  - first:
+      74: 4481305901805292043
+    second: casa 1|npc cara.001Action
+  - first:
+      74: 1495975005139468952
+    second: casa 1|npc cara.001Action.001
+  - first:
+      74: 3421057620569919235
+    second: casa 1|npc caraAction
+  - first:
+      74: 4053246575337580346
+    second: casa 1|npc caraAction.001
+  - first:
+      74: 2231252888181838993
+    second: casa 1|PlaneAction
+  - first:
+      74: -5113223716244594412
+    second: casa 1|PlaneAction.001
+  - first:
+      74: -4988786931204446307
+    second: casa 1|troncoAction
+  - first:
+      74: 8884918973501359276
+    second: casa 1|vasoAction
+  - first:
+      74: 8833807499795903777
+    second: casa 1|vasoAction.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
