@@ -2,7 +2,157 @@ fileFormatVersion: 2
 guid: 23a647f2836af48439ce1ca9a67f4abd
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1344290090720678763
+    second: idle
+  - first:
+      74: 3759789893582073740
+    second: npc cara|Circle.001Action.001
+  - first:
+      74: 1800233562431091602
+    second: npc cara|Circle.001Action.002
+  - first:
+      74: 3936081387535614461
+    second: npc cara|EmptyAction
+  - first:
+      74: -7635383177638052878
+    second: npc cara|EmptyAction.001
+  - first:
+      74: -2152772448385452813
+    second: npc cara|EmptyAction.002
+  - first:
+      74: -6154533565559162758
+    second: npc cara|npc 1Action
+  - first:
+      74: 7731979848498496088
+    second: npc cara|npc baseAction
+  - first:
+      74: -313072815910774742
+    second: npc cara|npc cara.001Action
+  - first:
+      74: 5265876709309241749
+    second: npc cara|npc cara.001Action.001
+  - first:
+      74: -2070316085714419118
+    second: npc cara|npc caraAction
+  - first:
+      74: 7583730939607958552
+    second: npc cara|npc caraAction.001
+  - first:
+      74: -6519891353858643244
+    second: npc cara|troncoAction
+  - first:
+      74: 1785342267369071846
+    second: npc cara|vasoAction
+  - first:
+      74: -1656101253842501573
+    second: npc cara|vasoAction.001
+  - first:
+      74: 4781951162920444690
+    second: walk
+  - first:
+      74: -1422011007694221501
+    second: mal
+  - first:
+      74: 6093225430303232669
+    second: bien
+  - first:
+      74: 4419341551624498096
+    second: bebe
+  - first:
+      74: 6221187890141279125
+    second: a
+  - first:
+      74: -3940031873545852154
+    second: Armature|Circle.001Action
+  - first:
+      74: 6927502509116007319
+    second: Armature|Circle.001Action.001
+  - first:
+      74: -6064431354851601757
+    second: Armature|Circle.001Action.002
+  - first:
+      74: -751813995980742648
+    second: Armature|EmptyAction
+  - first:
+      74: 6914186477651995811
+    second: Armature|EmptyAction.001
+  - first:
+      74: -5028752428267467716
+    second: Armature|EmptyAction.002
+  - first:
+      74: -5168003802383989810
+    second: Armature|npc 1Action
+  - first:
+      74: -4199310557379155650
+    second: Armature|npc baseAction
+  - first:
+      74: -5788416114382498523
+    second: Armature|npc cara.001Action
+  - first:
+      74: -4089394426190615940
+    second: Armature|npc cara.001Action.001
+  - first:
+      74: -5569742093613840130
+    second: Armature|npc caraAction
+  - first:
+      74: 5147891142067334360
+    second: Armature|npc caraAction.001
+  - first:
+      74: 2438032782898304380
+    second: Armature|troncoAction
+  - first:
+      74: -3965884953527235376
+    second: Armature|vasoAction
+  - first:
+      74: 4614236902577333733
+    second: Armature|vasoAction.001
+  - first:
+      74: -7160631709876723766
+    second: color vaso|Circle.001Action
+  - first:
+      74: -8878969720995256733
+    second: color vaso|Circle.001Action.001
+  - first:
+      74: -8515227936600195032
+    second: color vaso|Circle.001Action.002
+  - first:
+      74: -3181147404894708881
+    second: color vaso|EmptyAction
+  - first:
+      74: 6485093952163053798
+    second: color vaso|EmptyAction.001
+  - first:
+      74: 4870778461662140715
+    second: color vaso|EmptyAction.002
+  - first:
+      74: 8298442145623607679
+    second: color vaso|npc 1Action
+  - first:
+      74: -759341223508393605
+    second: color vaso|npc baseAction
+  - first:
+      74: -9197762367552034160
+    second: color vaso|npc cara.001Action
+  - first:
+      74: -2465714434602217716
+    second: color vaso|npc cara.001Action.001
+  - first:
+      74: 290113536064981040
+    second: color vaso|npc caraAction
+  - first:
+      74: 4168515538655214522
+    second: color vaso|npc caraAction.001
+  - first:
+      74: -5267754041905239422
+    second: color vaso|troncoAction
+  - first:
+      74: -3769102804543874984
+    second: color vaso|vasoAction
+  - first:
+      74: -8019425490038929712
+    second: color vaso|vasoAction.001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -31,11 +181,156 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 39
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mal
+      takeName: Armature|ArmatureAction.001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: bien
+      takeName: Armature|ArmatureAction.002
+      internalID: 0
+      firstFrame: 11
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: bebe
+      takeName: Armature|ArmatureAction.003
+      internalID: 0
+      firstFrame: 23
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: npc cara|Circle.001Action
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +383,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.002
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

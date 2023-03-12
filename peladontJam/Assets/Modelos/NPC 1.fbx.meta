@@ -2,7 +2,61 @@ fileFormatVersion: 2
 guid: 5e94383cc5a09df42bd144d23ea74f4d
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1344290090720678763
+    second: npc cara|Circle.001Action
+  - first:
+      74: 3759789893582073740
+    second: npc cara|Circle.001Action.001
+  - first:
+      74: -6154533565559162758
+    second: npc cara|npc 1Action
+  - first:
+      74: 7731979848498496088
+    second: npc cara|npc baseAction
+  - first:
+      74: -313072815910774742
+    second: npc cara|npc cara.001Action
+  - first:
+      74: -2070316085714419118
+    second: npc cara|npc caraAction
+  - first:
+      74: -6519891353858643244
+    second: npc cara|troncoAction
+  - first:
+      74: 1785342267369071846
+    second: npc cara|vasoAction
+  - first:
+      74: -1656101253842501573
+    second: npc cara|vasoAction.001
+  - first:
+      74: -918813369291010582
+    second: npc 1|Circle.001Action
+  - first:
+      74: 3678050031396154424
+    second: npc 1|Circle.001Action.001
+  - first:
+      74: 6140218775200004082
+    second: npc 1|npc 1Action
+  - first:
+      74: 8240614766902185280
+    second: npc 1|npc baseAction
+  - first:
+      74: -9033339854981210754
+    second: npc 1|npc cara.001Action
+  - first:
+      74: 3809652955011396057
+    second: npc 1|npc caraAction
+  - first:
+      74: 1837000090614542367
+    second: npc 1|troncoAction
+  - first:
+      74: 3223007786185981983
+    second: npc 1|vasoAction
+  - first:
+      74: 1356370178772277038
+    second: npc 1|vasoAction.001
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +89,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +142,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.002
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
