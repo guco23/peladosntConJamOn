@@ -12,7 +12,9 @@ public class SoundComponent : MonoBehaviour
     public AudioClip _slimeJump;                // +-
     public AudioClip _pickUpPuddle;             // +-
     public AudioClip _slimeHitted;              // +-
-    public AudioClip _slimeKilled;
+    public AudioClip _slimeKilled;              // +-
+    public AudioClip _poisonFailed;
+    public AudioClip _poisonSuccess;
 
     #region Singleton
     static private SoundComponent _instance;
