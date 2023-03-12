@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     public float _walkSpeed = 2.0f;
     private float _runSpeedMultiplier = 1.0f;
-    [SerializeField] public float _maxRunSpeed = 3.0f;
+    [SerializeField] private float _maxRunSpeed = 3.0f;
     [SerializeField]
     private float _gravityValue = -9.81f;
     private float _downForce;
