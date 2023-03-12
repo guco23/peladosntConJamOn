@@ -20,7 +20,8 @@ public class UIManager : MonoBehaviour
     GameObject _crossHair;
     [SerializeField]
     HitBorder _hitBorder;
-
+    [SerializeField]
+    TextMeshProUGUI _puntuacion;
     [SerializeField]
     DebuffUIManager _debuffUIManager;
 
@@ -119,6 +120,12 @@ public class UIManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(nombreEscena);
     }
+
+    public void SetPuntuacion(string puntuacion)
+    {
+        _puntuacion.text = puntuacion;
+    }
+
     public void ExitGame()
     {
         Application.Quit();
