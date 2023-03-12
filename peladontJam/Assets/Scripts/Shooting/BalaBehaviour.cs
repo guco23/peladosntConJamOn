@@ -38,7 +38,7 @@ public class BalaBehaviour : MonoBehaviour
         //Debug.Log(collision.gameObject);
         if (other.gameObject.layer == _enemies)// restar vida
         {
-            //Debug.Log("Enemigo");
+            other.gameObject.GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._slimeHitted);
             other.gameObject.GetComponent<LifeComponent>().DealDamage(_damage);
             other.gameObject.GetComponent<LifeComponent>().KnockBack(transform.position - other.transform.position);
         }

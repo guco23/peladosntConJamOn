@@ -8,9 +8,11 @@ public class SoundComponent : MonoBehaviour
     //public AudioClip _idle;
     //public AudioClip _walking;
     //public AudioClip _running;
-    public AudioClip _receiveDamage;
+    public AudioClip _receiveDamage;            // +-
     public AudioClip _slimeJump;                // +-
-    public AudioClip _pickUpPuddle;             // --
+    public AudioClip _pickUpPuddle;             // +-
+    public AudioClip _slimeHitted;              // +-
+    public AudioClip _slimeKilled;
 
     #region Singleton
     static private SoundComponent _instance;
@@ -27,6 +29,11 @@ public class SoundComponent : MonoBehaviour
         _instance = this;
     }
     #endregion
+
+    public void PlaySound(AudioClip myAudio)
+    {
+        GetComponent<AudioSource>().PlayOneShot(myAudio);
+    }
 
     // Start is called before the first frame update
     void Start()

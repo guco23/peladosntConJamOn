@@ -46,6 +46,7 @@ public class LifeComponent : MonoBehaviour
 
         else  if (_iaManager != null)                                         // Si nos encontramos en un enemigo
         {
+            SoundComponent.Instance.PlaySound(SoundComponent.Instance._slimeKilled);
             //desactivamos el enemigo
             gameObject.SetActive(false);
             //creamos el puddle y le asignamos el color

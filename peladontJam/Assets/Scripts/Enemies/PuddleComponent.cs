@@ -18,9 +18,10 @@ public class PuddleComponent : MonoBehaviour
         if (_manager != null)
         {
             //añade el color en el manager, manda el mensaje a la UI y destruye el objeto
+            SoundComponent.Instance.PlaySound(SoundComponent.Instance._pickUpPuddle);
             _manager.AddColor((int) _color);
             GameManager.Instance.ColorPicked((int) _color);
-            GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._pickUpPuddle);
+            Debug.Log("Tu vieja en bañera");
             Destroy(gameObject);
         }
     }  
