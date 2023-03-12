@@ -99,4 +99,9 @@ public class LifeComponent : MonoBehaviour
     {
         return _maxLife;
     }
+    public void ResetLife()
+    {
+        _currentLife = _maxLife;
+        GameManager.Instance.UpdateHeath(_currentLife);
+    }
 }

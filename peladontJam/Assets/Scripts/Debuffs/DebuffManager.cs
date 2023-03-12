@@ -99,6 +99,7 @@ public class DebuffManager : MonoBehaviour
     private void HideCrosshair()
     {
         _uiManager.HideCrossHair();
+        _shooterController._mira = false;
         _debuffContador[6]++;
     }
     
@@ -152,6 +153,7 @@ public class DebuffManager : MonoBehaviour
     private void ElimCrosshairDebuff()
     {
         _uiManager.ShowCrossHair();
+        _shooterController._mira = true;
         _debuffContador[6] = 0;
     }
     #endregion
@@ -192,6 +194,7 @@ public class DebuffManager : MonoBehaviour
     private void ElimCrosshairDebuffParcial()
     {
         _uiManager.ShowCrossHair();
+        _shooterController._mira = true;
         _debuffContador[6]--;
     }
     #endregion

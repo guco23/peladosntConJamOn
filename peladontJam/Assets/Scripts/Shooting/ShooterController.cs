@@ -23,6 +23,8 @@ public class ShooterController : MonoBehaviour
 
     private Animator _mano;
 
+    public bool _mira;
+    
     private RaycastHit hit;
     float _reloj;
 
@@ -78,7 +80,10 @@ public class ShooterController : MonoBehaviour
     public void EnterArea()
     {
         _enArea = true;
-        mirilla.gameObject.SetActive(true);
+        if (_mira)
+        {
+            mirilla.gameObject.SetActive(true);
+        }
         _armaPlaceHolder.SetActive(true);
 
     }
