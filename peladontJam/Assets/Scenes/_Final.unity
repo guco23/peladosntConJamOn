@@ -320,7 +320,7 @@ MonoBehaviour:
   _myWaypoints:
   - {fileID: 44946982}
   - {fileID: 689522188}
-  _speed: 20
+  _speed: 8
   _rotation: 270
 --- !u!1001 &25307910
 PrefabInstance:
