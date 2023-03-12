@@ -168,6 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: 2
+  _maxRadioCirculo: 25
+  _minRadioCirculo: 0
+  _minTiempoMax: 5
+  _maxTiempoMax: 8
   _playerInArea: 0
 --- !u!195 &1543473295
 NavMeshAgent:
