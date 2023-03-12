@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     HitBorder _hitBorder;
 
+    [SerializeField]
+    DebuffUIManager _debuffUIManager;
+
     #endregion
 
     #region properties
@@ -95,5 +98,10 @@ public class UIManager : MonoBehaviour
     public void RequestStateChange(int newState)
     {
         GameManager.Instance.RequestStateChange((GameManager.GameStates)newState);
+    }
+
+    public void AddDebuff(int v)
+    {
+        _debuffUIManager.AddDebuff(v);
     }
 }
