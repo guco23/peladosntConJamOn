@@ -106,9 +106,19 @@ public class DebuffManager : MonoBehaviour
     //Conjunto de métodos que eliminan debuffs
     public void EliminaTodos()
     {
-        for(int i =0; i < _debuffContador.Length; i++) if (_debuffContador[i] > 0) EliminameEsta(i);
+        for(int i =0; i < _debuffContador.Length; i++) if (_debuffContador[i] > 0) EliminameEstaTotal(i);
     }
     public void EliminameEsta(int indexDebuff)
+    {
+        if (indexDebuff == 0) ElimDamageDebuffParcial();
+        else if (indexDebuff == 1) ElimSpeedDebuffParcial();
+        else if (indexDebuff == 2) ElimSlimeDebuffParcial();
+        else if (indexDebuff == 3) ElimLessBulletsDebuffParcial();
+        else if (indexDebuff == 4) ElimCameraSpeedDebuffParcial();
+        else if (indexDebuff == 5) ElimAxisDebuffParcial();
+        else if (indexDebuff == 6) ElimCrosshairDebuffParcial();
+    }
+    public void EliminameEstaTotal(int indexDebuff)
     {
         if (indexDebuff == 0) ElimDamageDebuff();
         else if (indexDebuff == 1) ElimSpeedDebuff();
