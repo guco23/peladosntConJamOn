@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e6872de39d89649b34bb179c300080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _escalaMin: 0
+  _escalaMin: 0.3
   _masaMin: 0
   _masaMax: 0
 --- !u!114 &-5008896722215035378

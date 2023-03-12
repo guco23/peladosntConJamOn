@@ -80,7 +80,6 @@ public class ColorController : MonoBehaviour
         if (colores[0] == 1) EvaluaSecundarios(ref colores[1], ref colores[2]);
         else if (colores[1] == 1) EvaluaSecundarios(ref colores[0], ref colores[2]);
         else if (colores[2] == 1) EvaluaSecundarios(ref colores[1], ref colores[0]);
-
         return new Color(colores[0], colores[1], colores[2],1);
     }
     /// <summary>
@@ -96,7 +95,7 @@ public class ColorController : MonoBehaviour
         }
         Color aux = ColorMasCercano(c);
         if (aux == Color.red) return ColorCodificacion.Rojo;
-        else if (aux == Color.yellow) return ColorCodificacion.Amarillo;
+        else if (aux == new Color(1,1,0,1)) return ColorCodificacion.Amarillo;
         else if (aux == Color.green) return ColorCodificacion.Verde;
         else if (aux == Color.cyan) return ColorCodificacion.Cian;
         else if (aux == Color.blue) return ColorCodificacion.Azul;

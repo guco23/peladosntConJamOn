@@ -14,7 +14,8 @@ public class HitBorder : MonoBehaviour
 
     public void HitRecived()
     {
-        _alphaColorBorder = 255;
+        _alphaColorBorder = 1;
+        _hitBorder.color = new Color(_hitBorder.color.r, _hitBorder.color.g, _hitBorder.color.b, _alphaColorBorder);
     }
     // Start is called before the first frame update
     void Start()
@@ -29,10 +30,10 @@ public class HitBorder : MonoBehaviour
         {
             _alphaColorBorder = Mathf.Lerp(_hitBorder.color.a, 0, Time.deltaTime * _interpolationSpeed);
             _hitBorder.color = new Color(_hitBorder.color.r, _hitBorder.color.g, _hitBorder.color.b, _alphaColorBorder);
-            {
-                if (_alphaColorBorder < 2)
-                    _alphaColorBorder = Mathf.Clamp(_alphaColorBorder, -1, 0);
-            }
+            
+            if (_alphaColorBorder < 0.01f)
+                _alphaColorBorder = Mathf.Clamp(_alphaColorBorder, -1, 0);
+            
         }
     }
 }

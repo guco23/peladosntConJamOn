@@ -14,7 +14,7 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private int _currentLife;
     [SerializeField]
-    public int _damageMultiplier;
+    public float _damageMultiplier;
     [SerializeField]
     private float _kockbackForce;
     [SerializeField] private float _spawnerOffset;
@@ -24,7 +24,7 @@ public class LifeComponent : MonoBehaviour
     public int MaxLife { get { return _maxLife; }}
     public void DealDamage(int damage)
     {
-        _currentLife -= damage * _damageMultiplier;
+        _currentLife -= (int)(damage * _damageMultiplier);
         if (GetComponent<PlayerController>() != null)   // Si nos encontramos en el jugador
         {
             GameManager.Instance.UpdateHeath(_currentLife);
