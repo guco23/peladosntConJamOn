@@ -90,11 +90,6 @@ public class GameManager : MonoBehaviour
 
         _debuffManager.ApplyDebuff((int)colorCod);
         _uiManager.AddDebuff((int)colorCod);
-        //TODO
-        /*
-         * Obtener un efecto negativo 
-         * Notificar a la UI el nuevo efecto
-         */
         _playerColorManager.ResetCantidades();
         _uiManager.ResetColors();
         //Comenzar una nueva petición.?????
@@ -102,20 +97,13 @@ public class GameManager : MonoBehaviour
     }
     public void PotionCorrect(Color color)
     {
-
-        /*
-         * Perder todos los efectos negativos.
-         * 
-         */
         _uiManager.ResetColors();
 
         _uiManager.EliminaTodosLosDebuffs();
         _debuffManager.EliminaTodos();//quita los efectos del debuff en codido
-        //falta quitar los efectos en la UI
-
         NewPotionPetition();
         KillAllSpawned();
-        SpawnAll();
+        SpawnAll(); 
     }
 
     /// <summary>

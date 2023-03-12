@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -108,5 +109,10 @@ public class UIManager : MonoBehaviour
     public void EliminaTodosLosDebuffs()
     {
         _debuffUIManager.EliminaTodosLosDebuffs();
+    }
+    public void GoToGame(string nombreEscena)
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(nombreEscena);
     }
 }
