@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 38e4fc979aa75fb40b363494b66cad65, type: 2}
 --- !u!1 &23939371
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,16 +617,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7275171406083387697, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: _customMAterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 9650055e4ebf0ab498af4139372798fe, type: 2}
-    - target: {fileID: 8193281249799342537, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8193281251139863954, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_RootOrder
@@ -687,86 +677,6 @@ PrefabInstance:
       propertyPath: mirilla
       value: 
       objectReference: {fileID: 1869329495}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
-      value: ec3be37f-e99a-46e4-93c7-3354380566ba
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
-      value: Player/GivePotion[/Keyboard/f]
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 418805693}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GivePotion
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Run
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ColorConfirmationComponent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MovementController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8193281251139864043, guid: d1f7d2759927ba3449a19c50ffa20e85,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8193281251761951307, guid: d1f7d2759927ba3449a19c50ffa20e85,
         type: 3}
       propertyPath: m_Name
