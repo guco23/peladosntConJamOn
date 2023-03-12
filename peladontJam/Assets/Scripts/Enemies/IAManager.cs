@@ -48,6 +48,10 @@ public class IAManager : MonoBehaviour
     void Update()
     {
         if (_playerInArea) _myAgent.SetDestination(_target.transform.position);
+        else
+        {
+
+        }
     }
 
     private void OnEnter()

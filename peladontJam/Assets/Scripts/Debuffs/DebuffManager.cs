@@ -107,14 +107,7 @@ public class DebuffManager : MonoBehaviour
     //Conjunto de métodos que eliminan debuffs
     public void EliminaTodos()
     {
-        for(int i =0; i < _debuffContador.Length; i++)
-        {
-            if (_debuffContador[i] > 0)
-            {
-                EliminameEsta(i);
-                _debuffContador[i] = 0;
-            }
-        }
+        for(int i =0; i < _debuffContador.Length; i++) if (_debuffContador[i] > 0) EliminameEsta(i);
     }
     private void EliminameEsta(int indexDebuff)
     {
@@ -126,42 +119,88 @@ public class DebuffManager : MonoBehaviour
         else if (indexDebuff == 5) ElimAxisDebuff();
         else if (indexDebuff == 6) ElimCrosshairDebuff();
     }
+    #region EliminadoresTotales
+
     private void ElimDamageDebuff()
     {
-        _playerController._dañoBalasBase = _originalDamageDealt;
-        _debuffContador[0]--;
+        _playerController.SetDañoBalas(_originalDamageDealt);
+        _debuffContador[0] = 0;
     }
     private void ElimSpeedDebuff()
     {
-        _movementController._walkSpeed = _originalWalkSpeed;
-        _movementController._maxRunSpeed = _originalRunSpeed;
-        _debuffContador[1]--;
+        _movementController._walkSpeed += _originalWalkSpeed;
+        _movementController._maxRunSpeed += _originalRunSpeed;
+        _debuffContador[1] = 0;
     }
     private void ElimSlimeDebuff()
     {
         _lifeComponent._damageMultiplier = _originalDamageReceived;
-        _debuffContador[2]--;
+        _debuffContador[2] =0;
     }
     private void ElimLessBulletsDebuff()
     {
         _shooterController._cadenciaDisparo = _originalRateOfFire;
-        _debuffContador[3]--;
+        _debuffContador[3] = 0;
     }
     private void ElimCameraSpeedDebuff()
     {
         _cameraController._sens = _originalSens;
-        _debuffContador[4]--;
+        _debuffContador[4] = 0;
     }
     private void ElimAxisDebuff()
     {
         _cameraController.InvertirEjes();
-        _debuffContador[5]--;
+        _debuffContador[5] = 0;
     }
     private void ElimCrosshairDebuff()
     {
         _uiManager.ShowCrossHair();
+        _debuffContador[6] = 0;
+    }
+    #endregion
+
+    #region EliminadoresParciales
+
+    private void ElimDamageDebuffParcial()
+    {
+        _currentDamage -= _damageDebuff;
+        _playerController.SetDañoBalas(_currentDamage);
+        _debuffContador[0]--;
+    }
+    private void ElimSpeedDebuffParcial()
+    {
+        _movementController._walkSpeed += _speedDebuff;
+        _movementController._maxRunSpeed += _speedDebuff;
+        _debuffContador[1]--;
+    }
+    private void ElimSlimeDebuffParcial()
+    {
+        _lifeComponent._damageMultiplier -= _damageReceivedDebuff;
+        _debuffContador[2]--;
+    }
+    private void ElimLessBulletsDebuffParcial()
+    {
+        _shooterController._cadenciaDisparo += _rateOfFireDebuff;
+        _debuffContador[3]--;
+    }
+    private void ElimCameraSpeedDebuffParcial()
+    {
+        _cameraController._sens -= _sensDebuff;
+        _debuffContador[4]--;
+    }
+    private void ElimAxisDebuffParcial()
+    {
+        _cameraController.InvertirEjes();
+        _debuffContador[5]--;
+    }
+    private void ElimCrosshairDebuffParcial()
+    {
+        _uiManager.ShowCrossHair();
         _debuffContador[6]--;
     }
+    #endregion
+
+
     #endregion
     // Start is called before the first frame update
     void Start()
