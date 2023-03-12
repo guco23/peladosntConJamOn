@@ -36,7 +36,6 @@ public class DebuffManager : MonoBehaviour
     //Valores originales de los parámetros
     private int _originalDamageDealt;
     private float _originalWalkSpeed;
-    private float _originalRunSpeed;
     private float _originalDamageReceived;
     private float _originalRateOfFire;
     private float _originalSens;
@@ -75,7 +74,6 @@ public class DebuffManager : MonoBehaviour
     private void LessVelocity()
     {
         _movementController._walkSpeed -= _speedDebuff;
-        _movementController._maxRunSpeed -= _speedDebuff;
         _debuffContador[1]++;
     }
     private void SlimeDamage()
@@ -129,7 +127,6 @@ public class DebuffManager : MonoBehaviour
     private void ElimSpeedDebuff()
     {
         _movementController._walkSpeed += _originalWalkSpeed;
-        _movementController._maxRunSpeed += _originalRunSpeed;
         _debuffContador[1] = 0;
     }
     private void ElimSlimeDebuff()
@@ -170,7 +167,6 @@ public class DebuffManager : MonoBehaviour
     private void ElimSpeedDebuffParcial()
     {
         _movementController._walkSpeed += _speedDebuff;
-        _movementController._maxRunSpeed += _speedDebuff;
         _debuffContador[1]--;
     }
     private void ElimSlimeDebuffParcial()
@@ -213,7 +209,6 @@ public class DebuffManager : MonoBehaviour
 
         _originalDamageDealt = _playerController._dañoBalasBase;
         _originalWalkSpeed = _movementController._walkSpeed;
-        _originalRunSpeed = _movementController._maxRunSpeed;
         _originalDamageReceived = _lifeComponent._damageMultiplier;
         _originalRateOfFire = _shooterController._cadenciaDisparo;
         _originalSens = _cameraController._sens;
@@ -222,7 +217,7 @@ public class DebuffManager : MonoBehaviour
         /* Testing
         _dañoBalasActual = _playerController._dañoBalasBase;
         Debug.Log("daño balas actual " + _playerController._dañoBalasBase);
-        Debug.Log("andar" + _movementController._walkSpeed + " correr " +  _movementController._maxRunSpeed);
+        Debug.Log("velocidad" + _movementController._walkSpeed);
         Debug.Log("slime damage" + _lifeComponent._damageMultiplier);
         Debug.Log("cadencia " + _shooterController._cadenciaDisparo);
         Debug.Log("sens" + _cameraController._sens);*/
@@ -236,7 +231,7 @@ public class DebuffManager : MonoBehaviour
         {
             _a = false;
             LessDamageDebuff(); Debug.Log("daño balas actual " + _dañoBalasActual);
-            LessVelocity(); Debug.Log("andar" + _movementController._walkSpeed + " correr " + _movementController._maxRunSpeed);
+            LessVelocity(); Debug.Log("velocidad" + _movementController._walkSpeed);
             //HideCrosshair();
             MixAxis();
             SlimeDamage(); Debug.Log("slime damage" + _lifeComponent._damageMultiplier);
