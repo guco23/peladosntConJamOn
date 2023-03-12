@@ -10206,7 +10206,7 @@ PrefabInstance:
     - target: {fileID: 48974490628164395, guid: 64d84f6888d97994bb1a21dff681173e,
         type: 3}
       propertyPath: _sens
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 48974490628164396, guid: 64d84f6888d97994bb1a21dff681173e,
         type: 3}
