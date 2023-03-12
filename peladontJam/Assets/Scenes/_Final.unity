@@ -646,7 +646,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -24.96, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10886,6 +10886,7 @@ GameObject:
   - component: {fileID: 1032478716}
   - component: {fileID: 1032478715}
   - component: {fileID: 1032478714}
+  - component: {fileID: 1032478717}
   m_Layer: 0
   m_Name: cartel (1)
   m_TagString: Untagged
@@ -10951,14 +10952,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032478713}
   m_LocalRotation: {x: 0.27060112, y: -0.6532797, z: -0.6532814, w: -0.27059966}
-  m_LocalPosition: {x: -6.04, y: -0.06, z: 30.08}
-  m_LocalScale: {x: 228.3, y: 228.3, z: 228.3}
+  m_LocalPosition: {x: -4.349628, y: 1.7602351, z: 13.579361}
+  m_LocalScale: {x: 228.30003, y: 228.29999, z: 228.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 778180841}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1584187244}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 135}
+--- !u!64 &1032478717
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032478713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1306677120394779113, guid: 6f860f94f30a3c2478247800e94f2d8b, type: 3}
 --- !u!1001 &1032880305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16639,6 +16654,8 @@ Transform:
   - {fileID: 795308821}
   - {fileID: 23939376}
   - {fileID: 1752398377}
+  - {fileID: 8779022736703842005}
+  - {fileID: 1032478716}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24776,6 +24793,7 @@ GameObject:
   - component: {fileID: 8779022736703842005}
   - component: {fileID: 5654974390610192752}
   - component: {fileID: 7610650673177206202}
+  - component: {fileID: 8779022736703842006}
   m_Layer: 0
   m_Name: cartel
   m_TagString: Untagged
@@ -24791,11 +24809,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8259190528961100911}
   m_LocalRotation: {x: -0.18300995, y: -0.6830129, z: -0.68301344, w: 0.18301207}
-  m_LocalPosition: {x: 5.69, y: -0.04, z: 30.02}
+  m_LocalPosition: {x: 7.380372, y: 1.780235, z: 13.5193615}
   m_LocalScale: {x: 228.3, y: 228.3, z: 228.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 583320862}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1584187244}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 210}
+--- !u!64 &8779022736703842006
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259190528961100911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1306677120394779113, guid: 6f860f94f30a3c2478247800e94f2d8b, type: 3}

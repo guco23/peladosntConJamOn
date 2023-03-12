@@ -19,7 +19,7 @@ public class ColorConfirmationComponent : MonoBehaviour
             {
                 _playerColor = other.gameObject.GetComponent<ColorManager>().Colors;
                 _canCompare = true;
-                GameManager.Instance.ShowMesage("F para interactuar");
+                GameManager.Instance.ShowMesage("F para entregar");
             }
             
         }
