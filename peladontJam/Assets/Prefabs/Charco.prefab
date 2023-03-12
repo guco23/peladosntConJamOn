@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colores:
-  - {fileID: 2100000, guid: a6b8a2cd23953a04f812d704d44b8a6b, type: 2}
-  - {fileID: 2100000, guid: 44e845509b32dc1499bb6c1a0fdabf19, type: 2}
-  - {fileID: 2100000, guid: 5227ea55b3b263e4eae664d2a86c155f, type: 2}
+  - {fileID: 2100000, guid: 26aac72e52bcbe648a9f6069ce734d2a, type: 2}
+  - {fileID: 2100000, guid: cdf8ab6681101a94685c7f8dd14dc468, type: 2}
+  - {fileID: 2100000, guid: 52286e364a205874ba793f80ff70d3b7, type: 2}
   _alturaY: 0

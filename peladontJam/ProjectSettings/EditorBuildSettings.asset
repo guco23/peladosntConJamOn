@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UIStartFinal.unity
+    guid: ea4188b77d09aea449606f74cf924823
+  - enabled: 1
     path: Assets/Scenes/_Final.unity
     guid: 063558ee8b95fad44afbe68dd720a45e
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: b89ae3f27fda947448a8ecaf6379aaaa
-  - enabled: 1
-    path: Assets/Scenes/UIStartFinal.unity
-    guid: ea4188b77d09aea449606f74cf924823
   m_configObjects: {}
