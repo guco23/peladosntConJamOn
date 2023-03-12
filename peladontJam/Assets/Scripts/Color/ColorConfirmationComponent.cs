@@ -43,11 +43,13 @@ public class ColorConfirmationComponent : MonoBehaviour
 
             if (_myColorController.ColoresIguales(c, _materialToCompare.color))
             {
+                GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._poisonSuccess);
                 Debug.Log("Tu vieja colorada");
                 GameManager.Instance.PotionCorrect(c);
             }
             else
             {
+                GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._poisonFailed);
                 Debug.Log("ColorEquivocado");
                 GameManager.Instance.PotionFailed(c);
             }
