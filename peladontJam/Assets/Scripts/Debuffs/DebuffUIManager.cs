@@ -49,14 +49,16 @@ public class DebuffUIManager : MonoBehaviour
             {
                 transform.GetChild(i).GetComponent<Image>().sprite = _debuffIcons[_debuffs[i + 1]];
                 transform.GetChild(i).GetComponent<Image>().color = _colors[_debuffs[i + 1]];
+                Debug.Log(i);
+            }
+
+            for (int i = 0; i <= _numberOfSlot - 2; i++)
+            {
+                _debuffs[i] = _debuffs[i + 1];
+                Debug.Log(_debuffs[i + 1]);
             }
 
             _debuffs[_numberOfSlot - 1] = debuff;
-
-            for (int i = 0; i <= _numberOfSlot - 1; i++)
-            {
-                _debuffs[i] = _debuffs[i + 1];
-            }
         }
        
     }
