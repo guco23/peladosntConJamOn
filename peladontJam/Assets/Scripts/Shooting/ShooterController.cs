@@ -21,6 +21,7 @@ public class ShooterController : MonoBehaviour
     [SerializeField]
     public float _cadenciaDisparo;
 
+    private Animator _mano;
 
     private RaycastHit hit;
     float _reloj;
@@ -38,6 +39,7 @@ public class ShooterController : MonoBehaviour
         _reloj = _cadenciaDisparo;
         _disparando = false;
         ExitArea();
+        _mano = _armaPlaceHolder.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -68,7 +70,8 @@ public class ShooterController : MonoBehaviour
             }
             else { bullet.GetComponent<BalaBehaviour>().SetDirection(bullet.transform.forward); }           
             _reloj = 0;
-            
+
+            _mano.SetTrigger("Shoot");
         }
     }
 
