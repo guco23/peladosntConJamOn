@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     DebuffManager _debuffManager;
 
+    NPCManager _npcManager;
+
     #endregion
     //La cantidad de rondas que lleva ganadas el juegador.
     #region Parameters
@@ -65,6 +67,10 @@ public class GameManager : MonoBehaviour
         _colorController = GetComponent<ColorController>();
         _playerColorManager = _player.GetComponent<ColorManager>();
         _debuffManager = GetComponent<DebuffManager>();
+        _npcManager = GetComponent<NPCManager>();
+
+
+        _npcManager.NuevoNpc();
         _puntos = 0;
         NewRound();
     }
@@ -89,11 +95,13 @@ public class GameManager : MonoBehaviour
         //usar este método para aplicar los debufos
         ColorController.ColorCodificacion colorCod = _colorController.DecodeColor(color);
 
-
         _debuffManager.ApplyDebuff((int)colorCod);
         _uiManager.AddDebuff((int)colorCod);
         _playerColorManager.ResetCantidades();
         _uiManager.ResetColors();
+
+
+        _npcManager.MalAnim();
         //Comenzar una nueva petición.?????
         //NewPotionPetition();
     }
@@ -103,8 +111,11 @@ public class GameManager : MonoBehaviour
 
         _uiManager.EliminaTodosLosDebuffs();
         _debuffManager.EliminaTodos();//quita los efectos del debuff en codido
-        NewPotionPetition();
-        
+        //NewPotionPetition();
+
+        _npcManager.BienAnim();
+
+
         _puntos++;
         _uiManager.SetPuntuacion(_puntos.ToString());
         if (_puntos >= _maxPointsRound)
@@ -146,7 +157,7 @@ public class GameManager : MonoBehaviour
         //Destruye todos los enemigos y regenera uno.
         KillAllSpawned();
         SpawnAll();
-        NewPotionPetition();
+        //NewPotionPetition();
         _playerColorManager.ResetCantidades();
         _uiManager.ResetColors();
     }
@@ -180,7 +191,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NewPotionPetition()
+    public void NewPotionPetition()
     {
         //Resetea los colores del player
         _playerColorManager.ResetCantidades();

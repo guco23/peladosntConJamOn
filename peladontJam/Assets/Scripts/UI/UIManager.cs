@@ -32,23 +32,22 @@ public class UIManager : MonoBehaviour
     private GameObject _endMenu;
     [SerializeField]
     private GameObject _gameMenu;
+    [SerializeField]
+    private GameObject _introduction;
 
     #endregion
 
     #region properties
     private GameObject _actualMenu;
-
     #endregion
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveIntroduction()
     {
-        
+        if(_introduction.activeSelf)
+        {
+            _introduction.SetActive(false);
+            _startMenu.SetActive(true);
+        }
     }
     public void CatchColor(int color)
     {
