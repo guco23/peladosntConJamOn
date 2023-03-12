@@ -27,4 +27,14 @@ public class SpawnerController : MonoBehaviour
         GameObject spawny = Instantiate(_enemyPrefab, transform.position, Quaternion.identity, transform);
         
     }
+    public void CleanPuddles()
+    {
+        int numChilds = transform.childCount;
+
+        for (int i = 0; i < numChilds; i++)
+        {
+            if(transform.GetChild(i).GetComponent<PuddleComponent>() != null)
+                Destroy(transform.GetChild(i).gameObject);
+        }
+    }
 }
