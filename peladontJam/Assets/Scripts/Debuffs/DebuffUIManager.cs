@@ -58,6 +58,7 @@ public class DebuffUIManager : MonoBehaviour
                 Debug.Log(_debuffs[i + 1]);
             }
 
+            EliminaUnDebuff(_debuffs[_numberOfSlot - 1]);
             _debuffs[_numberOfSlot - 1] = debuff;
         }
 
@@ -71,7 +72,10 @@ public class DebuffUIManager : MonoBehaviour
         _numberOfSlot = 0;
         for (int i = 0; i < transform.childCount; i++) transform.GetChild(i).gameObject.SetActive(false);
     }
-
+    private void EliminaUnDebuff(int n)
+    {
+        GameManager.Instance._debuffManager.EliminameEsta(n);
+    }
 
     #endregion
 

@@ -108,7 +108,7 @@ public class DebuffManager : MonoBehaviour
     {
         for(int i =0; i < _debuffContador.Length; i++) if (_debuffContador[i] > 0) EliminameEsta(i);
     }
-    private void EliminameEsta(int indexDebuff)
+    public void EliminameEsta(int indexDebuff)
     {
         if (indexDebuff == 0) ElimDamageDebuff();
         else if (indexDebuff == 1) ElimSpeedDebuff();
