@@ -24,7 +24,8 @@ public class UIManager : MonoBehaviour
     TextMeshProUGUI _puntuacion;
     [SerializeField]
     DebuffUIManager _debuffUIManager;
-
+    [SerializeField]
+    AudioSource _audioSource;
     [Header("Menus")]
     [SerializeField]
     private GameObject _startMenu;
