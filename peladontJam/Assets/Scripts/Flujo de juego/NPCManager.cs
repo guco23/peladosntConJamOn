@@ -26,16 +26,16 @@ public class NPCManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _isMoving = false;
-        _currentAgent = null;
+        //_isMoving = false;
+        //_currentAgent = null;
         _currentTime = 0;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //Debug.Log(_isMoving);
-        if(_isMoving)
+        Debug.Log(_isMoving);
+        if(_isMoving &&_currentAgent != null)
         {
             _currentTime += Time.deltaTime;
             if(_currentTime>_time) { GameManager.Instance.NewPotionPetition();_currentTime = 0;}
