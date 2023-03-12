@@ -4,17 +4,11 @@ ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 1455756820419928721
-    second: gota grande|CameraAction
+      74: 5542676446686182864
+    second: bala|gota grandeAction
   - first:
-      74: -4650109770614780287
-    second: gota grande|gota grandeAction
-  - first:
-      74: 3066952221168894212
-    second: gota grande|PlaneAction
-  - first:
-      74: -4130140048672022986
-    second: gota grande|troncoAction
+      74: -7323001788823013686
+    second: bala|troncoAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -47,7 +41,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -100,7 +94,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.049999997
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
