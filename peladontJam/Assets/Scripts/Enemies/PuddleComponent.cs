@@ -7,15 +7,19 @@ public class PuddleComponent : MonoBehaviour
     private ColorManager.colors _color;
 
     [SerializeField]
+    private Material[] _colores = new Material[3];
+
+    [SerializeField]
     private float _alturaY;
 
     private void Start()
-    {
+    {   
         transform.position = new Vector3(transform.position.x, _alturaY, transform.position.z);
-    }
+    }   
     public void SetColor(ColorManager.colors color)
     {
         _color = color;
+        GetComponent<MeshRenderer>().material = _colores[(int)color];
     }
 
     private void OnTriggerEnter(Collider other)
