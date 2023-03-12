@@ -5,13 +5,25 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 4781951162920444690
-    second: shoot
+    second: idle
   - first:
-      74: -3419257869308726280
+      74: -1464263079514145092
+    second: Armature|brazoAction
+  - first:
+      74: -2111779600099031386
+    second: Armature|pistolaAction
+  - first:
+      74: -4200436215017481706
+    second: pistola|brazoAction
+  - first:
+      74: 1097455907372002974
+    second: pistola|pistolaAction
+  - first:
+      74: -8612994791844490777
     second: walk
   - first:
-      74: -5252816984213320552
-    second: idle
+      74: -6163974202272359319
+    second: shoot
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -42,18 +54,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: shoot
+      name: idle
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 0
-      lastFrame: 10
+      firstFrame: 30
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -100,18 +112,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: idle
+      name: shoot
       takeName: Armature|ArmatureAction
       internalID: 0
-      firstFrame: 30
-      lastFrame: 70
+      firstFrame: 0
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -131,7 +143,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -184,7 +196,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
