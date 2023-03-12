@@ -32,8 +32,8 @@ public class DebuffUIManager : MonoBehaviour
     #region methods
 
     public void AddDebuff(int debuff) //Método para almacenar un nuevo debuff, teniendo que enviar el debuff que se le aplica (por numero)
-    {
-        if (_numberOfSlot < 7) //Si no esta llena la lista de debuffs el nuevo se almacena en el seguiente espacio libre
+    {        
+        if (_numberOfSlot < _debuffs.Length) //Si no esta llena la lista de debuffs el nuevo se almacena en el seguiente espacio libre
         {
             transform.GetChild(_numberOfSlot).GetComponent<Image>().sprite = _debuffIcons[debuff];
             transform.GetChild(_numberOfSlot).GetComponent<Image>().color = _colors[debuff];
@@ -42,9 +42,9 @@ public class DebuffUIManager : MonoBehaviour
         }
         else //Si esta llena la lista se sobrescribe en el último y se desplazan el resto, sobrescribiendo de uno en uno
         {
-            for (int i = _numberOfSlot; i > 0; i--)
+            _debuffs[_numberOfSlot -1] = debuff;
+            for (int i = _numberOfSlot-1; i > 0; i--)
             {
-                _debuffs[_numberOfSlot] = debuff;
                 transform.GetChild(i).GetComponent<Image>().sprite = _debuffIcons[_debuffs[i]];
                 transform.GetChild(i).GetComponent<Image>().color = _colors[_debuffs[i]];
 
@@ -60,7 +60,8 @@ public class DebuffUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < _colors.Length; i++) _colors[i].a = 1;  
+       
     }
 
     // Update is called once per frame
