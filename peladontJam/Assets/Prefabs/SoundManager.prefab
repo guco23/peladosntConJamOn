@@ -491,10 +491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b6ca182478f504cb35e68e5d002744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shoot: {fileID: 8300000, guid: 63d0ec187bdffc144aea0121941afd32, type: 3}
-  _receiveDamage: {fileID: 8300000, guid: b5f22f8a4ad5b464f9306acff8cd7fab, type: 3}
+  _shoot: {fileID: 8300000, guid: 493b5c01d20e18b41b3f637841081574, type: 3}
+  _receiveDamage: {fileID: 8300000, guid: e0f4b74ec3b6fbe43b1abaab1f0d15ac, type: 3}
   _slimeJump: {fileID: 8300000, guid: 9dd7852987350a848870d9584f8c331f, type: 3}
   _pickUpPuddle: {fileID: 8300000, guid: 61d54a207aa3d4a42a278c54a9aaea26, type: 3}
+  _slimeHitted: {fileID: 8300000, guid: 63d0ec187bdffc144aea0121941afd32, type: 3}
+  _slimeKilled: {fileID: 8300000, guid: 1d8255f6701569a489d297e003977915, type: 3}
 --- !u!82 &1527222254
 AudioSource:
   m_ObjectHideFlags: 0

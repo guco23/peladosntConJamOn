@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == enemies && _currentTime >= _tiempoEntreDaños)
         {
             _currentTime = 0;
+            GetComponent<AudioSource>().PlayOneShot(SoundComponent.Instance._receiveDamage);
             _lifeComponent.DealDamage(_dañoEnemigosActual);
         }
     }
